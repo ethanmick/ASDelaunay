@@ -20,6 +20,8 @@
 		AAAF5EF916E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
 		AAAF5EFC16E7D3D700C38071 /* ASPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EFB16E7D3D700C38071 /* ASPoint.m */; };
 		AAAF5EFD16E7D3D700C38071 /* ASPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EFB16E7D3D700C38071 /* ASPoint.m */; };
+		AAAF5F0016E7E03F00C38071 /* ASCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EFF16E7E03F00C38071 /* ASCircle.m */; };
+		AAAF5F0116E7E03F00C38071 /* ASCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EFF16E7E03F00C38071 /* ASCircle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLineSegment.m; sourceTree = "<group>"; };
 		AAAF5EFA16E7D3D700C38071 /* ASPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPoint.h; sourceTree = "<group>"; };
 		AAAF5EFB16E7D3D700C38071 /* ASPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPoint.m; sourceTree = "<group>"; };
+		AAAF5EFE16E7E03F00C38071 /* ASCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASCircle.h; sourceTree = "<group>"; };
+		AAAF5EFF16E7E03F00C38071 /* ASCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCircle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 				AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */,
 				AAAF5EFA16E7D3D700C38071 /* ASPoint.h */,
 				AAAF5EFB16E7D3D700C38071 /* ASPoint.m */,
+				AAAF5EFE16E7E03F00C38071 /* ASCircle.h */,
+				AAAF5EFF16E7E03F00C38071 /* ASCircle.m */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				AA72487F16E7CC4500197718 /* ASDelaunay.m in Sources */,
 				AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */,
 				AAAF5EFC16E7D3D700C38071 /* ASPoint.m in Sources */,
+				AAAF5F0016E7E03F00C38071 /* ASCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +283,7 @@
 				AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */,
 				AAAF5EF916E7D16D00C38071 /* ASLineSegment.m in Sources */,
 				AAAF5EFD16E7D3D700C38071 /* ASPoint.m in Sources */,
+				AAAF5F0116E7E03F00C38071 /* ASCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

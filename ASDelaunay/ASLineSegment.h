@@ -12,8 +12,8 @@
 
 @interface ASLineSegment : NSObject
 
-@property (nonatomic) ASPoint *p0;
-@property (nonatomic) ASPoint *p1;
+@property (nonatomic, retain) ASPoint *p0;
+@property (nonatomic, retain) ASPoint *p1;
 
 - (id)initWithPoint0:(ASPoint *)aPoint0 point1:(ASPoint *)aPoint1;
 
