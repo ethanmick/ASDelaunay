@@ -16,12 +16,11 @@
  */
 @interface ASPoint : NSObject
 
-@property (nonatomic) CGPoint point;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
 
-- (CGFloat)x;
-- (CGFloat)y;
-- (void)setX:(CGFloat)x;
-- (void)setY:(CGFloat)y;
+- (id)initWithX:(CGFloat)anX y:(CGFloat)aY;
 + (CGFloat)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1;
+- (CGPoint)point;
 
 @end

@@ -7,13 +7,14 @@
 //
 
 #import "ASLineSegment.h"
+#import "ASPoint.h"
 
 @implementation ASLineSegment
 
 @synthesize p0, p1;
 
 
-- (id)initWithPoint0:(CGPoint)aPoint0 point1:(CGPoint)aPoint1 {
+- (id)initWithPoint0:(ASPoint *)aPoint0 point1:(ASPoint *)aPoint1 {
     
     if ( (self = [super init]) ) {
         self.p0 = aPoint0;
@@ -24,8 +25,21 @@
 }
 
 
-+ (NSInteger)compareLengthsMAX(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
-    
++ (NSInteger)compareLengthsMAX:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
+    CGFloat length0 = [ASPoint distanceBetweenPoint0:segment0.p0 andPoint1:segment0.p1];
+    CGFloat length1 = [ASPoint distanceBetweenPoint0:segment1.p0 andPoint1:segment1.p1];
+    if (length0 < length1) {
+        return 1;
+    }
+    if (length0 > length1) {
+        return -1;
+    }
+    return 0;
+}
+
+
++ (CGFloat)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
+    return -[self compareLengthsMAX:segment0 segment1:segment1];
 }
 
 @end

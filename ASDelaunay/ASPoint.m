@@ -10,24 +10,20 @@
 
 @implementation ASPoint
 
-@synthesize point;
+@synthesize x, y;
 
-
-- (CGFloat)x {
-    return self.point.x;
+- (id)initWithX:(CGFloat)anX y:(CGFloat)aY {
+    if ( (self = [super init]) ) {
+        self.x = anX;
+        self.y = aY;
+    }
+    return self;
 }
 
-- (CGFloat)y {
-    return self.point.y;
-}
-
-- (void)setX:(CGFloat)x {
-    self.point = CGPointMake(x, self.point.y);
+- (CGPoint)point {
+    return CGPointMake(self.x, self.y);
 }
 
-- (void)setY:(CGFloat)y {
-    self.point = CGPointMake(self.point.x, y);
-}
 
 #pragma mark - Class Methods
 

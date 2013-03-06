@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class ASPoint;
+
 @interface ASLineSegment : NSObject
 
-@property (nonatomic) CGPoint p0;
-@property (nonatomic) CGPoint p1;
+@property (nonatomic) ASPoint *p0;
+@property (nonatomic) ASPoint *p1;
 
-- (id)initWithPoint0:(CGPoint)aPoint0 point1:(CGPoint)aPoint1;
+- (id)initWithPoint0:(ASPoint *)aPoint0 point1:(ASPoint *)aPoint1;
+
+
++ (NSInteger)compareLengthsMAX:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1;
++ (CGFloat)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1;
 
 @end
