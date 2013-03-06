@@ -16,6 +16,10 @@
 		AA72489316E7CC4600197718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA72489116E7CC4600197718 /* InfoPlist.strings */; };
 		AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72489516E7CC4600197718 /* ASDelaunayTests.m */; };
 		AAAF5EF416E7CC9600C38071 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
+		AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
+		AAAF5EF916E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
+		AAAF5EFC16E7D3D700C38071 /* ASPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EFB16E7D3D700C38071 /* ASPoint.m */; };
+		AAAF5EFD16E7D3D700C38071 /* ASPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EFB16E7D3D700C38071 /* ASPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		AA72489416E7CC4600197718 /* ASDelaunayTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASDelaunayTests.h; sourceTree = "<group>"; };
 		AA72489516E7CC4600197718 /* ASDelaunayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASDelaunayTests.m; sourceTree = "<group>"; };
 		AAAF5EF316E7CC9600C38071 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AAAF5EF616E7D16D00C38071 /* ASLineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLineSegment.h; sourceTree = "<group>"; };
+		AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLineSegment.m; sourceTree = "<group>"; };
+		AAAF5EFA16E7D3D700C38071 /* ASPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPoint.h; sourceTree = "<group>"; };
+		AAAF5EFB16E7D3D700C38071 /* ASPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,7 @@
 		AA72487916E7CC4500197718 /* ASDelaunay */ = {
 			isa = PBXGroup;
 			children = (
+				AAAF5EF516E7D15400C38071 /* Geometry */,
 				AA72487C16E7CC4500197718 /* ASDelaunay.h */,
 				AA72487E16E7CC4500197718 /* ASDelaunay.m */,
 				AA72487A16E7CC4500197718 /* Supporting Files */,
@@ -143,6 +152,17 @@
 				AA72489116E7CC4600197718 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AAAF5EF516E7D15400C38071 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				AAAF5EF616E7D16D00C38071 /* ASLineSegment.h */,
+				AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */,
+				AAAF5EFA16E7D3D700C38071 /* ASPoint.h */,
+				AAAF5EFB16E7D3D700C38071 /* ASPoint.m */,
+			);
+			name = Geometry;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA72487F16E7CC4500197718 /* ASDelaunay.m in Sources */,
+				AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */,
+				AAAF5EFC16E7D3D700C38071 /* ASPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */,
+				AAAF5EF916E7D16D00C38071 /* ASLineSegment.m in Sources */,
+				AAAF5EFD16E7D3D700C38071 /* ASPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

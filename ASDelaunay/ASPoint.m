@@ -19,7 +19,7 @@
 
 - (CGFloat)y {
     return self.point.y;
-}
+}
 
 - (void)setX:(CGFloat)x {
     self.point = CGPointMake(x, self.point.y);
