@@ -5,5 +5,7 @@ There are a few other libaries which have tackled the Voronoi and Delaunay probl
 This is meant to be a more complete port.
 
 Things Missing in this port:
- * Colors
+ * Colors have been removed.
 
+
+I've done my best to keep the interfaces the same, so if you have used the original library, this library should work in the same way. Class names have been given the *AS* prefix, and method names have been Apple-ized; but the functionality remains the same.
