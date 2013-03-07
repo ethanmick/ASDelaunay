@@ -14,7 +14,6 @@
 
 @end
 
-
 @implementation ASWinding
 
 @synthesize name;

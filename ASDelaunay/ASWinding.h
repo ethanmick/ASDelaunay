@@ -17,9 +17,3 @@
 + (ASWinding *)NONE;
 
 @end
-
-extern ASWinding *CLOCKWISE;
- 
-extern ASWinding *COUNTERCLOCKWISE;
-
-extern ASWinding *NONE;
