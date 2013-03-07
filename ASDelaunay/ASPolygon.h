@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class ASWinding;
+
 @interface ASPolygon : NSObject
 
 - (id)initWithPoints:(NSArray *)points;
 - (CGFloat)area;
+- (ASWinding *)winding;
 
 
 @end

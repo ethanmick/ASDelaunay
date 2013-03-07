@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1BF02516E835CD00DC61B5 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02416E835CD00DC61B5 /* ASWinding.m */; };
+		AA1BF02616E835CD00DC61B5 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02416E835CD00DC61B5 /* ASWinding.m */; };
+		AA1BF02916E83BFE00DC61B5 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */; };
+		AA1BF02A16E83BFE00DC61B5 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */; };
 		AA72487816E7CC4500197718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487716E7CC4500197718 /* Foundation.framework */; };
 		AA72487D16E7CC4500197718 /* ASDelaunay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA72487C16E7CC4500197718 /* ASDelaunay.h */; };
 		AA72487F16E7CC4500197718 /* ASDelaunay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72487E16E7CC4500197718 /* ASDelaunay.m */; };
@@ -48,6 +52,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA1BF02316E835CD00DC61B5 /* ASWinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWinding.h; sourceTree = "<group>"; };
+		AA1BF02416E835CD00DC61B5 /* ASWinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWinding.m; sourceTree = "<group>"; };
+		AA1BF02716E83BFE00DC61B5 /* ASPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPolygon.h; sourceTree = "<group>"; };
+		AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPolygon.m; sourceTree = "<group>"; };
 		AA72487416E7CC4500197718 /* libASDelaunay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libASDelaunay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA72487716E7CC4500197718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA72487B16E7CC4500197718 /* ASDelaunay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASDelaunay-Prefix.pch"; sourceTree = "<group>"; };
@@ -167,6 +175,10 @@
 				AAAF5EFB16E7D3D700C38071 /* ASPoint.m */,
 				AAAF5EFE16E7E03F00C38071 /* ASCircle.h */,
 				AAAF5EFF16E7E03F00C38071 /* ASCircle.m */,
+				AA1BF02316E835CD00DC61B5 /* ASWinding.h */,
+				AA1BF02416E835CD00DC61B5 /* ASWinding.m */,
+				AA1BF02716E83BFE00DC61B5 /* ASPolygon.h */,
+				AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -273,6 +285,8 @@
 				AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */,
 				AAAF5EFC16E7D3D700C38071 /* ASPoint.m in Sources */,
 				AAAF5F0016E7E03F00C38071 /* ASCircle.m in Sources */,
+				AA1BF02516E835CD00DC61B5 /* ASWinding.m in Sources */,
+				AA1BF02916E83BFE00DC61B5 /* ASPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +298,8 @@
 				AAAF5EF916E7D16D00C38071 /* ASLineSegment.m in Sources */,
 				AAAF5EFD16E7D3D700C38071 /* ASPoint.m in Sources */,
 				AAAF5F0116E7E03F00C38071 /* ASCircle.m in Sources */,
+				AA1BF02616E835CD00DC61B5 /* ASWinding.m in Sources */,
+				AA1BF02A16E83BFE00DC61B5 /* ASPolygon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
