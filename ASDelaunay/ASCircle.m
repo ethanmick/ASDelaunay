@@ -16,7 +16,8 @@
 - (id)initWithX:(CGFloat)anX y:(CGFloat)aY radius:(CGFloat)r {
     
     if ( (self = [super init]) ) {
-        self.point = [ASPoint point]
+        self.point = [[ASPoint alloc] initWithX:anX y:aY];
+        self.radius = r;
     }
     
     return self;
