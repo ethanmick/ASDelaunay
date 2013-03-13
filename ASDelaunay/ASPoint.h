@@ -24,3 +24,10 @@
 - (CGPoint)point;
 
 @end
+
+
+@protocol ICoord <NSObject>
+
+- (ASPoint *)coord;
+
+@end

@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class ASSite;
+@class ASVertex;
 @class ASLR;
 
 @interface ASEdge : NSObject
+
+@property (nonatomic, strong, readonly) ASVertex *leftVertex;
+@property (nonatomic, strong, readonly) ASVertex *rightVertex;
 
 - (NSComparisonResult)compareSiteDistance:(ASEdge *)object;
 - (NSComparisonResult)compareSiteDistanceMAX:(ASEdge *)object;

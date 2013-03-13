@@ -10,4 +10,10 @@
 
 @interface ASEdgeReorderer : NSObject
 
+@property (nonatomic, strong, readonly) NSMutableArray *edges;
+@property (nonatomic, strong, readonly) NSMutableArray *edgeOrientations;
+
+- (id)initWithEdges:(NSMutableArray *)origEdges criterion:(Class)criterion;
+- (NSMutableArray *)reorderEdges:(NSMutableArray *)origEdges criterion:(Class)criterion;
+
 @end

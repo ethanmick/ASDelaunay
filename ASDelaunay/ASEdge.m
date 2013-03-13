@@ -10,6 +10,7 @@
 #import "ASPoint.h"
 #import "ASSite.h"
 #import "ASLR.h"
+#import "ASVertex.h"
 
 @interface ASEdge()
 
@@ -67,6 +68,18 @@
     return [self.sites objectForKey:leftRight];
 }
 
+- (ASVertex *)vertex:(ASLR *)leftRight {
+    return leftRight == [ASLR LEFT] ? self.leftVertex : self.rightVertex;
+}
+
+- (void)setVertex:(ASLR *)leftRight vertex:(ASVertex *)v {
+    if (leftRight == [ASLR LEFT]) {
+        _leftVertex = v;
+    } else {
+        _rightVertex = v;
+    }
+    
+}
 
 
 

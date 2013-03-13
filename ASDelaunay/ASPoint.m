@@ -31,4 +31,12 @@
     return sqrt(((p1.x - p0.x) * (p1.x - p0.x)) + ((p1.y - p0.y) * (p1.y - p0.y)));
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"( %f, %f)", self.x, self.y];
+}
+
+- (BOOL)isEqual:(id)object {
+    return [object isKindOfClass:[self class]] && ([self x] == [(ASPoint *)object x]) && ([self y] == [(ASPoint *)object y]);
+}
+
 @end

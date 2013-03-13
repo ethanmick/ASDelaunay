@@ -7,10 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA11E2CE16EED93900365CC6 /* ASEdgeReorderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */; };
+		AA11E2CF16EED93900365CC6 /* ASEdgeReorderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */; };
+		AA11E2D216EEDA6700365CC6 /* ASVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D116EEDA6700365CC6 /* ASVertex.m */; };
+		AA11E2D316EEDA6700365CC6 /* ASVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D116EEDA6700365CC6 /* ASVertex.m */; };
+		AA11E2D616EEE1CA00365CC6 /* ASHalfEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */; };
+		AA11E2D716EEE1CA00365CC6 /* ASHalfEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */; };
 		AA1BF02516E835CD00DC61B5 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02416E835CD00DC61B5 /* ASWinding.m */; };
 		AA1BF02616E835CD00DC61B5 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02416E835CD00DC61B5 /* ASWinding.m */; };
 		AA1BF02916E83BFE00DC61B5 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */; };
 		AA1BF02A16E83BFE00DC61B5 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */; };
+		AA1BF02D16E8440400DC61B5 /* ASEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02C16E8440400DC61B5 /* ASEdge.m */; };
+		AA1BF02E16E8440400DC61B5 /* ASEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02C16E8440400DC61B5 /* ASEdge.m */; };
+		AA1BF03116E8448900DC61B5 /* ASSite.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03016E8448800DC61B5 /* ASSite.m */; };
+		AA1BF03216E8448900DC61B5 /* ASSite.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03016E8448800DC61B5 /* ASSite.m */; };
+		AA1BF03516ED39BB00DC61B5 /* ASLR.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03416ED39BB00DC61B5 /* ASLR.m */; };
+		AA1BF03616ED39BB00DC61B5 /* ASLR.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03416ED39BB00DC61B5 /* ASLR.m */; };
+		AA1BF03916EEC4A200DC61B5 /* ASVoronoi.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */; };
+		AA1BF03A16EEC4A200DC61B5 /* ASVoronoi.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */; };
 		AA72487816E7CC4500197718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487716E7CC4500197718 /* Foundation.framework */; };
 		AA72487D16E7CC4500197718 /* ASDelaunay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA72487C16E7CC4500197718 /* ASDelaunay.h */; };
 		AA72487F16E7CC4500197718 /* ASDelaunay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72487E16E7CC4500197718 /* ASDelaunay.m */; };
@@ -52,10 +66,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AA11E2CC16EED93900365CC6 /* ASEdgeReorderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdgeReorderer.h; sourceTree = "<group>"; };
+		AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdgeReorderer.m; sourceTree = "<group>"; };
+		AA11E2D016EEDA6700365CC6 /* ASVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASVertex.h; sourceTree = "<group>"; };
+		AA11E2D116EEDA6700365CC6 /* ASVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVertex.m; sourceTree = "<group>"; };
+		AA11E2D416EEE1C900365CC6 /* ASHalfEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHalfEdge.h; sourceTree = "<group>"; };
+		AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHalfEdge.m; sourceTree = "<group>"; };
 		AA1BF02316E835CD00DC61B5 /* ASWinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWinding.h; sourceTree = "<group>"; };
 		AA1BF02416E835CD00DC61B5 /* ASWinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWinding.m; sourceTree = "<group>"; };
 		AA1BF02716E83BFE00DC61B5 /* ASPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPolygon.h; sourceTree = "<group>"; };
 		AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPolygon.m; sourceTree = "<group>"; };
+		AA1BF02B16E8440400DC61B5 /* ASEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdge.h; sourceTree = "<group>"; };
+		AA1BF02C16E8440400DC61B5 /* ASEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdge.m; sourceTree = "<group>"; };
+		AA1BF02F16E8448800DC61B5 /* ASSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSite.h; sourceTree = "<group>"; };
+		AA1BF03016E8448800DC61B5 /* ASSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSite.m; sourceTree = "<group>"; };
+		AA1BF03316ED39BA00DC61B5 /* ASLR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLR.h; sourceTree = "<group>"; };
+		AA1BF03416ED39BB00DC61B5 /* ASLR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLR.m; sourceTree = "<group>"; };
+		AA1BF03716EEC4A100DC61B5 /* ASVoronoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASVoronoi.h; sourceTree = "<group>"; };
+		AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVoronoi.m; sourceTree = "<group>"; };
 		AA72487416E7CC4500197718 /* libASDelaunay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libASDelaunay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA72487716E7CC4500197718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA72487B16E7CC4500197718 /* ASDelaunay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASDelaunay-Prefix.pch"; sourceTree = "<group>"; };
@@ -134,6 +162,20 @@
 				AAAF5EF516E7D15400C38071 /* Geometry */,
 				AA72487C16E7CC4500197718 /* ASDelaunay.h */,
 				AA72487E16E7CC4500197718 /* ASDelaunay.m */,
+				AA1BF02B16E8440400DC61B5 /* ASEdge.h */,
+				AA1BF02C16E8440400DC61B5 /* ASEdge.m */,
+				AA1BF02F16E8448800DC61B5 /* ASSite.h */,
+				AA1BF03016E8448800DC61B5 /* ASSite.m */,
+				AA11E2D016EEDA6700365CC6 /* ASVertex.h */,
+				AA11E2D116EEDA6700365CC6 /* ASVertex.m */,
+				AA1BF03316ED39BA00DC61B5 /* ASLR.h */,
+				AA1BF03416ED39BB00DC61B5 /* ASLR.m */,
+				AA1BF03716EEC4A100DC61B5 /* ASVoronoi.h */,
+				AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */,
+				AA11E2CC16EED93900365CC6 /* ASEdgeReorderer.h */,
+				AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */,
+				AA11E2D416EEE1C900365CC6 /* ASHalfEdge.h */,
+				AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */,
 				AA72487A16E7CC4500197718 /* Supporting Files */,
 			);
 			path = ASDelaunay;
@@ -287,6 +329,13 @@
 				AAAF5F0016E7E03F00C38071 /* ASCircle.m in Sources */,
 				AA1BF02516E835CD00DC61B5 /* ASWinding.m in Sources */,
 				AA1BF02916E83BFE00DC61B5 /* ASPolygon.m in Sources */,
+				AA1BF02D16E8440400DC61B5 /* ASEdge.m in Sources */,
+				AA1BF03116E8448900DC61B5 /* ASSite.m in Sources */,
+				AA1BF03516ED39BB00DC61B5 /* ASLR.m in Sources */,
+				AA1BF03916EEC4A200DC61B5 /* ASVoronoi.m in Sources */,
+				AA11E2CE16EED93900365CC6 /* ASEdgeReorderer.m in Sources */,
+				AA11E2D216EEDA6700365CC6 /* ASVertex.m in Sources */,
+				AA11E2D616EEE1CA00365CC6 /* ASHalfEdge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +349,13 @@
 				AAAF5F0116E7E03F00C38071 /* ASCircle.m in Sources */,
 				AA1BF02616E835CD00DC61B5 /* ASWinding.m in Sources */,
 				AA1BF02A16E83BFE00DC61B5 /* ASPolygon.m in Sources */,
+				AA1BF02E16E8440400DC61B5 /* ASEdge.m in Sources */,
+				AA1BF03216E8448900DC61B5 /* ASSite.m in Sources */,
+				AA1BF03616ED39BB00DC61B5 /* ASLR.m in Sources */,
+				AA1BF03A16EEC4A200DC61B5 /* ASVoronoi.m in Sources */,
+				AA11E2CF16EED93900365CC6 /* ASEdgeReorderer.m in Sources */,
+				AA11E2D316EEDA6700365CC6 /* ASVertex.m in Sources */,
+				AA11E2D716EEE1CA00365CC6 /* ASHalfEdge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

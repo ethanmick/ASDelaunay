@@ -10,6 +10,8 @@
 #import "ASPoint.h"
 #import "ASVoronoi.h"
 #import "ASEdge.h"
+#import "ASEdgeReorderer.h"
+#import "ASVertex.h"
 
 #define EPSILON .005
 
@@ -156,24 +158,10 @@ return returnValue;
 }
 
 - (void)reorderEdges {
-    
+    ASEdgeReorderer *reorderer = [[ASEdgeReorderer alloc] initWithEdges:self.edges criterion:[ASVertex class]];
+    self.edges = [reorderer edges];
+    self.edgeOrientation = [reorderer edgeOrientations];
 }
-
-
-
-
-
-
-private function reorderEdges():void
-{
-    //trace("_edges:", _edges);
-    var reorderer:EdgeReorderer = new EdgeReorderer(_edges, Vertex);
-    _edges = reorderer.edges;
-    //trace("reordered:", _edges);
-    _edgeOrientations = reorderer.edgeOrientations;
-    reorderer.dispose();
-}
-
 
 
 
