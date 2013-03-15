@@ -19,10 +19,11 @@
 
 @property (nonatomic) NSUInteger siteIndex;
 @property (nonatomic, strong) ASPoint *coord;
-@property (nonatomic) CGFloat weight;
+@property (nonatomic) double weight;
 @property (nonatomic, strong) NSMutableArray *edges;
 @property (nonatomic, strong) NSMutableArray *points;
 @property (nonatomic, strong) NSMutableArray *edgeOrientation;
+@property (nonatomic, strong) NSMutableArray *regions;
 
 @end
 
@@ -34,18 +35,19 @@
 
 
 
-- (id)initWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(CGFloat)aWeight {
+- (id)initWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(double)aWeight {
     if ( (self = [super init]) ) {
         self.coord = aPoint;
         self.siteIndex = anIndex;
         self.weight = aWeight;
         self.edges = [[NSMutableArray alloc] init];
         self.points = nil;
+        self.regions = nil;
     }
     return self;
 }
 
-+ (id)createWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(CGFloat)aWeight {
++ (id)createWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(double)aWeight {
 //    if (!pool) {
 //        pool = [NSMutableArray array];
 //    }
@@ -55,7 +57,7 @@
     ///
     
 //    if ([pool count] > 0) {
-//        [[pool lastObject] initWithPoint:<#(ASPoint *)#> index:<#(NSUInteger)#> weight:<#(CGFloat)#>];
+//        [[pool lastObject] initWithPoint:<#(ASPoint *)#> index:<#(NSUInteger)#> weight:<#(double)#>];
 //    } else {
         return [[ASSite alloc] initWithPoint:aPoint index:anIndex weight:aWeight];
 //    }
@@ -66,7 +68,7 @@
 }
 
 - (ASPoint *)coord {
-    return self.coord;
+    return coord;
 }
 
 + (void)sortSites:(NSMutableArray *)someSites {
@@ -74,7 +76,6 @@
 }
 
 
-//acending = -1
 - (NSComparisonResult)compare:(id)object {
     NSComparisonResult returnValue = [ASVoronoi compareByYThenX:self site2:object];
     ASSite *s2 = (ASSite *)object;
@@ -97,16 +98,16 @@ return returnValue;
 }
 
 
-- (CGFloat)getX {
+- (double)getX {
     return self.coord.x;
 }
 
-- (CGFloat)getY {
+- (double)getY {
     return self.coord.y;
 }
 
-- (CGFloat)distance:(id<ICoord>)aCoord {
-    return [ASPoint distanceBetweenPoint0:aCoord andPoint1:self.coord];
+- (double)distance:(id<ICoord>)aCoord {
+    return [ASPoint distanceBetweenPoint0:[aCoord coord] andPoint1:self.coord];
 }
 
 - (NSMutableArray *)getEdges {
@@ -162,6 +163,19 @@ return returnValue;
     self.edges = [reorderer edges];
     self.edgeOrientation = [reorderer edgeOrientations];
 }
+
+//- (NSMutableArray *)region:(CGRect)clippingBounds {
+//    if (self.edges == nil || [self.edges count] == 0) {
+//        return [NSMutableArray array];
+//    }
+//    
+//    if (self.edgeOrientation == nil) {
+//        [self reorderEdges];
+//    }
+//}
+
+
+
 
 
 

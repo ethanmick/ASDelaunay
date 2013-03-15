@@ -7,6 +7,8 @@
 //
 
 #import "ASDelaunayTests.h"
+#import "ASVoronoi.h"
+#import "ASPoint.h"
 
 @implementation ASDelaunayTests
 
@@ -24,9 +26,20 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    STFail(@"Unit tests are not implemented yet in ASDelaunayTests");
+- (void)testExample {
+    
+    NSMutableArray *randomPoints = [NSMutableArray array];
+    
+    for (int i = 0; i < 2000; i++) {
+        float x = 10 + (arc4random() % ((int)768 - 10*2));
+        float y = 10 + (arc4random() % ((int)900 - 10*2));
+        ASPoint *point = [[ASPoint alloc] initWithX:x y:y];
+        [randomPoints addObject:point];
+    }
+    
+    ASVoronoi *voronoi = [[ASVoronoi alloc] initWithPoints:randomPoints plotBounds:CGRectMake(0, 0, 768, 1024)];
+    
+    STAssertNotNil(voronoi.edges, @"Edges cannot be nil after this!");
 }
 
 @end

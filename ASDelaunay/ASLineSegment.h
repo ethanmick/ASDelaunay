@@ -19,6 +19,6 @@
 
 
 + (NSInteger)compareLengthsMAX:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1;
-+ (CGFloat)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1;
++ (double)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1;
 
 @end

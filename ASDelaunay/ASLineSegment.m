@@ -26,8 +26,8 @@
 
 
 + (NSInteger)compareLengthsMAX:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
-    CGFloat length0 = [ASPoint distanceBetweenPoint0:segment0.p0 andPoint1:segment0.p1];
-    CGFloat length1 = [ASPoint distanceBetweenPoint0:segment1.p0 andPoint1:segment1.p1];
+    double length0 = [ASPoint distanceBetweenPoint0:segment0.p0 andPoint1:segment0.p1];
+    double length1 = [ASPoint distanceBetweenPoint0:segment1.p0 andPoint1:segment1.p1];
     if (length0 < length1) {
         return 1;
     }
@@ -38,7 +38,7 @@
 }
 
 
-+ (CGFloat)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
++ (double)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
     return -[self compareLengthsMAX:segment0 segment1:segment1];
 }
 

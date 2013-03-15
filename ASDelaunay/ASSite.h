@@ -13,10 +13,10 @@
 
 @interface ASSite : NSObject <ICoord>
 
-+ (id)createWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(CGFloat)aWeight;
-- (CGFloat)getX;
-- (CGFloat)getY;
-- (CGFloat)distance:(id<ICoord>)aCoord;
++ (id)createWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(double)aWeight;
+- (double)getX;
+- (double)getY;
+- (double)distance:(id<ICoord>)aCoord;
 + (BOOL)closeEnough:(ASPoint *)p0 andPoint:(ASPoint *)p1;
 + (void)sortSites:(NSMutableArray *)someSites;
 - (void)addEdge:(ASEdge *)anEdge;

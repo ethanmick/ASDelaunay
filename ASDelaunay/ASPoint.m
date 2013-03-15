@@ -12,7 +12,7 @@
 
 @synthesize x, y;
 
-- (id)initWithX:(CGFloat)anX y:(CGFloat)aY {
+- (id)initWithX:(double)anX y:(double)aY {
     if ( (self = [super init]) ) {
         self.x = anX;
         self.y = aY;
@@ -24,10 +24,17 @@
     return CGPointMake(self.x, self.y);
 }
 
+- (double)getX {
+    return self.x;
+}
+
+- (double)getY {
+    return self.y;
+}
 
 #pragma mark - Class Methods
 
-+ (CGFloat)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1 {
++ (double)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1 {
     return sqrt(((p1.x - p0.x) * (p1.x - p0.x)) + ((p1.y - p0.y) * (p1.y - p0.y)));
 }
 
@@ -37,6 +44,10 @@
 
 - (BOOL)isEqual:(id)object {
     return [object isKindOfClass:[self class]] && ([self x] == [(ASPoint *)object x]) && ([self y] == [(ASPoint *)object y]);
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    return [[ASPoint alloc] initWithX:self.x y:self.y];
 }
 
 @end

@@ -13,8 +13,8 @@
 @interface ASCircle : NSObject
 
 @property (nonatomic, retain) ASPoint *point;
-@property (nonatomic) CGFloat radius;
+@property (nonatomic) double radius;
 
-- (id)initWithX:(CGFloat)anX y:(CGFloat)aY radius:(CGFloat)r;
+- (id)initWithX:(double)anX y:(double)aY radius:(double)r;
 
 @end

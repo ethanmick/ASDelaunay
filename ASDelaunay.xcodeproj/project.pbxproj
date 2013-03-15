@@ -13,6 +13,8 @@
 		AA11E2D316EEDA6700365CC6 /* ASVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D116EEDA6700365CC6 /* ASVertex.m */; };
 		AA11E2D616EEE1CA00365CC6 /* ASHalfEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */; };
 		AA11E2D716EEE1CA00365CC6 /* ASHalfEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */; };
+		AA11E2DA16F035AA00365CC6 /* ASSiteList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D916F035A900365CC6 /* ASSiteList.m */; };
+		AA11E2DB16F035AA00365CC6 /* ASSiteList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2D916F035A900365CC6 /* ASSiteList.m */; };
 		AA1BF02516E835CD00DC61B5 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02416E835CD00DC61B5 /* ASWinding.m */; };
 		AA1BF02616E835CD00DC61B5 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02416E835CD00DC61B5 /* ASWinding.m */; };
 		AA1BF02916E83BFE00DC61B5 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF02816E83BFE00DC61B5 /* ASPolygon.m */; };
@@ -25,6 +27,25 @@
 		AA1BF03616ED39BB00DC61B5 /* ASLR.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03416ED39BB00DC61B5 /* ASLR.m */; };
 		AA1BF03916EEC4A200DC61B5 /* ASVoronoi.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */; };
 		AA1BF03A16EEC4A200DC61B5 /* ASVoronoi.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */; };
+		AA245F1816F186AF0039F1AB /* ASHalfedgePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA245F1716F186AF0039F1AB /* ASHalfedgePriorityQueue.m */; };
+		AA245F1916F186AF0039F1AB /* ASHalfedgePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA245F1716F186AF0039F1AB /* ASHalfedgePriorityQueue.m */; };
+		AA245F1C16F18FD70039F1AB /* ASEdgeList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA245F1B16F18FD70039F1AB /* ASEdgeList.m */; };
+		AA245F1D16F18FD70039F1AB /* ASEdgeList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA245F1B16F18FD70039F1AB /* ASEdgeList.m */; };
+		AA245F1E16F2AF810039F1AB /* ASLineSegment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAAF5EF616E7D16D00C38071 /* ASLineSegment.h */; };
+		AA245F1F16F2AF810039F1AB /* ASPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAAF5EFA16E7D3D700C38071 /* ASPoint.h */; };
+		AA245F2016F2AF810039F1AB /* ASCircle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAAF5EFE16E7E03F00C38071 /* ASCircle.h */; };
+		AA245F2116F2AF810039F1AB /* ASWinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02316E835CD00DC61B5 /* ASWinding.h */; };
+		AA245F2216F2AF810039F1AB /* ASPolygon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02716E83BFE00DC61B5 /* ASPolygon.h */; };
+		AA245F2316F2AF810039F1AB /* ASEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02B16E8440400DC61B5 /* ASEdge.h */; };
+		AA245F2416F2AF810039F1AB /* ASSite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02F16E8448800DC61B5 /* ASSite.h */; };
+		AA245F2516F2AF810039F1AB /* ASVertex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2D016EEDA6700365CC6 /* ASVertex.h */; };
+		AA245F2616F2AF810039F1AB /* ASLR.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF03316ED39BA00DC61B5 /* ASLR.h */; };
+		AA245F2716F2AF810039F1AB /* ASVoronoi.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF03716EEC4A100DC61B5 /* ASVoronoi.h */; };
+		AA245F2816F2AF810039F1AB /* ASEdgeReorderer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2CC16EED93900365CC6 /* ASEdgeReorderer.h */; };
+		AA245F2916F2AF810039F1AB /* ASHalfEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2D416EEE1C900365CC6 /* ASHalfEdge.h */; };
+		AA245F2A16F2AF810039F1AB /* ASSiteList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2D816F035A900365CC6 /* ASSiteList.h */; };
+		AA245F2B16F2AF810039F1AB /* ASEdgeList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA245F1A16F18FD70039F1AB /* ASEdgeList.h */; };
+		AA245F2C16F2AF810039F1AB /* ASHalfedgePriorityQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA245F1616F186AF0039F1AB /* ASHalfedgePriorityQueue.h */; };
 		AA72487816E7CC4500197718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487716E7CC4500197718 /* Foundation.framework */; };
 		AA72487D16E7CC4500197718 /* ASDelaunay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA72487C16E7CC4500197718 /* ASDelaunay.h */; };
 		AA72487F16E7CC4500197718 /* ASDelaunay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72487E16E7CC4500197718 /* ASDelaunay.m */; };
@@ -56,9 +77,24 @@
 		AA72487216E7CC4500197718 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
+			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				AA245F1E16F2AF810039F1AB /* ASLineSegment.h in CopyFiles */,
+				AA245F1F16F2AF810039F1AB /* ASPoint.h in CopyFiles */,
+				AA245F2016F2AF810039F1AB /* ASCircle.h in CopyFiles */,
+				AA245F2116F2AF810039F1AB /* ASWinding.h in CopyFiles */,
+				AA245F2216F2AF810039F1AB /* ASPolygon.h in CopyFiles */,
+				AA245F2316F2AF810039F1AB /* ASEdge.h in CopyFiles */,
+				AA245F2416F2AF810039F1AB /* ASSite.h in CopyFiles */,
+				AA245F2516F2AF810039F1AB /* ASVertex.h in CopyFiles */,
+				AA245F2616F2AF810039F1AB /* ASLR.h in CopyFiles */,
+				AA245F2716F2AF810039F1AB /* ASVoronoi.h in CopyFiles */,
+				AA245F2816F2AF810039F1AB /* ASEdgeReorderer.h in CopyFiles */,
+				AA245F2916F2AF810039F1AB /* ASHalfEdge.h in CopyFiles */,
+				AA245F2A16F2AF810039F1AB /* ASSiteList.h in CopyFiles */,
+				AA245F2B16F2AF810039F1AB /* ASEdgeList.h in CopyFiles */,
+				AA245F2C16F2AF810039F1AB /* ASHalfedgePriorityQueue.h in CopyFiles */,
 				AA72487D16E7CC4500197718 /* ASDelaunay.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +108,8 @@
 		AA11E2D116EEDA6700365CC6 /* ASVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVertex.m; sourceTree = "<group>"; };
 		AA11E2D416EEE1C900365CC6 /* ASHalfEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHalfEdge.h; sourceTree = "<group>"; };
 		AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHalfEdge.m; sourceTree = "<group>"; };
+		AA11E2D816F035A900365CC6 /* ASSiteList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSiteList.h; sourceTree = "<group>"; };
+		AA11E2D916F035A900365CC6 /* ASSiteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSiteList.m; sourceTree = "<group>"; };
 		AA1BF02316E835CD00DC61B5 /* ASWinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWinding.h; sourceTree = "<group>"; };
 		AA1BF02416E835CD00DC61B5 /* ASWinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWinding.m; sourceTree = "<group>"; };
 		AA1BF02716E83BFE00DC61B5 /* ASPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPolygon.h; sourceTree = "<group>"; };
@@ -84,6 +122,10 @@
 		AA1BF03416ED39BB00DC61B5 /* ASLR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLR.m; sourceTree = "<group>"; };
 		AA1BF03716EEC4A100DC61B5 /* ASVoronoi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASVoronoi.h; sourceTree = "<group>"; };
 		AA1BF03816EEC4A100DC61B5 /* ASVoronoi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVoronoi.m; sourceTree = "<group>"; };
+		AA245F1616F186AF0039F1AB /* ASHalfedgePriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHalfedgePriorityQueue.h; sourceTree = "<group>"; };
+		AA245F1716F186AF0039F1AB /* ASHalfedgePriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHalfedgePriorityQueue.m; sourceTree = "<group>"; };
+		AA245F1A16F18FD70039F1AB /* ASEdgeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdgeList.h; sourceTree = "<group>"; };
+		AA245F1B16F18FD70039F1AB /* ASEdgeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdgeList.m; sourceTree = "<group>"; };
 		AA72487416E7CC4500197718 /* libASDelaunay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libASDelaunay.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA72487716E7CC4500197718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA72487B16E7CC4500197718 /* ASDelaunay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASDelaunay-Prefix.pch"; sourceTree = "<group>"; };
@@ -176,6 +218,12 @@
 				AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */,
 				AA11E2D416EEE1C900365CC6 /* ASHalfEdge.h */,
 				AA11E2D516EEE1C900365CC6 /* ASHalfEdge.m */,
+				AA11E2D816F035A900365CC6 /* ASSiteList.h */,
+				AA11E2D916F035A900365CC6 /* ASSiteList.m */,
+				AA245F1A16F18FD70039F1AB /* ASEdgeList.h */,
+				AA245F1B16F18FD70039F1AB /* ASEdgeList.m */,
+				AA245F1616F186AF0039F1AB /* ASHalfedgePriorityQueue.h */,
+				AA245F1716F186AF0039F1AB /* ASHalfedgePriorityQueue.m */,
 				AA72487A16E7CC4500197718 /* Supporting Files */,
 			);
 			path = ASDelaunay;
@@ -336,6 +384,9 @@
 				AA11E2CE16EED93900365CC6 /* ASEdgeReorderer.m in Sources */,
 				AA11E2D216EEDA6700365CC6 /* ASVertex.m in Sources */,
 				AA11E2D616EEE1CA00365CC6 /* ASHalfEdge.m in Sources */,
+				AA11E2DA16F035AA00365CC6 /* ASSiteList.m in Sources */,
+				AA245F1816F186AF0039F1AB /* ASHalfedgePriorityQueue.m in Sources */,
+				AA245F1C16F18FD70039F1AB /* ASEdgeList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +407,9 @@
 				AA11E2CF16EED93900365CC6 /* ASEdgeReorderer.m in Sources */,
 				AA11E2D316EEDA6700365CC6 /* ASVertex.m in Sources */,
 				AA11E2D716EEE1CA00365CC6 /* ASHalfEdge.m in Sources */,
+				AA11E2DB16F035AA00365CC6 /* ASSiteList.m in Sources */,
+				AA245F1916F186AF0039F1AB /* ASHalfedgePriorityQueue.m in Sources */,
+				AA245F1D16F18FD70039F1AB /* ASEdgeList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

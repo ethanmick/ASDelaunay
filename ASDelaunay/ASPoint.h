@@ -14,14 +14,16 @@
  *
  * This is *my* port damn it, I'm going to fix this. This class will mimic Actionsripts Point class.
  */
-@interface ASPoint : NSObject
+@interface ASPoint : NSObject <NSCopying>
 
-@property (nonatomic) CGFloat x;
-@property (nonatomic) CGFloat y;
+@property (nonatomic) double x;
+@property (nonatomic) double y;
 
-- (id)initWithX:(CGFloat)anX y:(CGFloat)aY;
-+ (CGFloat)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1;
+- (id)initWithX:(double)anX y:(double)aY;
++ (double)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1;
 - (CGPoint)point;
+- (double)getX;
+- (double)getY;
 
 @end
 

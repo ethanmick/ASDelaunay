@@ -14,7 +14,7 @@
 
 @property (nonatomic, copy) NSMutableArray *vertices;
 
-- (CGFloat)signedDoubleArea;
+- (double)signedDoubleArea;
 
 @end
 
@@ -31,7 +31,7 @@
 }
 
 - (ASWinding *)winding {
-    CGFloat doubleSignedArea = [self signedDoubleArea];
+    double doubleSignedArea = [self signedDoubleArea];
     
     if (doubleSignedArea < 0) {
         return [ASWinding CLOCKWISE];
@@ -42,7 +42,7 @@
     return [ASWinding NONE];
 }
 
-- (CGFloat)area {
+- (double)area {
     return fabsf( [self signedDoubleArea] * .5 );
 }
 
@@ -50,7 +50,7 @@
 
 #pragma mark - Private
 
-- (CGFloat)signedDoubleArea {
+- (double)signedDoubleArea {
     NSUInteger index = 0;
     NSUInteger nextIndex = 0;
     NSUInteger n = [self.vertices count];

@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "ASPoint.h"
 
+@class ASHalfEdge;
+
 @interface ASVertex : NSObject <ICoord>
 
 @property (nonatomic, readonly) NSInteger vertexIndex;
 
 - (void)setIndex;
 + (ASVertex *)VERTEX_AT_INFINITY;
-- (CGFloat)getX;
-- (CGFloat)getY;
+- (double)getX;
+- (double)getY;
++ (ASVertex *)intersect:(ASHalfEdge *)halfEdge0 halfEdge1:(ASHalfEdge *)halfEdge1;
 
 @end

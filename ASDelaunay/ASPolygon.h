@@ -13,7 +13,7 @@
 @interface ASPolygon : NSObject
 
 - (id)initWithPoints:(NSArray *)points;
-- (CGFloat)area;
+- (double)area;
 - (ASWinding *)winding;
 
 

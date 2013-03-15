@@ -13,7 +13,7 @@
 
 @synthesize point, radius;
 
-- (id)initWithX:(CGFloat)anX y:(CGFloat)aY radius:(CGFloat)r {
+- (id)initWithX:(double)anX y:(double)aY radius:(double)r {
     
     if ( (self = [super init]) ) {
         self.point = [[ASPoint alloc] initWithX:anX y:aY];
