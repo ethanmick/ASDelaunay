@@ -10,18 +10,40 @@
 #import "ASVoronoi.h"
 #import "ASPoint.h"
 
+@interface ASDelaunayTests()
+
+@property (nonatomic, strong) ASPoint *point0;
+@property (nonatomic, strong) ASPoint *point1;
+@property (nonatomic, strong) ASPoint *point2;
+@property (nonatomic, strong) ASVoronoi *voronoi;
+@property (nonatomic, copy) NSArray *points;
+@property (nonatomic) CGRect plotBounds;
+
+@end
+
 @implementation ASDelaunayTests
+
+@synthesize point0, point1, point2, voronoi, points, plotBounds;
 
 - (void)setUp
 {
     [super setUp];
     
-    // Set-up code here.
+    self.point0 = [[ASPoint alloc] initWithX:-10 y:0];
+    self.point1 = [[ASPoint alloc] initWithX:10 y:0];
+    self.point2 = [[ASPoint alloc] initWithX:0 y:10];
+    self.points = @[self.point0, self.point1, self.point2];
+    
+    self.plotBounds = CGRectMake(-20, -20, 40, 40);
+    self.voronoi = [[ASVoronoi alloc] initWithPoints:[NSMutableArray arrayWithArray:self.points] plotBounds:self.plotBounds];
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
+    self.voronoi = nil;
+    self.plotBounds = CGRectZero;
+    self.points = nil;
+    self.point0 = self.point1 = self.point2 = nil;
     
     [super tearDown];
 }
@@ -37,9 +59,31 @@
         [randomPoints addObject:point];
     }
     
-    ASVoronoi *voronoi = [[ASVoronoi alloc] initWithPoints:randomPoints plotBounds:CGRectMake(0, 0, 768, 1024)];
+    ASVoronoi *voronoiInner = [[ASVoronoi alloc] initWithPoints:randomPoints plotBounds:CGRectMake(0, 0, 768, 1024)];
     
-    STAssertNotNil(voronoi.edges, @"Edges cannot be nil after this!");
+    STAssertNotNil(voronoiInner.edges, @"Edges cannot be nil after this!");
 }
+
+- (void)testRegionsHaveNoDuplicatedPoints {
+    for (NSMutableArray *region in [self.voronoi regions]) {
+        NSLog(@"Region: %@", region);
+        NSMutableArray *sortedRegion = [region copy];
+        [sortedRegion sortUsingSelector:@selector(compare:)];
+        for (NSInteger i = 1; i < [sortedRegion count]; ++i) {
+            STAssertFalse([[sortedRegion objectAtIndex:i] isEqual:[sortedRegion objectAtIndex:i - 1]], @"They should not be equal!");
+        }
+    }
+}
+
+
+- (NSComparisonResult)compareYThenX:(ASPoint *)p0 p1:(ASPoint *)p1 {
+    if (p0.y < p1.y) return NSOrderedAscending;
+    if (p0.y > p1.y) return NSOrderedDescending;
+    if (p0.x < p1.x) return NSOrderedAscending;
+    if (p0.x > p1.x) return NSOrderedDescending;
+    return NSOrderedSame;
+}
+
+
 
 @end
