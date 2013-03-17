@@ -18,5 +18,6 @@
 - (ASSite *)next;
 - (NSUInteger)push:(ASSite *)aSite;
 - (NSUInteger)length;
+- (NSMutableArray *)regions:(CGRect)plotBounds;
 
 @end

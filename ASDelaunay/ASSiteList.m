@@ -107,6 +107,16 @@
     return cirlces;
 }
 
+- (NSMutableArray *)regions:(CGRect)plotBounds {
+    NSMutableArray *regions = [NSMutableArray array];
+    for (ASSite *site in self.sites) {
+        [regions addObject:[site region:plotBounds]];
+    }
+    return regions;
+}
+
+
+
 
 @end
 

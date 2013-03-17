@@ -48,6 +48,19 @@
     [self.sitesIndexedByLocation setObject:site forKey:aPoint];
 }
 
+- (NSMutableArray *)region:(ASPoint *)p {
+    id site = [self.sitesIndexedByLocation objectForKey:p];
+    if (site == [NSNull null]) {
+        return [NSMutableArray array];
+    }
+    return [(ASSite *)site region:self.plotBounds];
+}
+
+- (NSMutableArray *)regions {
+    return [self.sites regions:self.plotBounds];
+}
+
+
 - (void)fortunesAlgorithm {
     ASSite *newSite = nil; ASSite *bottomSite = nil; ASSite *topSite = nil; ASSite *tempSite = nil;
     ASVertex *v = nil; ASVertex *vertex = nil;

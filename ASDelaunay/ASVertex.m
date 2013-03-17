@@ -13,6 +13,8 @@
 #import "ASSite.h"
 #import "ASLR.h"
 
+static ASVertex *_VERTEX_AT_INFINITY = nil;
+
 @interface ASVertex()
 
 @property (nonatomic, strong) ASPoint *coord;
@@ -24,11 +26,10 @@
 @synthesize coord, nvertices, vertexIndex;
 
 + (ASVertex *)VERTEX_AT_INFINITY {
-    static ASVertex *VERTEX_AT_INFINITY = nil;
-    if (VERTEX_AT_INFINITY == nil) {
-        VERTEX_AT_INFINITY = [[ASVertex alloc] initWith:INFINITY y:INFINITY];
+    if (_VERTEX_AT_INFINITY == nil) {
+        _VERTEX_AT_INFINITY = [[ASVertex alloc] initWith:INFINITY y:INFINITY];
     }
-    return VERTEX_AT_INFINITY;
+    return _VERTEX_AT_INFINITY;
 }
 
 
@@ -37,9 +38,9 @@
     if ( (self = [super init]) ) {
         self.nvertices = 0;
         
-        if (x == INFINITY && y == INFINITY) {
-            return [ASVertex VERTEX_AT_INFINITY];
-        }
+//        if (x == INFINITY && y == INFINITY) {
+//            return [ASVertex VERTEX_AT_INFINITY];
+//        }
         
         self.coord = [[ASPoint alloc] initWithX:x y:y];
     }

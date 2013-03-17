@@ -19,6 +19,7 @@
 + (ASVertex *)VERTEX_AT_INFINITY;
 - (double)getX;
 - (double)getY;
+- (id)initWith:(double)x y:(double)y;
 + (ASVertex *)intersect:(ASHalfEdge *)halfEdge0 halfEdge1:(ASHalfEdge *)halfEdge1;
 
 @end

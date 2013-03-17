@@ -32,14 +32,8 @@
     return self.y;
 }
 
-#pragma mark - Class Methods
-
-+ (double)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1 {
-    return sqrt(((p1.x - p0.x) * (p1.x - p0.x)) + ((p1.y - p0.y) * (p1.y - p0.y)));
-}
-
 - (NSString *)description {
-    return [NSString stringWithFormat:@"( %f, %f)", self.x, self.y];
+    return [NSString stringWithFormat:@"( %f, %f )", self.x, self.y];
 }
 
 - (BOOL)isEqual:(id)object {
@@ -49,5 +43,12 @@
 - (id)copyWithZone:(NSZone *)zone {
     return [[ASPoint alloc] initWithX:self.x y:self.y];
 }
+
+#pragma mark - Class Methods
+
++ (double)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1 {
+    return sqrt(((p1.x - p0.x) * (p1.x - p0.x)) + ((p1.y - p0.y) * (p1.y - p0.y)));
+}
+
 
 @end

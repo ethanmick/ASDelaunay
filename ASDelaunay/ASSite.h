@@ -23,6 +23,7 @@
 - (ASEdge *)nearestEdge;
 - (void)move:(ASPoint *)aPoint;
 - (NSMutableArray *)getEdges;
+- (NSMutableArray *)region:(CGRect)clippingBounds;
 
 
 @end

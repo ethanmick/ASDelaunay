@@ -10,6 +10,7 @@
 
 @class ASSite;
 @class ASSiteList;
+@class ASPoint;
 
 @interface ASVoronoi : NSObject
 
@@ -21,5 +22,7 @@
 
 + (NSComparisonResult)compareByYThenX:(ASSite *)s1 site2:(id)s2;
 - (id)initWithPoints:(NSMutableArray *)somePoints plotBounds:(CGRect)theBounds;
+- (NSMutableArray *)region:(ASPoint *)p;
+- (NSMutableArray *)regions;
 
 @end
