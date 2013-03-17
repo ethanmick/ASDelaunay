@@ -156,11 +156,11 @@ return returnValue;
 }
 
 - (ASSite *)neighborSite:(ASEdge *)edge {
-    if (self == [edge leftSite]) {
+    if ([self isEqual:[edge leftSite]]) {
         return [edge rightSite];
     }
     
-    if (self == [edge rightSite]) {
+    if ([self isEqual:[edge rightSite]]) {
         return [edge leftSite];
     }
     return nil;
@@ -180,7 +180,7 @@ return returnValue;
     if (self.edgeOrientation == nil) {
         [self reorderEdges];
         self.region = [self clipToBounds:clippingBounds];
-        if ( [[[ASPolygon alloc] initWithPoints:self.region] winding] == [ASWinding CLOCKWISE]) {
+        if ( [[[[ASPolygon alloc] initWithPoints:self.region] winding] isEqual:[ASWinding CLOCKWISE]]) {
             
             self.region = [NSMutableArray arrayWithArray:[[self.region reverseObjectEnumerator] allObjects]];
         }

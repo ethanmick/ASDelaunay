@@ -59,7 +59,7 @@
     id<ICoord> firstPoint = (criterion == [ASVertex class]) ? [edge leftVertex] : [edge leftSite];
     id<ICoord> lastPoint = (criterion == [ASVertex class]) ? [edge rightVertex] : [edge rightSite];
     
-    if (firstPoint == [ASVertex VERTEX_AT_INFINITY] || lastPoint == [ASVertex VERTEX_AT_INFINITY]) {
+    if ([firstPoint isEqual:[ASVertex VERTEX_AT_INFINITY]] || [lastPoint isEqual:[ASVertex VERTEX_AT_INFINITY]]) {
         return [NSMutableArray array];
     }
     
@@ -81,7 +81,7 @@
             id<ICoord>leftPoint = criterion == [ASVertex class] ? [edge leftVertex] : [edge leftSite];
             id<ICoord>rightPoint = criterion == [ASVertex class] ? [edge rightVertex] : [edge rightSite];
             
-            if (leftPoint == [ASVertex VERTEX_AT_INFINITY] || rightPoint == [ASVertex VERTEX_AT_INFINITY]) {
+            if ([leftPoint isEqual:[ASVertex VERTEX_AT_INFINITY]] || [rightPoint isEqual:[ASVertex VERTEX_AT_INFINITY]]) {
                 return [NSMutableArray array];
             }
             

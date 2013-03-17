@@ -99,11 +99,11 @@ static NSInteger nedges = 0;
 }
 
 - (ASVertex *)vertex:(ASLR *)leftRight {
-    return leftRight == [ASLR LEFT] ? self.leftVertex : self.rightVertex;
+    return [leftRight isEqual:[ASLR LEFT]] ? self.leftVertex : self.rightVertex;
 }
 
 - (void)setVertex:(ASLR *)leftRight vertex:(ASVertex *)v {
-    if (leftRight == [ASLR LEFT]) {
+    if ([leftRight isEqual:[ASLR LEFT]]) {
         self.leftVertex = v;
     } else {
         self.rightVertex = v;

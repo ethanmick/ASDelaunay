@@ -43,7 +43,7 @@
 }
 
 + (ASLR *)other:(ASLR *)leftRight {
-    return leftRight == [self LEFT] ? [self RIGHT] : [self LEFT];
+    return [leftRight isEqual:[self LEFT]] ? [self RIGHT] : [self LEFT];
 }
 
 ///
@@ -59,7 +59,7 @@
 }
 
 - (BOOL)isEqual:(id)object {
-    return [object isKindOfClass:[self class]] && [self name] == [object name];
+    return [object isKindOfClass:[self class]] && [[self name] isEqual:[object name]];
 }
 
 @end

@@ -61,7 +61,7 @@ static ASVertex *_VERTEX_AT_INFINITY = nil;
 }
 
 - (BOOL)isEqual:(id)object {
-    return [object isKindOfClass:[self class]] && [self coord] == [object coord];
+    return [object isKindOfClass:[self class]] && [[self coord] isEqual:[object coord]];
 }
 
 - (double)getX {
@@ -106,8 +106,8 @@ static ASVertex *_VERTEX_AT_INFINITY = nil;
         halfEdge = halfEdge1; edge = edge1;
     }
     rightOfSite = intersectionX >= [edge.rightSite getX];
-    if ((rightOfSite && halfEdge.leftRight == [ASLR LEFT])
-        ||  (!rightOfSite && halfEdge.leftRight == [ASLR RIGHT]))
+    if ((rightOfSite && [halfEdge.leftRight isEqual:[ASLR LEFT]])
+        ||  (!rightOfSite && [halfEdge.leftRight isEqual:[ASLR RIGHT]]))
     {
         return nil;
     }

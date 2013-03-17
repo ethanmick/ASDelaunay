@@ -34,12 +34,16 @@
 }
 
 - (BOOL)isEqual:(id)object {
-    return [object isKindOfClass:[self class]] && [self.edge isEqual:[object edge]] && [self.leftRight isEqual:[object leftRight]] && [self.edgeListLeftNeighbor isEqual:[object edgeListLeftNeighbor]] && [self.edgeListRightNeighbor isEqual:[object edgeListRightNeighbor]];
+    return [object isKindOfClass:[self class]] &&
+    [self.edge isEqual:[object edge]] &&
+    [self.leftRight isEqual:[object leftRight]] &&
+    [self.edgeListLeftNeighbor isEqual:[object edgeListLeftNeighbor]] &&
+    [self.edgeListRightNeighbor isEqual:[object edgeListRightNeighbor]];
 }
 
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Halfedge (leftRight: %@ vertex: %@ )", self.leftRight, self.vertex];
+    return [NSString stringWithFormat:@"Halfedge ( leftRight: %@ vertex: %@ )", self.leftRight, self.vertex];
 }
 
 - (void)remove:(ASHalfEdge *)halfEdge {
@@ -55,27 +59,27 @@
     BOOL rightOfSite; BOOL above; BOOL fast;
     double dxp; double dyp; double dxs; double t1; double t2; double t3; double yl;
     
-    topSite = [edge rightSite];
+    topSite = [self.edge rightSite];
     rightOfSite = p.x > [topSite getX];
-    if (rightOfSite && self.leftRight == [ASLR LEFT]) {
+    if (rightOfSite && [self.leftRight isEqual:[ASLR LEFT]]) {
         return YES;
     }
     
-    if (!rightOfSite && self.leftRight == [ASLR RIGHT]) {
+    if (!rightOfSite && [self.leftRight isEqual:[ASLR RIGHT]]) {
         return NO;
     }
     
-    if (edge.a == 1.0) {
+    if (self.edge.a == 1.0) {
         dyp = p.y - [topSite getY];
         dxp = p.x - [topSite getX];
         fast = NO;
-        if ((!rightOfSite && edge.b < 0.0) || (rightOfSite && edge.b >= 0.0) )
+        if ((!rightOfSite && self.edge.b < 0.0) || (rightOfSite && self.edge.b >= 0.0) )
         {
-            above = dyp >= edge.b * dxp;
+            above = dyp >= self.edge.b * dxp;
             fast = above;
         } else {
-            above = p.x + p.y * edge.b > edge.c;
-            if (edge.b < 0.0)
+            above = p.x + p.y * self.edge.b > self.edge.c;
+            if (self.edge.b < 0.0)
             {
                 above = !above;
             }
@@ -85,7 +89,7 @@
             }
         }
         if (!fast) {
-            dxs = [topSite getX] - [edge.leftSite getX];
+            dxs = [topSite getX] - [self.edge.leftSite getX];
             above = edge.b * (dxp * dxp - dyp * dyp) < dxs * dyp * (1.0 + 2.0 * dxp/dxs + edge.b * edge.b);
             if (edge.b < 0.0)
             {
@@ -100,7 +104,7 @@
         above = t1 * t1 > t2 * t2 + t3 * t3;
     }
 
-    return self.leftRight == [ASLR LEFT] ? above : !above;
+    return [self.leftRight isEqual:[ASLR LEFT]] ? above : !above;
 }
 
 

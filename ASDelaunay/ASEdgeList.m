@@ -84,7 +84,7 @@
         }
     }
     /* Now search linear list of halfedges for the correct one */
-    if (halfEdge == self.leftEnd  || (halfEdge != self.rightEnd && [halfEdge isLeftOf:p])) {
+    if ([halfEdge isEqual:self.leftEnd] || (halfEdge != self.rightEnd && [halfEdge isLeftOf:p])) {
         do {
             halfEdge = halfEdge.edgeListRightNeighbor;
         } while (halfEdge != rightEnd && [halfEdge isLeftOf:p] );
@@ -120,7 +120,7 @@
         halfEdge = (ASHalfEdge *)object;
     }
     
-    if (halfEdge != nil && halfEdge.edge == [ASEdge DELETED]) {
+    if (halfEdge != nil && [halfEdge.edge isEqual:[ASEdge DELETED]]) {
         [self.hash replaceObjectAtIndex:b withObject:[NSNull null]];
         return nil;
     } else {
