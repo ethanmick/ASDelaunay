@@ -63,6 +63,9 @@
 
 - (void)insert:(ASHalfEdge *)halfEdge {
     ASHalfEdge *previous; ASHalfEdge *next;
+    
+    NSLog(@"400.1 %@ ( %f, %f )", halfEdge.vertex, [halfEdge.vertex getX], [halfEdge.vertex getY]);
+    
     NSInteger insertionBucket = [self bucket:halfEdge];
     if (insertionBucket < self.minBucket) {
         self.minBucket = insertionBucket;
@@ -103,7 +106,9 @@
 - (ASPoint *)min {
     [self adjustMinBucket];
     ASHalfEdge *answer = [[self.hash objectAtIndex:self.minBucket] nextInPriorityQueue];
-    return [[ASPoint alloc] initWithX:[answer.vertex getX] y:[answer.vertex getY]];
+    NSLog(@"400 %@ and %d", answer, self.minBucket);
+    NSLog(@"401 %@ ( %f, %f )", answer.vertex, [answer.vertex getX], answer.ystar);
+    return [[ASPoint alloc] initWithX:[answer.vertex getX] y:answer.ystar];
 }
 
 - (void)adjustMinBucket {
