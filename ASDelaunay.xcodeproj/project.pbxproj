@@ -54,6 +54,7 @@
 		AA72488D16E7CC4600197718 /* libASDelaunay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487416E7CC4500197718 /* libASDelaunay.a */; };
 		AA72489316E7CC4600197718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA72489116E7CC4600197718 /* InfoPlist.strings */; };
 		AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72489516E7CC4600197718 /* ASDelaunayTests.m */; };
+		AAAF36CB16F671C00074988F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
 		AAAF5EF416E7CC9600C38071 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
 		AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
 		AAAF5EF916E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
@@ -162,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAF36CB16F671C00074988F /* UIKit.framework in Frameworks */,
 				AAB9E15C16F510E50028142A /* CoreGraphics.framework in Frameworks */,
 				AA72488716E7CC4600197718 /* SenTestingKit.framework in Frameworks */,
 				AA72488A16E7CC4600197718 /* Foundation.framework in Frameworks */,
@@ -175,7 +177,6 @@
 		AA72486B16E7CC4500197718 = {
 			isa = PBXGroup;
 			children = (
-				AAB9E15B16F510E40028142A /* CoreGraphics.framework */,
 				AA72487916E7CC4500197718 /* ASDelaunay */,
 				AA72488E16E7CC4600197718 /* ASDelaunayTests */,
 				AA72487616E7CC4500197718 /* Frameworks */,
@@ -195,6 +196,7 @@
 		AA72487616E7CC4500197718 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAB9E15B16F510E40028142A /* CoreGraphics.framework */,
 				AAAF5EF316E7CC9600C38071 /* UIKit.framework */,
 				AA72487716E7CC4500197718 /* Foundation.framework */,
 				AA72488616E7CC4600197718 /* SenTestingKit.framework */,
