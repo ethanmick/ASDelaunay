@@ -50,5 +50,13 @@
     return sqrt(((p1.x - p0.x) * (p1.x - p0.x)) + ((p1.y - p0.y) * (p1.y - p0.y)));
 }
 
+- (NSComparisonResult)compareYThenX:(ASPoint *)p0 {
+    if (self.y < p0.y) return NSOrderedAscending;
+    if (self.y > p0.y) return NSOrderedDescending;
+    if (self.x < p0.x) return NSOrderedAscending;
+    if (self.x > p0.x) return NSOrderedDescending;
+    return NSOrderedSame;
+}
+
 
 @end

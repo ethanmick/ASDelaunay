@@ -47,7 +47,13 @@
         [NSException raise:@"Not Sorted Exception" format:@"ASSiteList - Next : Sites not sorted!"];
     }
     
+    NSLog(@"200.0 Sites: %@", self.sites);
+    
+    NSLog(@"200 %d", self.currentIndex);
+    NSLog(@"201 %d", [self.sites count]);
+    
     if (self.currentIndex < [self.sites count]) {
+        NSLog(@"202 %@", [self.sites objectAtIndex:self.currentIndex]);
         return [self.sites objectAtIndex:self.currentIndex++];
     } else {
         return nil;
@@ -60,6 +66,7 @@
         self.currentIndex = 0;
         self.sorted = YES;
     }
+    
     double xmin = 0; double xmax = 0; double ymin = 0; double ymax = 0;
     
     if ([self.sites count] == 0) {

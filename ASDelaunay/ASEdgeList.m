@@ -22,7 +22,7 @@
 
 @implementation ASEdgeList
 
-@synthesize deltax, xmin, hash, hashSize, leftEnd, rightEnd;
+@synthesize deltax, xmin, hash, hashSize;
 
 - (id)initWithXMin:(double)anXmin deltax:(double)aDeltaX sqrtNSites:(NSInteger)sqrtNSites {
     
@@ -36,14 +36,17 @@
             [self.hash addObject:[NSNull null]];
         }
         
-        leftEnd = [ASHalfEdge createDummy];
-        rightEnd = [ASHalfEdge createDummy];
+        _leftEnd = [ASHalfEdge createDummy];
+        _rightEnd = [ASHalfEdge createDummy];
+        
         self.leftEnd.edgeListLeftNeighbor = nil;
         self.leftEnd.edgeListRightNeighbor = self.rightEnd;
         self.rightEnd.edgeListLeftNeighbor = self.leftEnd;
         self.rightEnd.edgeListRightNeighbor = nil;
+        
         [self.hash replaceObjectAtIndex:0 withObject:self.leftEnd];
         [self.hash replaceObjectAtIndex:self.hashSize - 1 withObject:self.rightEnd];
+        NSLog(@"300.00 %@", self.hash);
     }
     return self;
 }
@@ -65,40 +68,53 @@
 
 - (ASHalfEdge *)edgeListLeftNeighbor:(ASPoint *)p {
     
-    NSInteger i; NSInteger bucket;
+    NSInteger i;
+    NSInteger bucket;
     ASHalfEdge *halfEdge;
+    
+    NSLog(@"300: %@", self.hash);
     
     /* Use hash table to get close to desired halfedge */
     bucket = (p.x - self.xmin) / self.deltax * self.hashSize;
+    
+    NSLog(@"301 %d", bucket);
     if (bucket < 0) {
         bucket = 0;
     }
     if (bucket >= self.hashSize) {
         bucket = self.hashSize - 1;
     }
+    NSLog(@"302 %d", bucket);
     halfEdge = [self getHash:bucket];
+    NSLog(@"303 %@", halfEdge);
     if (halfEdge == nil) {
-        for (i = 1; true ; ++i) {
+        for (i = 1; YES ; ++i) {
             if ( (halfEdge = [self getHash:(bucket - i)]) != nil) break;
             if ( (halfEdge = [self getHash:(bucket + i)]) != nil) break;
         }
     }
+    NSLog(@"304 %@\n%@\n%@", halfEdge, halfEdge.edgeListLeftNeighbor, halfEdge.edgeListRightNeighbor);
     /* Now search linear list of halfedges for the correct one */
-    if ([halfEdge isEqual:self.leftEnd] || (halfEdge != self.rightEnd && [halfEdge isLeftOf:p])) {
+    if (halfEdge == self.leftEnd || (halfEdge != self.rightEnd && [halfEdge isLeftOf:p])) {
+        
         do {
+            NSLog(@"305");
             halfEdge = halfEdge.edgeListRightNeighbor;
-        } while (halfEdge != rightEnd && [halfEdge isLeftOf:p] );
+        } while ( halfEdge != self.rightEnd && [halfEdge isLeftOf:p] );
+        
         halfEdge = halfEdge.edgeListLeftNeighbor;
-    }
-    else {
+    } else {
+        
         do {
+            NSLog(@"306");
             halfEdge = halfEdge.edgeListLeftNeighbor;
-        } while (halfEdge != leftEnd && ![halfEdge isLeftOf:p]);
+        } while ( halfEdge != self.leftEnd && ![halfEdge isLeftOf:p]);
     }
     
+    NSLog(@"307 %d", bucket);
     /* Update hash table and reference counts */
     if (bucket > 0 && bucket < self.hashSize - 1) {
-        [self.hash setObject:halfEdge atIndexedSubscript:bucket];
+        [self.hash replaceObjectAtIndex:bucket withObject:(halfEdge != nil ? halfEdge : [NSNull null])];
     }
     return halfEdge;
     
@@ -120,7 +136,7 @@
         halfEdge = (ASHalfEdge *)object;
     }
     
-    if (halfEdge != nil && [halfEdge.edge isEqual:[ASEdge DELETED]]) {
+    if (halfEdge != nil && halfEdge.edge == [ASEdge DELETED]) {
         [self.hash replaceObjectAtIndex:b withObject:[NSNull null]];
         return nil;
     } else {

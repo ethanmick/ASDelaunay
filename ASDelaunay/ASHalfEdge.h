@@ -29,6 +29,7 @@
  * The right neighbor.
  */
 @property (nonatomic, strong) ASHalfEdge *edgeListRightNeighbor;
+
 @property (nonatomic, strong) ASHalfEdge *nextInPriorityQueue;
 
 @property (nonatomic, strong) ASEdge *edge; //Why do we need an Edge?
@@ -54,7 +55,7 @@
 - (id)initWithEdge:(ASEdge *)anEdge lr:(ASLR *)lr;
 + (instancetype)createDummy;
 - (BOOL)isLeftOf:(ASPoint *)p;
-- (void)remove:(ASHalfEdge *)halfEdge;
+//- (void)remove:(ASHalfEdge *)halfEdge; //Remove this later.
 
 
 @end

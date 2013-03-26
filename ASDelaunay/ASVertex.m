@@ -14,16 +14,16 @@
 #import "ASLR.h"
 
 static ASVertex *_VERTEX_AT_INFINITY = nil;
+static int nvertices = 0;
 
 @interface ASVertex()
 
 @property (nonatomic, strong) ASPoint *coord;
-@property (nonatomic) NSInteger nvertices;
 
 @end
 
 @implementation ASVertex
-@synthesize coord, nvertices, vertexIndex;
+@synthesize coord = _coord, vertexIndex;
 
 + (ASVertex *)VERTEX_AT_INFINITY {
     if (_VERTEX_AT_INFINITY == nil) {
@@ -36,7 +36,6 @@ static ASVertex *_VERTEX_AT_INFINITY = nil;
 - (id)initWith:(double)x y:(double)y {
     
     if ( (self = [super init]) ) {
-        self.nvertices = 0;
         
 //        if (x == INFINITY && y == INFINITY) {
 //            return [ASVertex VERTEX_AT_INFINITY];
@@ -49,11 +48,11 @@ static ASVertex *_VERTEX_AT_INFINITY = nil;
 }
 
 - (ASPoint *)coord {
-    return self.coord;
+    return _coord;
 }
 
 - (void)setIndex {
-    vertexIndex = self.nvertices++;
+    vertexIndex = nvertices++;
 }
 
 - (NSString *)description {
@@ -65,11 +64,11 @@ static ASVertex *_VERTEX_AT_INFINITY = nil;
 }
 
 - (double)getX {
-    return self.coord.x;
+    return _coord.x;
 }
 
 - (double)getY {
-    return self.coord.y;
+    return _coord.y;
 }
 
 + (ASVertex *)intersect:(ASHalfEdge *)halfEdge0 halfEdge1:(ASHalfEdge *)halfEdge1 {
@@ -106,8 +105,8 @@ static ASVertex *_VERTEX_AT_INFINITY = nil;
         halfEdge = halfEdge1; edge = edge1;
     }
     rightOfSite = intersectionX >= [edge.rightSite getX];
-    if ((rightOfSite && [halfEdge.leftRight isEqual:[ASLR LEFT]])
-        ||  (!rightOfSite && [halfEdge.leftRight isEqual:[ASLR RIGHT]]))
+    if ((rightOfSite && halfEdge.leftRight == [ASLR LEFT])
+        ||  (!rightOfSite && halfEdge.leftRight == [ASLR RIGHT]))
     {
         return nil;
     }

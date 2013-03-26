@@ -37,6 +37,10 @@
     return 0;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ ---- %@", self.p0, self.p1];
+}
+
 
 + (double)compareLengths:(ASLineSegment *)segment0 segment1:(ASLineSegment *)segment1 {
     return -[self compareLengthsMAX:segment0 segment1:segment1];

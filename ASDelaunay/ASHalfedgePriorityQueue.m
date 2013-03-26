@@ -64,8 +64,6 @@
 - (void)insert:(ASHalfEdge *)halfEdge {
     ASHalfEdge *previous; ASHalfEdge *next;
     
-    NSLog(@"400.1 %@ ( %f, %f )", halfEdge.vertex, [halfEdge.vertex getX], [halfEdge.vertex getY]);
-    
     NSInteger insertionBucket = [self bucket:halfEdge];
     if (insertionBucket < self.minBucket) {
         self.minBucket = insertionBucket;

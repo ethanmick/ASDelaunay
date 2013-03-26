@@ -10,7 +10,6 @@
 
 @interface ASLR()
 
-@property (nonatomic, strong) NSString *name;
 
 @end
 
@@ -21,21 +20,22 @@
 // should be private
 - (id)initWithName:(NSString *)aName {
     if ( (self = [super init]) ) {
-        self.name = aName;
+        name = aName;
     }
     return self;
 }
 
+static ASLR *LEFT = nil;
+
 + (ASLR *)LEFT {
-    static ASLR *LEFT = nil;
     if (!LEFT) {
         LEFT = [[ASLR alloc] initWithName:@"LEFT"];
     }
     return LEFT;
 }
+static ASLR *RIGHT = nil;
 
 + (ASLR *)RIGHT {
-    static ASLR *RIGHT = nil;
     if (!RIGHT) {
         RIGHT = [[ASLR alloc] initWithName:@"RIGHT"];
     }
@@ -43,16 +43,8 @@
 }
 
 + (ASLR *)other:(ASLR *)leftRight {
-    return [leftRight isEqual:[self LEFT]] ? [self RIGHT] : [self LEFT];
+    return leftRight == [self LEFT] ? [self RIGHT] : [self LEFT];
 }
-
-///
-/// We'll work on memory management later
-///
-- (id)copyWithZone:(NSZone *)zone {
-    return [[ASLR alloc] initWithName:self.name];
-}
-
 
 - (NSString *)description {
     return name;

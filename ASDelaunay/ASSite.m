@@ -54,6 +54,9 @@ static const NSInteger RIGHT = 8;
     }
     return self;
 }
+- (BOOL)isEqual:(id)object {
+    return [object isKindOfClass:[self class]] && [[self coord] isEqual:[object coord]];
+}
 
 + (id)createWithPoint:(ASPoint *)aPoint index:(NSUInteger)anIndex weight:(double)aWeight {
 //    if (!pool) {
@@ -102,7 +105,7 @@ static const NSInteger RIGHT = 8;
             self.siteIndex = tempIndex;
         }
     }
-return returnValue;
+    return returnValue;
 }
 
 
@@ -156,11 +159,11 @@ return returnValue;
 }
 
 - (ASSite *)neighborSite:(ASEdge *)edge {
-    if ([self isEqual:[edge leftSite]]) {
+    if (self == [edge leftSite]) {
         return [edge rightSite];
     }
     
-    if ([self isEqual:[edge rightSite]]) {
+    if (self == [edge rightSite]) {
         return [edge leftSite];
     }
     return nil;
@@ -180,7 +183,7 @@ return returnValue;
     if (self.edgeOrientation == nil) {
         [self reorderEdges];
         self.region = [self clipToBounds:clippingBounds];
-        if ( [[[[ASPolygon alloc] initWithPoints:self.region] winding] isEqual:[ASWinding CLOCKWISE]]) {
+        if ( [[[ASPolygon alloc] initWithPoints:self.region] winding] == [ASWinding CLOCKWISE]) {
             
             self.region = [NSMutableArray arrayWithArray:[[self.region reverseObjectEnumerator] allObjects]];
         }
@@ -204,10 +207,10 @@ return returnValue;
     
     edge = [self.edges objectAtIndex:i];
     ASLR *orientation = [self.edgeOrientation objectAtIndex:i];
-    [pointsInner addObject:[[edge clippedEnds] objectForKey:orientation]];
-    [pointsInner addObject:[[edge clippedEnds] objectForKey:[ASLR other:orientation]]];
+    [pointsInner addObject:[[edge clippedEnds] objectForKey:[orientation name]]];
+    [pointsInner addObject:[[edge clippedEnds] objectForKey:[[ASLR other:orientation] name]]];
     
-    for (NSInteger j = i + 1; j < n; n++) {
+    for (NSInteger j = i + 1; j < n; ++j) {
         edge = [self.edges objectAtIndex:j];
         if ([edge visible] == NO) {
             continue;
@@ -374,7 +377,7 @@ return returnValue;
     }
     
     
-    ASPoint *newRightPoint = [[newEdge clippedEnds] objectForKey:[ASLR other:newOrientation]];
+    ASPoint *newRightPoint = [[newEdge clippedEnds] objectForKey:[[ASLR other:newOrientation] name]];
     if (![ASSite closeEnough:[thePoints objectAtIndex:0] andPoint:newRightPoint]) {
         [thePoints addObject:newRightPoint];
     }

@@ -24,6 +24,7 @@
 - (CGPoint)point;
 - (double)getX;
 - (double)getY;
+- (NSComparisonResult)compareYThenX:(ASPoint *)p0;
 
 @end
 

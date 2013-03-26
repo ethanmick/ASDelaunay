@@ -53,13 +53,15 @@
     NSMutableArray *newEdges = [NSMutableArray array];
     ASEdge *edge = [origEdges objectAtIndex:i];
     
+    NSLog(@"Original Edges: %@", origEdges);
+    NSLog(@"Edge? %@", edge);
     
     [newEdges addObject:edge];
-    [edgeOrientations addObject:[ASLR LEFT]];
+    [self.edgeOrientations addObject:[ASLR LEFT]];
     id<ICoord> firstPoint = (criterion == [ASVertex class]) ? [edge leftVertex] : [edge leftSite];
     id<ICoord> lastPoint = (criterion == [ASVertex class]) ? [edge rightVertex] : [edge rightSite];
     
-    if ([firstPoint isEqual:[ASVertex VERTEX_AT_INFINITY]] || [lastPoint isEqual:[ASVertex VERTEX_AT_INFINITY]]) {
+    if (firstPoint == [ASVertex VERTEX_AT_INFINITY] || lastPoint == [ASVertex VERTEX_AT_INFINITY]) {
         return [NSMutableArray array];
     }
     
@@ -72,7 +74,7 @@
         NSLog(@"Infinite: %d: %d", nDone, n);
         for (i = 1; i < n; ++i) {
             NSLog(@"I: %d", i);
-            if ([done objectAtIndex:i]) {
+            if ([[done objectAtIndex:i] isEqual:@YES]) {
                 continue;
             }
             
@@ -81,7 +83,7 @@
             id<ICoord>leftPoint = criterion == [ASVertex class] ? [edge leftVertex] : [edge leftSite];
             id<ICoord>rightPoint = criterion == [ASVertex class] ? [edge rightVertex] : [edge rightSite];
             
-            if ([leftPoint isEqual:[ASVertex VERTEX_AT_INFINITY]] || [rightPoint isEqual:[ASVertex VERTEX_AT_INFINITY]]) {
+            if (leftPoint == [ASVertex VERTEX_AT_INFINITY] || rightPoint == [ASVertex VERTEX_AT_INFINITY]) {
                 return [NSMutableArray array];
             }
             
@@ -90,33 +92,35 @@
             NSLog(@"Last Point: %@", lastPoint);
             NSLog(@"First Point: %@", firstPoint);
             
-            if ([leftPoint isEqual:lastPoint]) {
+            if (leftPoint == lastPoint) {
                 lastPoint = rightPoint;
                 [self.edgeOrientations addObject:[ASLR LEFT]];
                 [newEdges addObject:edge];
                 [done setObject:@YES atIndexedSubscript:i];
-            } else if ( [rightPoint isEqual:firstPoint]) {
+            } else if ( rightPoint == firstPoint) {
                 firstPoint = leftPoint;
                 [self.edgeOrientations insertObject:[ASLR LEFT] atIndex:0];
                 [newEdges insertObject:edge atIndex:0];
                 [done setObject:@YES atIndexedSubscript:i];
-            } else if ([leftPoint isEqual:firstPoint]) {
+            } else if (leftPoint == firstPoint) {
                 firstPoint = rightPoint;
                 [self.edgeOrientations insertObject:[ASLR RIGHT] atIndex:0];
                 [newEdges insertObject:edge atIndex:0];
                 [done setObject:@YES atIndexedSubscript:i];
-            } else if ([rightPoint isEqual:lastPoint]) {
+            } else if (rightPoint == lastPoint) {
                 lastPoint = leftPoint;
                 [self.edgeOrientations addObject:[ASLR RIGHT]];
                 [newEdges addObject:edge];
                 [done setObject:@YES atIndexedSubscript:i];
             }
             
-            if ([done objectAtIndex:i]) {
+            if ([[done objectAtIndex:i] isEqual:@YES]) {
                 ++nDone;
             }
         }
     }
+    
+    NSLog(@"Leaving... %@", newEdges);
     return newEdges;
 
 }

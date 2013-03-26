@@ -25,6 +25,8 @@
         self.leftRight = lr;
         self.nextInPriorityQueue = nil;
         self.vertex = nil;
+        self.edgeListLeftNeighbor = nil;
+        self.edgeListRightNeighbor = nil;
     }
     return self;
 }
@@ -43,15 +45,16 @@
 
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Halfedge ( leftRight: %@ vertex: %@ )", self.leftRight, self.vertex];
+    return [NSString stringWithFormat:@"Halfedge ( leftRight: %@ vertex: %@ LeftHalfEdge Nil?: %d RightHalfEdge Nil?: %d)", self.leftRight, self.vertex,
+            self.edgeListLeftNeighbor == nil, self.edgeListRightNeighbor == nil];
 }
 
-- (void)remove:(ASHalfEdge *)halfEdge {
-    halfEdge.edgeListLeftNeighbor.edgeListRightNeighbor = halfEdge.edgeListRightNeighbor;
-    halfEdge.edgeListRightNeighbor.edgeListLeftNeighbor = halfEdge.edgeListLeftNeighbor;
-    halfEdge.edge = [ASEdge DELETED];
-    halfEdge.edgeListLeftNeighbor = halfEdge.edgeListRightNeighbor = nil;
-}
+//- (void)remove:(ASHalfEdge *)halfEdge {
+//    halfEdge.edgeListLeftNeighbor.edgeListRightNeighbor = halfEdge.edgeListRightNeighbor;
+//    halfEdge.edgeListRightNeighbor.edgeListLeftNeighbor = halfEdge.edgeListLeftNeighbor;
+//    halfEdge.edge = [ASEdge DELETED];
+//    halfEdge.edgeListLeftNeighbor = halfEdge.edgeListRightNeighbor = nil;
+//}
 
 
 - (BOOL)isLeftOf:(ASPoint *)p {
@@ -61,11 +64,11 @@
     
     topSite = [self.edge rightSite];
     rightOfSite = p.x > [topSite getX];
-    if (rightOfSite && [self.leftRight isEqual:[ASLR LEFT]]) {
+    if (rightOfSite && self.leftRight == [ASLR LEFT]) {
         return YES;
     }
     
-    if (!rightOfSite && [self.leftRight isEqual:[ASLR RIGHT]]) {
+    if (!rightOfSite && self.leftRight == [ASLR RIGHT]) {
         return NO;
     }
     
@@ -104,7 +107,7 @@
         above = t1 * t1 > t2 * t2 + t3 * t3;
     }
 
-    return [self.leftRight isEqual:[ASLR LEFT]] ? above : !above;
+    return self.leftRight == [ASLR LEFT] ? above : !above;
 }
 
 

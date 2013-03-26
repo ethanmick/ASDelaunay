@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ASLR : NSObject <NSCopying>
+@interface ASLR : NSObject
+
+@property (nonatomic, strong, readonly) NSString *name;
 
 + (ASLR *)LEFT;
 + (ASLR *)RIGHT;
