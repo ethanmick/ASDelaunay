@@ -59,14 +59,14 @@ static NSInteger nedges = 0;
 
 - (void)setLeftSite:(ASSite *)s {
     if (s == nil) {
-        [self.sites setObject:[NSNull null] forKey:[ASLR LEFT]];
+        [self.sites setObject:[NSNull null] forKey:[[ASLR LEFT] name]];
         return;
     }
-    [self.sites setObject:s forKey:[ASLR LEFT]];
+    [self.sites setObject:s forKey:[[ASLR LEFT] name]];
 }
 
 - (ASSite *)leftSite {
-    id toReturn = [self.sites objectForKey:[ASLR LEFT]];
+    id toReturn = [self.sites objectForKey:[[ASLR LEFT] name]];
     if (toReturn == [NSNull null]) {
         return nil;
     }
@@ -75,15 +75,16 @@ static NSInteger nedges = 0;
 
 - (void)setRightSite:(ASSite *)s {
     if (s == nil) {
-        [self.sites setObject:[NSNull null] forKey:[ASLR RIGHT]];
+        [self.sites setObject:[NSNull null] forKey:[[ASLR RIGHT] name]];
         return;
     }
-    
-    [self.sites setObject:s forKey:[ASLR RIGHT]];
+    NSLog(@"IT'S GOOOOD: %@", s);
+    [self.sites setObject:s forKey:[[ASLR RIGHT] name]];
 }
 
 - (ASSite *)rightSite {
-    id toReturn = [self.sites objectForKey:[ASLR RIGHT]];
+    id toReturn = [self.sites objectForKey:[[ASLR RIGHT] name]];
+    NSLog(@"WHTF: %@ and WTF: %@", toReturn, NSStringFromClass([toReturn class]));
     if (toReturn == [NSNull null]) {
         return nil;
     }
@@ -91,7 +92,7 @@ static NSInteger nedges = 0;
 }
 
 - (ASSite *)site:(ASLR *)leftRight {
-    id toReturn = [self.sites objectForKey:leftRight];
+    id toReturn = [self.sites objectForKey:[leftRight name]];
     if (toReturn == [NSNull null]) {
         return nil;
     }
@@ -99,11 +100,11 @@ static NSInteger nedges = 0;
 }
 
 - (ASVertex *)vertex:(ASLR *)leftRight {
-    return [leftRight isEqual:[ASLR LEFT]] ? self.leftVertex : self.rightVertex;
+    return leftRight == [ASLR LEFT] ? self.leftVertex : self.rightVertex;
 }
 
 - (void)setVertex:(ASLR *)leftRight vertex:(ASVertex *)v {
-    if ([leftRight isEqual:[ASLR LEFT]]) {
+    if (leftRight == [ASLR LEFT]) {
         self.leftVertex = v;
     } else {
         self.rightVertex = v;
@@ -127,18 +128,19 @@ static NSInteger nedges = 0;
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Edge: %d; sites: %@, %@; endVertices: %d, %d::",
-            self.edgeIndex, [self.sites objectForKey:[ASLR LEFT]], [self.sites objectForKey:[ASLR RIGHT]],
+    return [NSString stringWithFormat:@"Edge: %d; sites: %@ <--> %@; endVertices: Index: %d, Index: %d",
+            self.edgeIndex, [self.sites objectForKey:[[ASLR LEFT] name]], [self.sites objectForKey:[[ASLR RIGHT] name]],
             self.leftVertex ? [self.leftVertex vertexIndex] : 0,
             self.rightVertex ? [self.rightVertex vertexIndex] : 0];
 }
 
 - (ASLineSegment *)voronoiEdge {
-    return [[ASLineSegment alloc] initWithPoint0:[self.clippedVertices objectForKey:[ASLR LEFT]] point1:[self.clippedVertices objectForKey:[ASLR RIGHT]]];
+    return [[ASLineSegment alloc] initWithPoint0:[self.clippedVertices objectForKey:[[ASLR LEFT] name]] point1:[self.clippedVertices objectForKey:[[ASLR RIGHT] name]]];
 }
 
+static ASEdge *delete = nil;
+
 + (ASEdge *)DELETED {
-    static ASEdge *delete = nil;
     if (!delete) {
         delete = [[ASEdge alloc] init];
     }
@@ -160,13 +162,15 @@ static NSInteger nedges = 0;
         b = 1.0; a = dx/dy; c /= dy;
     }
     
+    NSLog(@"Site0: %@\nSite1: %@", site0, site1);
     ASEdge *edge = [[ASEdge alloc] init];
     [edge setLeftSite:site0];
     [edge setRightSite:site1];
     [site0 addEdge:edge];
     [site1 addEdge:edge];
     [edge setLeftVertex:nil];
-    [edge setRightSite:nil];
+    [edge setRightVertex:nil];
+    NSLog(@"Why don't you work? %@", [edge rightSite]);
     
     edge.a = a;
     edge.b = b;
@@ -275,11 +279,11 @@ static NSInteger nedges = 0;
     self.clippedVertices = [NSMutableDictionary dictionary];
     
     if (vertex0 == self.leftVertex) {
-        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x0 y:y0] forKey:[ASLR LEFT]];
-        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x1 y:y1] forKey:[ASLR RIGHT]];
+        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x0 y:y0] forKey:[[ASLR LEFT] name]];
+        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x1 y:y1] forKey:[[ASLR RIGHT] name]];
     } else {
-        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x0 y:y0] forKey:[ASLR RIGHT]];
-        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x1 y:y1] forKey:[ASLR LEFT]];
+        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x0 y:y0] forKey:[[ASLR RIGHT] name]];
+        [self.clippedVertices setObject:[[ASPoint alloc] initWithX:x1 y:y1] forKey:[[ASLR LEFT] name]];
     }
     
 }
