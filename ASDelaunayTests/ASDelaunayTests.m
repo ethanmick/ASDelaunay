@@ -16,8 +16,10 @@
 
 @interface ASDelaunayTests()
 
-
 - (BOOL)isCloseEnough:(double)d0 d1:(double)d1;
+- (void)testForFile:(NSInteger)integer;
+- (NSArray *)arrayOfPointsFromJSONFile:(NSInteger)integer;
+- (NSArray *)arrayFromJSONFileNamed:(NSString *)fileName;
 
 @end
 
@@ -87,6 +89,40 @@
 - (void)testJSON5 {
     [self testForFile:5];
 }
+
+///
+/// Test the Delaunay Line segments as well, as those are the aspects that will be used the most.
+///
+- (void)testJSON6 {
+    ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[self arrayOfPointsFromJSONFile:6] plotBounds:CGRectMake(0, 0, 500, 500)];
+    
+    ///
+    /// Read in input and test to see if it's "close enough"
+    ///
+    NSArray *outputs = [self arrayFromJSONFileNamed:[NSString stringWithFormat:@"output-%d", 6]];
+    
+    STAssertTrue([outputs count] == [voro.edges count], @"The number of line segments should be equal.");
+    
+    for (NSInteger i = 0; i < [voro.edges count]; i++) {
+        ASLineSegment *segment = [voro.edges[i] delaunayLine];
+        
+        if ([segment p0] == nil) {
+            
+            STAssertTrue([segment p0] == ((outputs[i][@"p0"] == [NSNull null]) ? nil : outputs[i][@"p0"]), @"Both p0's should be nil");
+            STAssertTrue([segment p1] == ((outputs[i][@"p1"] == [NSNull null]) ? nil : outputs[i][@"p1"]), @"Both p1's should be nil");
+            
+        } else {
+            
+            STAssertTrue( [self isCloseEnough:[segment p0].x d1:[outputs[i][@"p0"][@"x"] doubleValue] ] ,@"The X values are not close enough!");
+            STAssertTrue( [self isCloseEnough:[segment p0].y d1:[outputs[i][@"p0"][@"y"] doubleValue] ] ,@"The points are not close enough!");
+            
+            STAssertTrue( [self isCloseEnough:[segment p1].x d1:[outputs[i][@"p1"][@"x"] doubleValue] ] ,@"The points are not close enough!");
+            STAssertTrue( [self isCloseEnough:[segment p1].y d1:[outputs[i][@"p1"][@"y"] doubleValue] ] ,@"The points are not close enough!");
+        }
+    }
+}
+
+#pragma mark - Helper Methods
 
 - (void)testForFile:(NSInteger)integer {
     ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:integer] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
