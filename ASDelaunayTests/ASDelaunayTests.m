@@ -12,167 +12,135 @@
 #import "ASEdge.h"
 #import "ASLineSegment.h"
 
+#define EPSILON 0.01
+
 @interface ASDelaunayTests()
 
-@property (nonatomic, strong) ASPoint *point0;
-@property (nonatomic, strong) ASPoint *point1;
-@property (nonatomic, strong) ASPoint *point2;
-@property (nonatomic, strong) ASVoronoi *voronoi;
-@property (nonatomic, copy) NSArray *points;
-@property (nonatomic) CGRect plotBounds;
+
+- (BOOL)isCloseEnough:(double)d0 d1:(double)d1;
 
 @end
 
 @implementation ASDelaunayTests
 
-@synthesize point0, point1, point2, voronoi, points, plotBounds;
-
-- (void)setUp
-{
+- (void)setUp {
     [super setUp];
-    
-//    self.point0 = [[ASPoint alloc] initWithX:-10 y:0];
-//    self.point1 = [[ASPoint alloc] initWithX:10 y:0];
-//    self.point2 = [[ASPoint alloc] initWithX:0 y:10];
-//    self.points = @[self.point0, self.point1, self.point2];
-//    
-//    self.plotBounds = CGRectMake(-20, -20, 40, 40);
-//    self.voronoi = [[ASVoronoi alloc] initWithPoints:[NSMutableArray arrayWithArray:self.points] plotBounds:self.plotBounds];
 }
 
-- (void)tearDown
-{
-//    self.voronoi = nil;
-//    self.plotBounds = CGRectZero;
-//    self.points = nil;
-//    self.point0 = self.point1 = self.point2 = nil;
-    
+- (void)tearDown {
     [super tearDown];
 }
 
-
-//- (void)testExample {
-//    
-//    NSMutableArray *randomPoints = [NSMutableArray array];
-//    
-//    NSInteger start = 3;
-//    NSInteger start2 = 10;
-//    for (int i = 0; i < 10; i++) {
-//        [randomPoints addObject:[[ASPoint alloc] initWithX:start + (i * 4) y:start2 + (i * 5)]];
-//    }
-//    
-//    ASVoronoi *voronoiInner = [[ASVoronoi alloc] initWithPoints:randomPoints plotBounds:CGRectMake(0, 0, 70, 70)];
-//    
-//    STAssertNotNil(voronoiInner.edges, @"Edges cannot be nil after this!");
-//    
-//    for (ASEdge *edge in voronoiInner.edges) {
-//        NSLog(@"Final Segments: %@", [edge voronoiEdge]);
-//    }
-//}
-
-//- (void)testNumberTwo {
-//    
-//    
-//    ASPoint *p0 = [[ASPoint alloc] initWithX:-10 y:0];
-//    ASPoint *p1 = [[ASPoint alloc] initWithX:10 y:0];
-//    ASPoint *p2 = [[ASPoint alloc] initWithX:0 y:10];
-//    NSArray *pos = @[p0, p1, p2];
-//    
-//    CGRect pb = CGRectMake(-20, -20, 40, 40);
-//    ASVoronoi *vo = [[ASVoronoi alloc] initWithPoints:[NSMutableArray arrayWithArray:pos] plotBounds:pb];
-//    
-//    
-//    for (ASEdge *edge in vo.edges) {
-//        NSLog(@"Final Segments: %@", [edge voronoiEdge]);
-//    }
-//    
-//    
-//}
-
-
-//- (void)testNumberThree {
-//    
-//    
-//    ASPoint *p0 = [[ASPoint alloc] initWithX:-10 y:0];
-//    ASPoint *p1 = [[ASPoint alloc] initWithX:10 y:0];
-//    ASPoint *p2 = [[ASPoint alloc] initWithX:-5 y:-5];
-//    ASPoint *p3 = [[ASPoint alloc] initWithX:-10 y:3];
-//    ASPoint *p4 = [[ASPoint alloc] initWithX:0 y:7];
-//    ASPoint *p5 = [[ASPoint alloc] initWithX:13 y:-4];
-//    ASPoint *p6 = [[ASPoint alloc] initWithX:10 y:10];
-//    ASPoint *p7 = [[ASPoint alloc] initWithX:8 y:1];
-//    
-//    NSArray *pos = @[p0, p1, p2, p3, p4, p5, p6, p7];
-//    
-//    CGRect pb = CGRectMake(-20, -20, 40, 40);
-//    ASVoronoi *vo = [[ASVoronoi alloc] initWithPoints:[NSMutableArray arrayWithArray:pos] plotBounds:pb];
-//    
-//    
-//    for (ASEdge *edge in vo.edges) {
-//        NSLog(@"Final Segments: %@", [edge voronoiEdge]);
-//    }
-//    
-//    for (ASEdge *edge in vo.edges) {
-//        NSLog(@"Delaunay Line: %@", [edge delaunayLine]);
-//    }
-//    
-//    
-//}
-
-- (void)testJSON {
+- (void)testASmallNumberOfPoints {
+    ASPoint *p0 = [[ASPoint alloc] initWithX:-10 y:0];
+    ASPoint *p1 = [[ASPoint alloc] initWithX:10 y:0];
+    ASPoint *p2 = [[ASPoint alloc] initWithX:0 y:10];
+    NSArray *pos = @[p0, p1, p2];
     
-    for (NSInteger i = 0; i < 100; i++) {
-        
-        NSString * filePath = [[NSBundle bundleForClass:[self class] ] pathForResource:[NSString stringWithFormat:@"points-%d", i] ofType:@"json"];
-        NSData *data = [NSData dataWithContentsOfFile:filePath];
-        
-        if (data) {
-            
-            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-            
-            NSMutableArray *points = [NSMutableArray array];
-            
-            for (NSDictionary *coords in array) {
-                [points addObject:[[ASPoint alloc] initWithX:[coords[@"x"] doubleValue] y:[coords[@"y"] doubleValue]]];
-            }
-            
-            ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:points plotBounds:CGRectMake(0, 0, 500, 500)];
-            
-            NSString *outputPath = @"/Users/ethan/Documents/json";
-            
-            outputPath = [outputPath stringByExpandingTildeInPath];
-            outputPath = [outputPath stringByAppendingPathComponent:[NSString stringWithFormat:@"output-%d", i]];
-            outputPath = [outputPath stringByAppendingPathExtension:@"txt"];
-            
-            NSString *output = @"";
-            for (ASEdge *edge in voro.edges) {
-                output = [NSString stringWithFormat:@"%@\n%@", output, [edge voronoiEdge]];
-            }
-            [output writeToFile:outputPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        }
+    CGRect pb = CGRectMake(-20, -20, 40, 40);
+    ASVoronoi *vo = [[ASVoronoi alloc] initWithPoints:[NSMutableArray arrayWithArray:pos] plotBounds:pb];
+    
+    STAssertTrue([vo.edges count] == 3, @"The Number of Line Segments should be 3");
+    STAssertTrue([[[vo.edges[0] voronoiEdge] p0] x] == 0, @"X Should be 0");
+    STAssertTrue([[[vo.edges[0] voronoiEdge] p0] y] == 0, @"X Should be 0");
+    STAssertTrue([[[vo.edges[0] voronoiEdge] p1] x] == 0, @"X Should be 0");
+    STAssertTrue([[[vo.edges[0] voronoiEdge] p1] y] == -20, @"X Should be -20");
+    
+    STAssertTrue([[[vo.edges[1] voronoiEdge] p0] x] == -20, @"X Should be -20");
+    STAssertTrue([[[vo.edges[1] voronoiEdge] p0] y] == 20, @"X Should be 20");
+    STAssertTrue([[[vo.edges[1] voronoiEdge] p1] x] == 0, @"X Should be 0");
+    STAssertTrue([[[vo.edges[1] voronoiEdge] p1] y] == 0, @"X Should be 0");
+    
+    STAssertTrue([[[vo.edges[2] voronoiEdge] p0] x] == 0, @"X Should be 0");
+    STAssertTrue([[[vo.edges[2] voronoiEdge] p0] y] == 0, @"X Should be 0");
+    STAssertTrue([[[vo.edges[2] voronoiEdge] p1] x] == 20, @"X Should be 20");
+    STAssertTrue([[[vo.edges[2] voronoiEdge] p1] y] == 20, @"X Should be 20");
 
-    }
-    
-        
-    
+}
+
+- (void)testJSON0 {
+    [self testForFile:0];
+}
+
+- (void)testJSON1 {
+    [self testForFile:1];
+}
+
+- (void)testJSON2 {
+    [self testForFile:2];
+}
+
+- (void)testJSON3 {
+    [self testForFile:3];
+}
+
+///
+/// This crashed on the original library, so this test ensures it completes here.
+/// Of course, since it crashed we can't verify that this is correct...
+///
+- (void)testJSON4 {
+    ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:4] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
+    STAssertTrue([voro.edges count] > 0, @"Did we put something in the edges array?");
 }
 
 
-//- (void)testRegionsHaveNoDuplicatedPoints {
-//    NSLog(@"TEST STARTING 111111");
-//    
-//    for (NSMutableArray *region in [self.voronoi regions]) {
-//        NSLog(@"Region: %@", region);
-//        NSMutableArray *sortedRegion = [region mutableCopy];
-//        
-//        NSLog(@"Sorted Region: %@", NSStringFromClass([[sortedRegion lastObject] class]));
-//        
-//        [sortedRegion sortUsingSelector:@selector(compareYThenX:)];
-//        for (NSInteger i = 1; i < [sortedRegion count]; ++i) {
-//            STAssertFalse([[sortedRegion objectAtIndex:i] isEqual:[sortedRegion objectAtIndex:i - 1]], @"They should not be equal!");
-//        }
-//    }
-//}
+- (void)testJSON5 {
+    [self testForFile:5];
+}
+
+- (void)testForFile:(NSInteger)integer {
+    ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:integer] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
+    
+    ///
+    /// Read in input and test to see if it's "close enough"
+    ///
+    NSArray *outputs = [self arrayFromJSONFileNamed:[NSString stringWithFormat:@"output-%d", integer]];
+    
+    STAssertTrue([outputs count] == [voro.edges count], @"The number of line segments should be equal.");
+    
+    for (NSInteger i = 0; i < [voro.edges count]; i++) {
+        ASLineSegment *segment = [voro.edges[i] voronoiEdge];
+        
+        if ([segment p0] == nil) {
+            
+            STAssertTrue([segment p0] == ((outputs[i][@"p0"] == [NSNull null]) ? nil : outputs[i][@"p0"]), @"Both p0's should be nil");
+            STAssertTrue([segment p1] == ((outputs[i][@"p1"] == [NSNull null]) ? nil : outputs[i][@"p1"]), @"Both p1's should be nil");
+            
+        } else {
+            
+            STAssertTrue( [self isCloseEnough:[segment p0].x d1:[outputs[i][@"p0"][@"x"] doubleValue] ] ,@"The X values are not close enough!");
+            STAssertTrue( [self isCloseEnough:[segment p0].y d1:[outputs[i][@"p0"][@"y"] doubleValue] ] ,@"The points are not close enough!");
+            
+            STAssertTrue( [self isCloseEnough:[segment p1].x d1:[outputs[i][@"p1"][@"x"] doubleValue] ] ,@"The points are not close enough!");
+            STAssertTrue( [self isCloseEnough:[segment p1].y d1:[outputs[i][@"p1"][@"y"] doubleValue] ] ,@"The points are not close enough!");
+        }
+    }
+
+}
+
+- (NSArray *)arrayFromJSONFileNamed:(NSString *)fileName {
+    NSString *filePath = [[NSBundle bundleForClass:[self class]] pathForResource:fileName ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    
+    return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+        
+}
+
+- (NSArray *)arrayOfPointsFromJSONFile:(NSInteger)integer {
+    
+    NSArray *array = [self arrayFromJSONFileNamed:[NSString stringWithFormat:@"points-%d", integer]];
+    NSMutableArray *jsonPoints = [NSMutableArray array];
+    
+    for (NSDictionary *coords in array) {
+        [jsonPoints addObject:[[ASPoint alloc] initWithX:[coords[@"x"] doubleValue] y:[coords[@"y"] doubleValue]]];
+    }
+    
+    return jsonPoints;
+}
+
+- (BOOL)isCloseEnough:(double)d0 d1:(double)d1 {
+    return fabs(d0 - d1) < EPSILON;
+}
 
 
 
