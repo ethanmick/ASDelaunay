@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) CGRect plotBounds; //may need to make custom rectangle class...
 
 + (NSComparisonResult)compareByYThenX:(ASSite *)s1 site2:(id)s2;
-- (id)initWithPoints:(NSMutableArray *)somePoints plotBounds:(CGRect)theBounds;
+- (id)initWithPoints:(NSArray *)somePoints plotBounds:(CGRect)theBounds;
 - (NSMutableArray *)region:(ASPoint *)p;
 - (NSMutableArray *)regions;
 

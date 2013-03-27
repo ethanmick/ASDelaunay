@@ -21,7 +21,7 @@
 
 @synthesize edges, sites, sitesIndexedByLocation, triangles, plotBounds;
 
-- (id)initWithPoints:(NSMutableArray *)somePoints plotBounds:(CGRect)theBounds {
+- (id)initWithPoints:(NSArray *)somePoints plotBounds:(CGRect)theBounds {
     
     if ( (self = [super init]) ) {
         self.sites = [[ASSiteList alloc] init];
