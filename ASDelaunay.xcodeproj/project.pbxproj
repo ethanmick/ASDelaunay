@@ -54,6 +54,8 @@
 		AA72488D16E7CC4600197718 /* libASDelaunay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487416E7CC4500197718 /* libASDelaunay.a */; };
 		AA72489316E7CC4600197718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA72489116E7CC4600197718 /* InfoPlist.strings */; };
 		AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72489516E7CC4600197718 /* ASDelaunayTests.m */; };
+		AA97C0281702BF50004D6224 /* output-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA97C0271702BF50004D6224 /* output-6.json */; };
+		AA97C02A1702BF57004D6224 /* points-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA97C0291702BF57004D6224 /* points-6.json */; };
 		AAAF36CB16F671C00074988F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
 		AAAF5EF416E7CC9600C38071 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
 		AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
@@ -150,6 +152,8 @@
 		AA72489216E7CC4600197718 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AA72489416E7CC4600197718 /* ASDelaunayTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASDelaunayTests.h; sourceTree = "<group>"; };
 		AA72489516E7CC4600197718 /* ASDelaunayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASDelaunayTests.m; sourceTree = "<group>"; };
+		AA97C0271702BF50004D6224 /* output-6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-6.json"; sourceTree = "<group>"; };
+		AA97C0291702BF57004D6224 /* points-6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-6.json"; sourceTree = "<group>"; };
 		AAAF5EF316E7CC9600C38071 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AAAF5EF616E7D16D00C38071 /* ASLineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLineSegment.h; sourceTree = "<group>"; };
 		AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLineSegment.m; sourceTree = "<group>"; };
@@ -283,12 +287,14 @@
 				AABAABE81702B2E8000235CD /* output-2.json */,
 				AABAABE91702B2E9000235CD /* output-3.json */,
 				AABAABEA1702B2E9000235CD /* output-5.json */,
+				AA97C0271702BF50004D6224 /* output-6.json */,
 				AABAABD51702AC29000235CD /* points-0.json */,
 				AABAABD61702AC29000235CD /* points-1.json */,
 				AABAABD71702AC29000235CD /* points-2.json */,
 				AABAABD81702AC29000235CD /* points-3.json */,
 				AABAABD91702AC29000235CD /* points-4.json */,
 				AABAABDA1702AC29000235CD /* points-5.json */,
+				AA97C0291702BF57004D6224 /* points-6.json */,
 				AA72489016E7CC4600197718 /* ASDelaunayTests-Info.plist */,
 				AA72489116E7CC4600197718 /* InfoPlist.strings */,
 			);
@@ -395,6 +401,8 @@
 				AABAABED1702B2E9000235CD /* output-2.json in Resources */,
 				AABAABEE1702B2E9000235CD /* output-3.json in Resources */,
 				AABAABEF1702B2E9000235CD /* output-5.json in Resources */,
+				AA97C0281702BF50004D6224 /* output-6.json in Resources */,
+				AA97C02A1702BF57004D6224 /* points-6.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
