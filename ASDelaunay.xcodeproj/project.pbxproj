@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		AA97C02D1703CF8D004D6224 /* ASDelaunay Universal */ = {
+		AA97C02D1703CF8D004D6224 /* ASDelaunay */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = AA97C02E1703CF8D004D6224 /* Build configuration list for PBXAggregateTarget "ASDelaunay Universal" */;
+			buildConfigurationList = AA97C02E1703CF8D004D6224 /* Build configuration list for PBXAggregateTarget "ASDelaunay" */;
 			buildPhases = (
 				AA97C0311703CFB3004D6224 /* Build Static Libs */,
 				AA97C0321703D073004D6224 /* Build Framework */,
@@ -17,7 +17,7 @@
 			);
 			dependencies = (
 			);
-			name = "ASDelaunay Universal";
+			name = ASDelaunay;
 			productName = "ASDelaunay Universal";
 		};
 /* End PBXAggregateTarget section */
@@ -65,7 +65,7 @@
 		AA72487816E7CC4500197718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487716E7CC4500197718 /* Foundation.framework */; };
 		AA72488716E7CC4600197718 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72488616E7CC4600197718 /* SenTestingKit.framework */; };
 		AA72488A16E7CC4600197718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487716E7CC4500197718 /* Foundation.framework */; };
-		AA72488D16E7CC4600197718 /* libASDelaunay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487416E7CC4500197718 /* libASDelaunay.a */; };
+		AA72488D16E7CC4600197718 /* libASDelaunay-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA72487416E7CC4500197718 /* libASDelaunay-lib.a */; };
 		AA72489316E7CC4600197718 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA72489116E7CC4600197718 /* InfoPlist.strings */; };
 		AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72489516E7CC4600197718 /* ASDelaunayTests.m */; };
 		AA97C0281702BF50004D6224 /* output-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA97C0271702BF50004D6224 /* output-6.json */; };
@@ -193,7 +193,7 @@
 		AA245F1716F186AF0039F1AB /* ASHalfedgePriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHalfedgePriorityQueue.m; sourceTree = "<group>"; };
 		AA245F1A16F18FD70039F1AB /* ASEdgeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdgeList.h; sourceTree = "<group>"; };
 		AA245F1B16F18FD70039F1AB /* ASEdgeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdgeList.m; sourceTree = "<group>"; };
-		AA72487416E7CC4500197718 /* libASDelaunay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libASDelaunay.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA72487416E7CC4500197718 /* libASDelaunay-lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libASDelaunay-lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA72487716E7CC4500197718 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA72487B16E7CC4500197718 /* ASDelaunay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASDelaunay-Prefix.pch"; sourceTree = "<group>"; };
 		AA72488516E7CC4600197718 /* ASDelaunayTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ASDelaunayTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,7 +243,7 @@
 				AAB9E15C16F510E50028142A /* CoreGraphics.framework in Frameworks */,
 				AA72488716E7CC4600197718 /* SenTestingKit.framework in Frameworks */,
 				AA72488A16E7CC4600197718 /* Foundation.framework in Frameworks */,
-				AA72488D16E7CC4600197718 /* libASDelaunay.a in Frameworks */,
+				AA72488D16E7CC4600197718 /* libASDelaunay-lib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +263,7 @@
 		AA72487516E7CC4500197718 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA72487416E7CC4500197718 /* libASDelaunay.a */,
+				AA72487416E7CC4500197718 /* libASDelaunay-lib.a */,
 				AA72488516E7CC4600197718 /* ASDelaunayTests.octest */,
 			);
 			name = Products;
@@ -385,9 +385,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AA72487316E7CC4500197718 /* ASDelaunay */ = {
+		AA72487316E7CC4500197718 /* ASDelaunay-lib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA72489916E7CC4600197718 /* Build configuration list for PBXNativeTarget "ASDelaunay" */;
+			buildConfigurationList = AA72489916E7CC4600197718 /* Build configuration list for PBXNativeTarget "ASDelaunay-lib" */;
 			buildPhases = (
 				AA72487016E7CC4500197718 /* Sources */,
 				AA72487116E7CC4500197718 /* Frameworks */,
@@ -397,9 +397,9 @@
 			);
 			dependencies = (
 			);
-			name = ASDelaunay;
+			name = "ASDelaunay-lib";
 			productName = ASDelaunay;
-			productReference = AA72487416E7CC4500197718 /* libASDelaunay.a */;
+			productReference = AA72487416E7CC4500197718 /* libASDelaunay-lib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		AA72488416E7CC4600197718 /* ASDelaunayTests */ = {
@@ -442,9 +442,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AA72487316E7CC4500197718 /* ASDelaunay */,
+				AA72487316E7CC4500197718 /* ASDelaunay-lib */,
 				AA72488416E7CC4600197718 /* ASDelaunayTests */,
-				AA97C02D1703CF8D004D6224 /* ASDelaunay Universal */,
+				AA97C02D1703CF8D004D6224 /* ASDelaunay */,
 			);
 		};
 /* End PBXProject section */
@@ -513,7 +513,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libASDelaunay.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libASDelaunay.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nrm -rf \"${SRCROOT}/build\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\nmkdir -p \"${SRCROOT}/build\" &&\n\n# Generate universal binary for the device and simulator.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\nln -s \"A\" \"${FRAMEWORK}/Versions/Current\" &&\nln -s \"Versions/Current/Headers\" \"${FRAMEWORK}/Headers\" &&\nln -s \"Versions/Current/Resources\" \"${FRAMEWORK}/Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${FRAMEWORK}/${PRODUCT_NAME}\" &&\n\n# Copy the final framework to a nicer location\ncp -RP \"${UNIVERSAL_LIBRARY_DIR}\" \"${SRCROOT}/build\"\n";
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libASDelaunay-lib.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libASDelaunay-lib.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/ASDelaunay\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/ASDelaunay.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nrm -rf \"${SRCROOT}/build\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\nmkdir -p \"${SRCROOT}/build\" &&\n\n# Generate universal binary for the device and simulator.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\nln -s \"A\" \"${FRAMEWORK}/Versions/Current\" &&\nln -s \"Versions/Current/Headers\" \"${FRAMEWORK}/Headers\" &&\nln -s \"Versions/Current/Resources\" \"${FRAMEWORK}/Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${FRAMEWORK}/${PRODUCT_NAME}\" &&\n\n# Copy the final framework to a nicer location\ncp -RP \"${UNIVERSAL_LIBRARY_DIR}\" \"${SRCROOT}/build\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -568,7 +568,7 @@
 /* Begin PBXTargetDependency section */
 		AA72488C16E7CC4600197718 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AA72487316E7CC4500197718 /* ASDelaunay */;
+			target = AA72487316E7CC4500197718 /* ASDelaunay-lib */;
 			targetProxy = AA72488B16E7CC4600197718 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -720,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA72489916E7CC4600197718 /* Build configuration list for PBXNativeTarget "ASDelaunay" */ = {
+		AA72489916E7CC4600197718 /* Build configuration list for PBXNativeTarget "ASDelaunay-lib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA72489A16E7CC4600197718 /* Debug */,
@@ -738,13 +738,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA97C02E1703CF8D004D6224 /* Build configuration list for PBXAggregateTarget "ASDelaunay Universal" */ = {
+		AA97C02E1703CF8D004D6224 /* Build configuration list for PBXAggregateTarget "ASDelaunay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AA97C02F1703CF8D004D6224 /* Debug */,
 				AA97C0301703CF8D004D6224 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
