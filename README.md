@@ -44,7 +44,7 @@ If anybody wants I can setup Cocoa Pods for this.
 
 After adding the Library to your project, using it is pretty straight forward.
 
-```objc
+```objective-c
 ///
 /// At the top...
 ///
