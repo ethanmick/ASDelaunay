@@ -44,7 +44,6 @@
 - (void)addSite:(ASPoint *)aPoint index:(NSInteger)index {
     double weight = arc4random();
     ASSite *site = [ASSite createWithPoint:aPoint index:index weight:weight];
-    NSLog(@"100 %@", site);
     [self.sites push:site];
     [self.sitesIndexedByLocation setObject:site forKey:aPoint];
 }
@@ -72,8 +71,6 @@
     
     
     CGRect dataBounds = [self.sites getSitesBounds];
-    
-    NSLog(@"001 %@", NSStringFromCGRect(dataBounds));
  
     double sqrt_nsites = sqrt([self.sites length] + 4.0);
     ASHalfedgePriorityQueue *heap = [[ASHalfedgePriorityQueue alloc] initWithYMin:dataBounds.origin.y deltay:dataBounds.size.height sqrtNSites:sqrt_nsites];
@@ -84,20 +81,14 @@
     ASSite *bottomMostSite = [self.sites next];
     newSite = [self.sites next];
     
-    NSLog(@"002 %@", bottomMostSite);
-    NSLog(@"003 %@", newSite);
-    
-    /// debugging first
     void (^leftRegion)(ASHalfEdge *, ASSite **) = ^(ASHalfEdge *he, ASSite **site) {
         ASEdge *edge = he.edge;
         
-        NSLog(@"i500 %@", edge);
         if (edge == nil) {
-            NSLog(@"i501 %@", bottomMostSite);
             *site = bottomMostSite;
             return;
         }
-        NSLog(@"i502 %@", [edge site:he.leftRight]);
+        
         *site = [edge site:he.leftRight];
     };
     
@@ -115,7 +106,6 @@
         
         if ( ![heap empty] ) {
             newIntStar = [heap min];
-            NSLog(@"004 %@", newIntStar);
         }
         
         if (newSite != nil && ([heap empty] || [ASVoronoi compareByYThenX:newSite site2:newIntStar] < 0)) {
@@ -131,17 +121,10 @@
 
             rightRegion(lbnd, &bottomSite); // this is the same as leftRegion(rbnd)
             // this Site determines the region containing the new site
-            
-            NSLog(@"005 %@", lbnd);
-            NSLog(@"006 %@", rbnd);
-            NSLog(@"007 %@", bottomSite);
-            
             // Step 9:
             edge = [ASEdge createBisectingEdge:bottomSite site1:newSite];
 
             [self.edges addObject:edge];
-            
-            NSLog(@"008 %@", edge);
             
             bisector = [[ASHalfEdge alloc] initWithEdge:edge lr:[ASLR LEFT]];
             [halfEdges addObject:bisector];
@@ -150,8 +133,6 @@
             // insert bisector to the right of lbnd:
             [edgeList insert:lbnd newHalfEdge:bisector];
             
-            NSLog(@"009 %@", bisector);
-            
             // first half of Step 11:
             if ( (vertex = [ASVertex intersect:lbnd halfEdge1:bisector]) != nil ) {
                 [vertices addObject:vertex];
@@ -159,7 +140,6 @@
                 lbnd.vertex = vertex;
                 lbnd.ystar = [vertex getY] + [newSite distance:vertex];
                 [heap insert:lbnd];
-                NSLog(@"010 %@", vertex);
             }
             
             lbnd = bisector;
@@ -170,20 +150,15 @@
             // insert bisector to the right of lbnd:
             [edgeList insert:lbnd newHalfEdge:bisector];
             
-            NSLog(@"011 %@", lbnd);
-            NSLog(@"012 %@", bisector);
-            
             // second half of Step 11:
             if ( (vertex = [ASVertex intersect:bisector halfEdge1:rbnd]) != nil ) {
                 [vertices addObject:vertex];
                 bisector.vertex = vertex;
                 bisector.ystar = [vertex getY] + [newSite distance:vertex];
                 [heap insert:bisector];
-                NSLog(@"013 %@", vertex);
             }
             
             newSite = [self.sites next];
-            NSLog(@"014 %@", newSite);
             
         } else if ([heap empty] == NO)
         {
@@ -194,15 +169,6 @@
             rrbnd = rbnd.edgeListRightNeighbor;
             leftRegion(lbnd, &bottomSite);
             rightRegion(rbnd, &topSite);
-            
-            NSLog(@"015 %@", lbnd);
-            NSLog(@"016 %@", llbnd);
-            NSLog(@"017 %@", rbnd);
-            NSLog(@"018 %@", rrbnd);
-            NSLog(@"019 %@", bottomSite);
-            NSLog(@"020 %@", topSite);
-            
-         
 
             // these three sites define a Delaunay triangle
             // (not actually using these for anything...)
@@ -217,8 +183,6 @@
             [edgeList remove:rbnd];
             leftRight = [ASLR LEFT];
             
-            NSLog(@"021 %@", v);
-            
          
             if ([bottomSite getY] > [topSite getY]) {
                 tempSite = bottomSite; bottomSite = topSite; topSite = tempSite; leftRight = [ASLR RIGHT];
@@ -228,8 +192,6 @@
             [self.edges addObject:edge];
             bisector = [[ASHalfEdge alloc] initWithEdge:edge lr:leftRight];
             
-            NSLog(@"022 %@", edge);
-            NSLog(@"023 %@", bisector);
             [halfEdges addObject:bisector];
          
             [edgeList insert:llbnd newHalfEdge:bisector];
@@ -243,7 +205,6 @@
                 llbnd.vertex = vertex;
                 llbnd.ystar = [vertex getY] + [bottomSite distance:vertex];
                 [heap insert:llbnd];
-                NSLog(@"024 %@", vertex);
             }
             
          
@@ -252,11 +213,9 @@
                 bisector.vertex = vertex;
                 bisector.ystar = [vertex getY] + [bottomSite distance:vertex];
                 [heap insert:bisector];
-                NSLog(@"025 %@", vertex);
             }
         }
         else {
-            NSLog(@"026 Break");
             break;
         }
     }

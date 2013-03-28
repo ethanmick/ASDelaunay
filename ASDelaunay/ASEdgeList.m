@@ -46,7 +46,6 @@
         
         [self.hash replaceObjectAtIndex:0 withObject:self.leftEnd];
         [self.hash replaceObjectAtIndex:self.hashSize - 1 withObject:self.rightEnd];
-        NSLog(@"300.00 %@", self.hash);
     }
     return self;
 }
@@ -72,33 +71,29 @@
     NSInteger bucket;
     ASHalfEdge *halfEdge;
     
-    NSLog(@"300: %@", self.hash);
-    
     /* Use hash table to get close to desired halfedge */
     bucket = (p.x - self.xmin) / self.deltax * self.hashSize;
     
-    NSLog(@"301 %d", bucket);
     if (bucket < 0) {
         bucket = 0;
     }
     if (bucket >= self.hashSize) {
         bucket = self.hashSize - 1;
     }
-    NSLog(@"302 %d", bucket);
+    
     halfEdge = [self getHash:bucket];
-    NSLog(@"303 %@", halfEdge);
+
     if (halfEdge == nil) {
         for (i = 1; YES ; ++i) {
             if ( (halfEdge = [self getHash:(bucket - i)]) != nil) break;
             if ( (halfEdge = [self getHash:(bucket + i)]) != nil) break;
         }
     }
-    NSLog(@"304 %@\n%@\n%@", halfEdge, halfEdge.edgeListLeftNeighbor, halfEdge.edgeListRightNeighbor);
+
     /* Now search linear list of halfedges for the correct one */
     if (halfEdge == self.leftEnd || (halfEdge != self.rightEnd && [halfEdge isLeftOf:p])) {
         
         do {
-            NSLog(@"305");
             halfEdge = halfEdge.edgeListRightNeighbor;
         } while ( halfEdge != self.rightEnd && [halfEdge isLeftOf:p] );
         
@@ -106,12 +101,10 @@
     } else {
         
         do {
-            NSLog(@"306");
             halfEdge = halfEdge.edgeListLeftNeighbor;
         } while ( halfEdge != self.leftEnd && ![halfEdge isLeftOf:p]);
     }
     
-    NSLog(@"307 %d", bucket);
     /* Update hash table and reference counts */
     if (bucket > 0 && bucket < self.hashSize - 1) {
         [self.hash replaceObjectAtIndex:bucket withObject:(halfEdge != nil ? halfEdge : [NSNull null])];
@@ -124,7 +117,6 @@
 - (ASHalfEdge *)getHash:(NSInteger)b {
     ASHalfEdge *halfEdge;
     
-    NSLog(@"B: %d Size: %d, REAL SIZE: %d", b, self.hashSize, [self.hash count]);
     if (b < 0 || b >= self.hashSize) {
         return nil;
     }

@@ -23,7 +23,6 @@
 - (id)initWithEdges:(NSMutableArray *)origEdges criterion:(Class)criterion {
     
     if ( (self = [super init]) ) {
-        NSLog(@"Criterion: %@", NSStringFromClass(criterion));
         if ([ASSite class] != criterion && [ASVertex class] != criterion) {
             [NSException raise:@"Bad Arguement Exception" format:@"Criterion must either be ASSite or ASVertex!"];
         }
@@ -48,13 +47,10 @@
     for (NSInteger forgetMe = 0 ; forgetMe < n; forgetMe++) {
         [done addObject:@NO];
     }
-    NSLog(@"Done: %@", done);
+
     NSInteger nDone = 0;
     NSMutableArray *newEdges = [NSMutableArray array];
     ASEdge *edge = [origEdges objectAtIndex:i];
-    
-    NSLog(@"Original Edges: %@", origEdges);
-    NSLog(@"Edge? %@", edge);
     
     [newEdges addObject:edge];
     [self.edgeOrientations addObject:[ASLR LEFT]];
@@ -68,12 +64,9 @@
     [done setObject:@YES atIndexedSubscript:i];
     ++nDone;
     
-    NSLog(@"Log: %@", done);
-    
     while (nDone < n) {
-        NSLog(@"Infinite: %d: %d", nDone, n);
         for (i = 1; i < n; ++i) {
-            NSLog(@"I: %d", i);
+            
             if ([[done objectAtIndex:i] isEqual:@YES]) {
                 continue;
             }
@@ -86,11 +79,6 @@
             if (leftPoint == [ASVertex VERTEX_AT_INFINITY] || rightPoint == [ASVertex VERTEX_AT_INFINITY]) {
                 return [NSMutableArray array];
             }
-            
-            NSLog(@"LeftPoint: %@", leftPoint);
-            NSLog(@"Right Point: %@", rightPoint);
-            NSLog(@"Last Point: %@", lastPoint);
-            NSLog(@"First Point: %@", firstPoint);
             
             if (leftPoint == lastPoint) {
                 lastPoint = rightPoint;
@@ -120,7 +108,6 @@
         }
     }
     
-    NSLog(@"Leaving... %@", newEdges);
     return newEdges;
 
 }

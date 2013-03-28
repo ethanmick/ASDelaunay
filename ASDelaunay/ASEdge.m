@@ -78,13 +78,11 @@ static NSInteger nedges = 0;
         [self.sites setObject:[NSNull null] forKey:[[ASLR RIGHT] name]];
         return;
     }
-    NSLog(@"IT'S GOOOOD: %@", s);
     [self.sites setObject:s forKey:[[ASLR RIGHT] name]];
 }
 
 - (ASSite *)rightSite {
     id toReturn = [self.sites objectForKey:[[ASLR RIGHT] name]];
-    NSLog(@"WHTF: %@ and WTF: %@", toReturn, NSStringFromClass([toReturn class]));
     if (toReturn == [NSNull null]) {
         return nil;
     }
@@ -162,7 +160,6 @@ static ASEdge *delete = nil;
         b = 1.0; a = dx/dy; c /= dy;
     }
     
-    NSLog(@"Site0: %@\nSite1: %@", site0, site1);
     ASEdge *edge = [[ASEdge alloc] init];
     [edge setLeftSite:site0];
     [edge setRightSite:site1];
@@ -170,7 +167,6 @@ static ASEdge *delete = nil;
     [site1 addEdge:edge];
     [edge setLeftVertex:nil];
     [edge setRightVertex:nil];
-    NSLog(@"Why don't you work? %@", [edge rightSite]);
     
     edge.a = a;
     edge.b = b;

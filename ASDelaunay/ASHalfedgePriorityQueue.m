@@ -104,8 +104,6 @@
 - (ASPoint *)min {
     [self adjustMinBucket];
     ASHalfEdge *answer = [[self.hash objectAtIndex:self.minBucket] nextInPriorityQueue];
-    NSLog(@"400 %@ and %d", answer, self.minBucket);
-    NSLog(@"401 %@ ( %f, %f )", answer.vertex, [answer.vertex getX], answer.ystar);
     return [[ASPoint alloc] initWithX:[answer.vertex getX] y:answer.ystar];
 }
 
