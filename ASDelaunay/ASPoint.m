@@ -20,6 +20,10 @@
     return self;
 }
 
++ (instancetype)pointWithX:(double)anX y:(double)aY {
+    return [[ASPoint alloc] initWithX:anX y:aY];
+}
+
 - (CGPoint)point {
     return CGPointMake(self.x, self.y);
 }
