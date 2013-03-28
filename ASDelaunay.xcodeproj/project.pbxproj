@@ -6,6 +6,22 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		AA97C02D1703CF8D004D6224 /* ASDelaunay Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AA97C02E1703CF8D004D6224 /* Build configuration list for PBXAggregateTarget "ASDelaunay Universal" */;
+			buildPhases = (
+				AA97C0311703CFB3004D6224 /* Build Static Libs */,
+				AA97C0321703D073004D6224 /* Build Framework */,
+				AA97C0331703D0BF004D6224 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = "ASDelaunay Universal";
+			productName = "ASDelaunay Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		AA11E2CE16EED93900365CC6 /* ASEdgeReorderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */; };
 		AA11E2CF16EED93900365CC6 /* ASEdgeReorderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA11E2CD16EED93900365CC6 /* ASEdgeReorderer.m */; };
@@ -54,6 +70,21 @@
 		AA72489616E7CC4600197718 /* ASDelaunayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA72489516E7CC4600197718 /* ASDelaunayTests.m */; };
 		AA97C0281702BF50004D6224 /* output-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA97C0271702BF50004D6224 /* output-6.json */; };
 		AA97C02A1702BF57004D6224 /* points-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA97C0291702BF57004D6224 /* points-6.json */; };
+		AA97C0341703D0FA004D6224 /* ASLineSegment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAAF5EF616E7D16D00C38071 /* ASLineSegment.h */; };
+		AA97C0351703D0FA004D6224 /* ASPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAAF5EFA16E7D3D700C38071 /* ASPoint.h */; };
+		AA97C0361703D0FA004D6224 /* ASCircle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAAF5EFE16E7E03F00C38071 /* ASCircle.h */; };
+		AA97C0371703D0FA004D6224 /* ASWinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02316E835CD00DC61B5 /* ASWinding.h */; };
+		AA97C0381703D0FA004D6224 /* ASPolygon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02716E83BFE00DC61B5 /* ASPolygon.h */; };
+		AA97C0391703D0FA004D6224 /* ASEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02B16E8440400DC61B5 /* ASEdge.h */; };
+		AA97C03A1703D0FA004D6224 /* ASSite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF02F16E8448800DC61B5 /* ASSite.h */; };
+		AA97C03B1703D0FA004D6224 /* ASVertex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2D016EEDA6700365CC6 /* ASVertex.h */; };
+		AA97C03C1703D0FA004D6224 /* ASLR.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF03316ED39BA00DC61B5 /* ASLR.h */; };
+		AA97C03D1703D0FA004D6224 /* ASEdgeReorderer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2CC16EED93900365CC6 /* ASEdgeReorderer.h */; };
+		AA97C03E1703D0FA004D6224 /* ASHalfEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2D416EEE1C900365CC6 /* ASHalfEdge.h */; };
+		AA97C03F1703D0FA004D6224 /* ASSiteList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA11E2D816F035A900365CC6 /* ASSiteList.h */; };
+		AA97C0401703D0FA004D6224 /* ASEdgeList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA245F1A16F18FD70039F1AB /* ASEdgeList.h */; };
+		AA97C0411703D0FA004D6224 /* ASHalfedgePriorityQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA245F1616F186AF0039F1AB /* ASHalfedgePriorityQueue.h */; };
+		AA97C0421703D0FA004D6224 /* ASVoronoi.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA1BF03716EEC4A100DC61B5 /* ASVoronoi.h */; };
 		AAAF36CB16F671C00074988F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
 		AAAF5EF416E7CC9600C38071 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAAF5EF316E7CC9600C38071 /* UIKit.framework */; };
 		AAAF5EF816E7D16D00C38071 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AAAF5EF716E7D16D00C38071 /* ASLineSegment.m */; };
@@ -108,6 +139,30 @@
 				AA245F2A16F2AF810039F1AB /* ASSiteList.h in CopyFiles */,
 				AA245F2B16F2AF810039F1AB /* ASEdgeList.h in CopyFiles */,
 				AA245F2C16F2AF810039F1AB /* ASHalfedgePriorityQueue.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA97C0331703D0BF004D6224 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${SRCROOT}/build/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers/";
+			dstSubfolderSpec = 0;
+			files = (
+				AA97C0341703D0FA004D6224 /* ASLineSegment.h in CopyFiles */,
+				AA97C0351703D0FA004D6224 /* ASPoint.h in CopyFiles */,
+				AA97C0361703D0FA004D6224 /* ASCircle.h in CopyFiles */,
+				AA97C0371703D0FA004D6224 /* ASWinding.h in CopyFiles */,
+				AA97C0381703D0FA004D6224 /* ASPolygon.h in CopyFiles */,
+				AA97C0391703D0FA004D6224 /* ASEdge.h in CopyFiles */,
+				AA97C03A1703D0FA004D6224 /* ASSite.h in CopyFiles */,
+				AA97C03B1703D0FA004D6224 /* ASVertex.h in CopyFiles */,
+				AA97C03C1703D0FA004D6224 /* ASLR.h in CopyFiles */,
+				AA97C03D1703D0FA004D6224 /* ASEdgeReorderer.h in CopyFiles */,
+				AA97C03E1703D0FA004D6224 /* ASHalfEdge.h in CopyFiles */,
+				AA97C03F1703D0FA004D6224 /* ASSiteList.h in CopyFiles */,
+				AA97C0401703D0FA004D6224 /* ASEdgeList.h in CopyFiles */,
+				AA97C0411703D0FA004D6224 /* ASHalfedgePriorityQueue.h in CopyFiles */,
+				AA97C0421703D0FA004D6224 /* ASVoronoi.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +444,7 @@
 			targets = (
 				AA72487316E7CC4500197718 /* ASDelaunay */,
 				AA72488416E7CC4600197718 /* ASDelaunayTests */,
+				AA97C02D1703CF8D004D6224 /* ASDelaunay Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -430,6 +486,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		AA97C0311703CFB3004D6224 /* Build Static Libs */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Static Libs";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos";
+		};
+		AA97C0321703D073004D6224 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libASDelaunay.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libASDelaunay.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nrm -rf \"${SRCROOT}/build\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\nmkdir -p \"${SRCROOT}/build\" &&\n\n# Generate universal binary for the device and simulator.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\nln -s \"A\" \"${FRAMEWORK}/Versions/Current\" &&\nln -s \"Versions/Current/Headers\" \"${FRAMEWORK}/Headers\" &&\nln -s \"Versions/Current/Resources\" \"${FRAMEWORK}/Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${FRAMEWORK}/${PRODUCT_NAME}\" &&\n\n# Copy the final framework to a nicer location\ncp -RP \"${UNIVERSAL_LIBRARY_DIR}\" \"${SRCROOT}/build\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -608,6 +692,22 @@
 			};
 			name = Release;
 		};
+		AA97C02F1703CF8D004D6224 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA97C0301703CF8D004D6224 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -637,6 +737,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AA97C02E1703CF8D004D6224 /* Build configuration list for PBXAggregateTarget "ASDelaunay Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA97C02F1703CF8D004D6224 /* Debug */,
+				AA97C0301703CF8D004D6224 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -23,8 +23,6 @@
 #import "ASPolygon.h"
 #import "ASEdgeReorderer.h"
 
-
-
 @class ASSite;
 @class ASSiteList;
 @class ASPoint;
