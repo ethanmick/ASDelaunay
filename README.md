@@ -7,6 +7,8 @@ There are a few [other](https://github.com/czgarrett/delaunay-ios) libaries whic
 ![Lots of Points](http://f.cl.ly/items/0o301S2w0M3s2a1f2L23/Screen%20Shot%202013-03-27%20at%2010.54.37%20PM.png)
 ![Big Margins](http://f.cl.ly/items/0P0R3b0c37080p3p2U1g/Screen%20Shot%202013-03-27%20at%2011.11.59%20PM.png)
 
+Black lines are the edges in the Voronoi Graph. Red lines are the edges in the Delaunay Graph. Each random point is a red dot.
+
 ## Features ##
 
 * ARC!
