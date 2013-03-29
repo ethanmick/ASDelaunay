@@ -11,19 +11,18 @@ Black lines are the edges in the Voronoi Graph. Red lines are the edges in the D
 
 ## Features ##
 
-* ARC!
-* XCode 4.4 or newer for autosynthesized properties!
-* Generates Voronoi and Delaunay edges!
-* Built into a .framework to easily use in projects!
-* MIT License!
+* ARC
+* XCode 4.4 or newer for autosynthesized properties
+* Generates Voronoi and Delaunay edges
+* Built into a .framework to easily use in projects
+* MIT License
 
 Things missing in this port:
  * Colors have been removed. Colors are up to the caller to figure out, as it should be. This servers as the model only and does not worry abou the view implementation.
 
 ### Version History ###
 
-1.0.0 March 29th, 2013
-======================
+#### 1.0.0 March 29th, 2013 ####
 * First Version
 
 
