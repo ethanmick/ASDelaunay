@@ -20,6 +20,12 @@ Black lines are the edges in the Voronoi Graph. Red lines are the edges in the D
 Things missing in this port:
  * Colors have been removed. Colors are up to the caller to figure out, as it should be. This servers as the model only and does not worry abou the view implementation.
 
+### Version History ###
+
+1.0.0 March 29th, 2013
+======================
+* First Version
+
 
 ### Requirements ###
 Requires ARC and Xcode 4.4 or greater for autosynthesized properties.
@@ -28,8 +34,10 @@ Requires ARC and Xcode 4.4 or greater for autosynthesized properties.
 
 There are a few different ways you can go about using this library.
 
-1. The easiest is to download a prebuilt (arm7) framework [here](http://cl.ly/0B2R363p280X). Ensure you meet the following dependencies:
+1. The easiest is to download a prebuilt (arm7) framework [here](http://cl.ly/301U1G1M2m0B). Ensure you meet the following dependencies:
  * Core Graphics Framework
+ * UIKit Framework
+ * Foundation Framework
 2. Unzip the framework, and drag it into your project.
 
 Alternatively, you can download the project and get going yourself.
