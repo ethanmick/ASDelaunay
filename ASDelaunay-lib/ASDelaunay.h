@@ -27,7 +27,7 @@
 @class ASSiteList;
 @class ASPoint;
 
-@interface ASVoronoi : NSObject
+@interface ASDelaunay : NSObject
 
 @property (nonatomic, strong) ASSiteList *sites;
 @property (nonatomic, strong) NSMutableDictionary *sitesIndexedByLocation;

@@ -8,7 +8,7 @@
 
 #import "ASSite.h"
 #import "ASPoint.h"
-#import "ASVoronoi.h"
+#import "ASDelaunay.h"
 #import "ASEdge.h"
 #import "ASEdgeReorderer.h"
 #import "ASVertex.h"
@@ -88,7 +88,7 @@ static const NSInteger RIGHT = 8;
 
 
 - (NSComparisonResult)compare:(id)object {
-    NSComparisonResult returnValue = [ASVoronoi compareByYThenX:self site2:object];
+    NSComparisonResult returnValue = [ASDelaunay compareByYThenX:self site2:object];
     ASSite *s2 = (ASSite *)object;
     
     NSInteger tempIndex;

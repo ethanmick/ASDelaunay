@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Ethan Mick. All rights reserved.
 //
 
-#import "ASVoronoi.h"
+#import "ASDelaunay.h"
 
-@implementation ASVoronoi
+@implementation ASDelaunay
 
 @synthesize edges, sites, sitesIndexedByLocation, triangles, plotBounds;
 
@@ -99,10 +99,10 @@
             newIntStar = [heap min];
         }
         
-        if (newSite != nil && ([heap empty] || [ASVoronoi compareByYThenX:newSite site2:newIntStar] < 0)) {
+        if (newSite != nil && ([heap empty] || [ASDelaunay compareByYThenX:newSite site2:newIntStar] < 0)) {
             
             // START
-            
+            NSLog(@"TESTING");
             /* new site is smallest */
             //trace("smallest: new site " + newSite);
             

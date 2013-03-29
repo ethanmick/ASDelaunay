@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Ethan Mick. All rights reserved.
 //
 
-#import "ASDelaunayTests.h"
+#import "ASDelaunay_libTests.h"
 #import "ASVoronoi.h"
 #import "ASPoint.h"
 #import "ASEdge.h"
@@ -157,7 +157,6 @@
 - (NSArray *)arrayFromJSONFileNamed:(NSString *)fileName {
     NSString *filePath = [[NSBundle bundleForClass:[self class]] pathForResource:fileName ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         
 }

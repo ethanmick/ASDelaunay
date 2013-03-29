@@ -9,7 +9,7 @@
 #import "ASVertex.h"
 #import "ASHalfEdge.h"
 #import "ASEdge.h"
-#import "ASVoronoi.h"
+#import "ASDelaunay.h"
 #import "ASSite.h"
 #import "ASLR.h"
 
@@ -96,7 +96,7 @@ static int nvertices = 0;
     intersectionX = (edge0.c * edge1.b - edge1.c * edge0.b) / determinant;
     intersectionY = (edge1.c * edge0.a - edge0.c * edge1.a) / determinant;
     
-    if ([ASVoronoi compareByYThenX:edge0.rightSite site2:edge1.rightSite] < 0)
+    if ([ASDelaunay compareByYThenX:edge0.rightSite site2:edge1.rightSite] < 0)
     {
         halfEdge = halfEdge0; edge = edge0;
     }
