@@ -40,9 +40,9 @@ There are a few different ways you can go about using this library.
 2. Unzip the framework, and drag it into your project.
 
 Alternatively, you can download the project and get going yourself.
-1. `git clone git@github.com:Wayfarer247/ASDelaunay.git`
-2. `cd ASDelaunay`
-3. Open the XCode project file. Things should be pretty self explainaitory. If you want to build the Framework yourself, choose the ASDelaunay Universal scheme in the top left, and then build. This will place the framework in the ${PROJECT_ROOT}/build folder.
+1. `git clone git@github.com:Wayfarer247/ASDelaunay.git`  
+2. `cd ASDelaunay`  
+3. Open the XCode project file. Things should be pretty self explainaitory. If you want to build the Framework yourself, choose the ASDelaunay Universal scheme in the top left, and then build. This will place the framework in the ${PROJECT_ROOT}/build folder.  
 
 If anybody wants I can setup Cocoa Pods for this.
 
