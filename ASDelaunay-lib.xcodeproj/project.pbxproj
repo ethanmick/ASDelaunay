@@ -1,0 +1,735 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		AAE450F7170549BD006A55A5 /* ASDelaunay */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AAE450F8170549BD006A55A5 /* Build configuration list for PBXAggregateTarget "ASDelaunay" */;
+			buildPhases = (
+				AAE450FB170549F0006A55A5 /* Build Library */,
+				AAE450FC17054A7F006A55A5 /* Build Universal Framework */,
+				AAE450FF17054EBD006A55A5 /* CopyFiles */,
+			);
+			dependencies = (
+			);
+			name = ASDelaunay;
+			productName = ASDelaunay;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		AA07E37D17053E1600E220F8 /* ASCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E35F17053E1600E220F8 /* ASCircle.m */; };
+		AA07E37E17053E1600E220F8 /* ASCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E35F17053E1600E220F8 /* ASCircle.m */; };
+		AA07E37F17053E1600E220F8 /* ASEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36217053E1600E220F8 /* ASEdge.m */; };
+		AA07E38017053E1600E220F8 /* ASEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36217053E1600E220F8 /* ASEdge.m */; };
+		AA07E38117053E1600E220F8 /* ASEdgeList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36417053E1600E220F8 /* ASEdgeList.m */; };
+		AA07E38217053E1600E220F8 /* ASEdgeList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36417053E1600E220F8 /* ASEdgeList.m */; };
+		AA07E38317053E1600E220F8 /* ASEdgeReorderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36617053E1600E220F8 /* ASEdgeReorderer.m */; };
+		AA07E38417053E1600E220F8 /* ASEdgeReorderer.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36617053E1600E220F8 /* ASEdgeReorderer.m */; };
+		AA07E38517053E1600E220F8 /* ASHalfEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36817053E1600E220F8 /* ASHalfEdge.m */; };
+		AA07E38617053E1600E220F8 /* ASHalfEdge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36817053E1600E220F8 /* ASHalfEdge.m */; };
+		AA07E38717053E1600E220F8 /* ASHalfedgePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36A17053E1600E220F8 /* ASHalfedgePriorityQueue.m */; };
+		AA07E38817053E1600E220F8 /* ASHalfedgePriorityQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36A17053E1600E220F8 /* ASHalfedgePriorityQueue.m */; };
+		AA07E38917053E1600E220F8 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36C17053E1600E220F8 /* ASLineSegment.m */; };
+		AA07E38A17053E1600E220F8 /* ASLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36C17053E1600E220F8 /* ASLineSegment.m */; };
+		AA07E38B17053E1600E220F8 /* ASLR.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36E17053E1600E220F8 /* ASLR.m */; };
+		AA07E38C17053E1600E220F8 /* ASLR.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E36E17053E1600E220F8 /* ASLR.m */; };
+		AA07E38D17053E1600E220F8 /* ASPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37017053E1600E220F8 /* ASPoint.m */; };
+		AA07E38E17053E1600E220F8 /* ASPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37017053E1600E220F8 /* ASPoint.m */; };
+		AA07E38F17053E1600E220F8 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37217053E1600E220F8 /* ASPolygon.m */; };
+		AA07E39017053E1600E220F8 /* ASPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37217053E1600E220F8 /* ASPolygon.m */; };
+		AA07E39117053E1600E220F8 /* ASSite.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37417053E1600E220F8 /* ASSite.m */; };
+		AA07E39217053E1600E220F8 /* ASSite.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37417053E1600E220F8 /* ASSite.m */; };
+		AA07E39317053E1600E220F8 /* ASSiteList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37617053E1600E220F8 /* ASSiteList.m */; };
+		AA07E39417053E1600E220F8 /* ASSiteList.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37617053E1600E220F8 /* ASSiteList.m */; };
+		AA07E39517053E1600E220F8 /* ASVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37817053E1600E220F8 /* ASVertex.m */; };
+		AA07E39617053E1600E220F8 /* ASVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37817053E1600E220F8 /* ASVertex.m */; };
+		AA07E39717053E1600E220F8 /* ASDelaunay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37A17053E1600E220F8 /* ASDelaunay.m */; };
+		AA07E39817053E1600E220F8 /* ASDelaunay.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37A17053E1600E220F8 /* ASDelaunay.m */; };
+		AA07E39917053E1600E220F8 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37C17053E1600E220F8 /* ASWinding.m */; };
+		AA07E39A17053E1600E220F8 /* ASWinding.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E37C17053E1600E220F8 /* ASWinding.m */; };
+		AA07E39D17053EA900E220F8 /* ASDelaunay_libTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07E39C17053EA900E220F8 /* ASDelaunay_libTests.m */; };
+		AA07E3AB17053EB700E220F8 /* output-0.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E39E17053EB700E220F8 /* output-0.json */; };
+		AA07E3AC17053EB700E220F8 /* output-1.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E39F17053EB700E220F8 /* output-1.json */; };
+		AA07E3AD17053EB700E220F8 /* output-2.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A017053EB700E220F8 /* output-2.json */; };
+		AA07E3AE17053EB700E220F8 /* output-3.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A117053EB700E220F8 /* output-3.json */; };
+		AA07E3AF17053EB700E220F8 /* output-5.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A217053EB700E220F8 /* output-5.json */; };
+		AA07E3B017053EB700E220F8 /* output-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A317053EB700E220F8 /* output-6.json */; };
+		AA07E3B117053EB700E220F8 /* points-0.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A417053EB700E220F8 /* points-0.json */; };
+		AA07E3B217053EB700E220F8 /* points-1.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A517053EB700E220F8 /* points-1.json */; };
+		AA07E3B317053EB700E220F8 /* points-2.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A617053EB700E220F8 /* points-2.json */; };
+		AA07E3B417053EB700E220F8 /* points-3.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A717053EB700E220F8 /* points-3.json */; };
+		AA07E3B517053EB700E220F8 /* points-4.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A817053EB700E220F8 /* points-4.json */; };
+		AA07E3B617053EB700E220F8 /* points-5.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3A917053EB700E220F8 /* points-5.json */; };
+		AA07E3B717053EB700E220F8 /* points-6.json in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3AA17053EB700E220F8 /* points-6.json */; };
+		AA07E3BC17053ECC00E220F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA07E3BA17053ECC00E220F8 /* InfoPlist.strings */; };
+		AA5DB94B170538680063DC10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB94A170538680063DC10 /* Foundation.framework */; };
+		AA5DB95A170538680063DC10 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB959170538680063DC10 /* SenTestingKit.framework */; };
+		AA5DB95D170538680063DC10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB94A170538680063DC10 /* Foundation.framework */; };
+		AA5DB960170538680063DC10 /* libASDelaunay-lib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB947170538680063DC10 /* libASDelaunay-lib.a */; };
+		AA5DB973170538F30063DC10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB972170538F30063DC10 /* CoreGraphics.framework */; };
+		AA5DB975170538FB0063DC10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB974170538FB0063DC10 /* UIKit.framework */; };
+		AAE450F317053F3A006A55A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB972170538F30063DC10 /* CoreGraphics.framework */; };
+		AAE450F6170542B3006A55A5 /* ASDelaunayTests2.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE450F5170542B3006A55A5 /* ASDelaunayTests2.m */; };
+		AAE4510017054F3E006A55A5 /* ASCircle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E35E17053E1600E220F8 /* ASCircle.h */; };
+		AAE4510117054F3E006A55A5 /* ASEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36117053E1600E220F8 /* ASEdge.h */; };
+		AAE4510217054F3E006A55A5 /* ASEdgeList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36317053E1600E220F8 /* ASEdgeList.h */; };
+		AAE4510317054F3E006A55A5 /* ASEdgeReorderer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36517053E1600E220F8 /* ASEdgeReorderer.h */; };
+		AAE4510417054F3E006A55A5 /* ASHalfEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36717053E1600E220F8 /* ASHalfEdge.h */; };
+		AAE4510517054F3E006A55A5 /* ASHalfedgePriorityQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36917053E1600E220F8 /* ASHalfedgePriorityQueue.h */; };
+		AAE4510617054F3E006A55A5 /* ASLineSegment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36B17053E1600E220F8 /* ASLineSegment.h */; };
+		AAE4510717054F3E006A55A5 /* ASLR.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36D17053E1600E220F8 /* ASLR.h */; };
+		AAE4510817054F3E006A55A5 /* ASPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36F17053E1600E220F8 /* ASPoint.h */; };
+		AAE4510917054F3E006A55A5 /* ASPolygon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37117053E1600E220F8 /* ASPolygon.h */; };
+		AAE4510A17054F3E006A55A5 /* ASSite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37317053E1600E220F8 /* ASSite.h */; };
+		AAE4510B17054F3E006A55A5 /* ASSiteList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37517053E1600E220F8 /* ASSiteList.h */; };
+		AAE4510C17054F3E006A55A5 /* ASVertex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37717053E1600E220F8 /* ASVertex.h */; };
+		AAE4510D17054F3E006A55A5 /* ASDelaunay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37917053E1600E220F8 /* ASDelaunay.h */; };
+		AAE4510E17054F3E006A55A5 /* ASWinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37B17053E1600E220F8 /* ASWinding.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA5DB95E170538680063DC10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA5DB93F170538680063DC10 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA5DB946170538680063DC10;
+			remoteInfo = "ASDelaunay-lib";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AA5DB945170538680063DC10 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE450FF17054EBD006A55A5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${SRCROOT}/build/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Headers/";
+			dstSubfolderSpec = 0;
+			files = (
+				AAE4510017054F3E006A55A5 /* ASCircle.h in CopyFiles */,
+				AAE4510117054F3E006A55A5 /* ASEdge.h in CopyFiles */,
+				AAE4510217054F3E006A55A5 /* ASEdgeList.h in CopyFiles */,
+				AAE4510317054F3E006A55A5 /* ASEdgeReorderer.h in CopyFiles */,
+				AAE4510417054F3E006A55A5 /* ASHalfEdge.h in CopyFiles */,
+				AAE4510517054F3E006A55A5 /* ASHalfedgePriorityQueue.h in CopyFiles */,
+				AAE4510617054F3E006A55A5 /* ASLineSegment.h in CopyFiles */,
+				AAE4510717054F3E006A55A5 /* ASLR.h in CopyFiles */,
+				AAE4510817054F3E006A55A5 /* ASPoint.h in CopyFiles */,
+				AAE4510917054F3E006A55A5 /* ASPolygon.h in CopyFiles */,
+				AAE4510A17054F3E006A55A5 /* ASSite.h in CopyFiles */,
+				AAE4510B17054F3E006A55A5 /* ASSiteList.h in CopyFiles */,
+				AAE4510C17054F3E006A55A5 /* ASVertex.h in CopyFiles */,
+				AAE4510D17054F3E006A55A5 /* ASDelaunay.h in CopyFiles */,
+				AAE4510E17054F3E006A55A5 /* ASWinding.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AA07E35E17053E1600E220F8 /* ASCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASCircle.h; sourceTree = "<group>"; };
+		AA07E35F17053E1600E220F8 /* ASCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCircle.m; sourceTree = "<group>"; };
+		AA07E36017053E1600E220F8 /* ASDelaunay-lib-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ASDelaunay-lib-Prefix.pch"; sourceTree = "<group>"; };
+		AA07E36117053E1600E220F8 /* ASEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdge.h; sourceTree = "<group>"; };
+		AA07E36217053E1600E220F8 /* ASEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdge.m; sourceTree = "<group>"; };
+		AA07E36317053E1600E220F8 /* ASEdgeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdgeList.h; sourceTree = "<group>"; };
+		AA07E36417053E1600E220F8 /* ASEdgeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdgeList.m; sourceTree = "<group>"; };
+		AA07E36517053E1600E220F8 /* ASEdgeReorderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASEdgeReorderer.h; sourceTree = "<group>"; };
+		AA07E36617053E1600E220F8 /* ASEdgeReorderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASEdgeReorderer.m; sourceTree = "<group>"; };
+		AA07E36717053E1600E220F8 /* ASHalfEdge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHalfEdge.h; sourceTree = "<group>"; };
+		AA07E36817053E1600E220F8 /* ASHalfEdge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHalfEdge.m; sourceTree = "<group>"; };
+		AA07E36917053E1600E220F8 /* ASHalfedgePriorityQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHalfedgePriorityQueue.h; sourceTree = "<group>"; };
+		AA07E36A17053E1600E220F8 /* ASHalfedgePriorityQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHalfedgePriorityQueue.m; sourceTree = "<group>"; };
+		AA07E36B17053E1600E220F8 /* ASLineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLineSegment.h; sourceTree = "<group>"; };
+		AA07E36C17053E1600E220F8 /* ASLineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLineSegment.m; sourceTree = "<group>"; };
+		AA07E36D17053E1600E220F8 /* ASLR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLR.h; sourceTree = "<group>"; };
+		AA07E36E17053E1600E220F8 /* ASLR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLR.m; sourceTree = "<group>"; };
+		AA07E36F17053E1600E220F8 /* ASPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPoint.h; sourceTree = "<group>"; };
+		AA07E37017053E1600E220F8 /* ASPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPoint.m; sourceTree = "<group>"; };
+		AA07E37117053E1600E220F8 /* ASPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASPolygon.h; sourceTree = "<group>"; };
+		AA07E37217053E1600E220F8 /* ASPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASPolygon.m; sourceTree = "<group>"; };
+		AA07E37317053E1600E220F8 /* ASSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSite.h; sourceTree = "<group>"; };
+		AA07E37417053E1600E220F8 /* ASSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSite.m; sourceTree = "<group>"; };
+		AA07E37517053E1600E220F8 /* ASSiteList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSiteList.h; sourceTree = "<group>"; };
+		AA07E37617053E1600E220F8 /* ASSiteList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSiteList.m; sourceTree = "<group>"; };
+		AA07E37717053E1600E220F8 /* ASVertex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASVertex.h; sourceTree = "<group>"; };
+		AA07E37817053E1600E220F8 /* ASVertex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASVertex.m; sourceTree = "<group>"; };
+		AA07E37917053E1600E220F8 /* ASDelaunay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDelaunay.h; sourceTree = "<group>"; };
+		AA07E37A17053E1600E220F8 /* ASDelaunay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDelaunay.m; sourceTree = "<group>"; };
+		AA07E37B17053E1600E220F8 /* ASWinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASWinding.h; sourceTree = "<group>"; };
+		AA07E37C17053E1600E220F8 /* ASWinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASWinding.m; sourceTree = "<group>"; };
+		AA07E39B17053EA900E220F8 /* ASDelaunay_libTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDelaunay_libTests.h; sourceTree = "<group>"; };
+		AA07E39C17053EA900E220F8 /* ASDelaunay_libTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDelaunay_libTests.m; sourceTree = "<group>"; };
+		AA07E39E17053EB700E220F8 /* output-0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-0.json"; sourceTree = "<group>"; };
+		AA07E39F17053EB700E220F8 /* output-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-1.json"; sourceTree = "<group>"; };
+		AA07E3A017053EB700E220F8 /* output-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-2.json"; sourceTree = "<group>"; };
+		AA07E3A117053EB700E220F8 /* output-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-3.json"; sourceTree = "<group>"; };
+		AA07E3A217053EB700E220F8 /* output-5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-5.json"; sourceTree = "<group>"; };
+		AA07E3A317053EB700E220F8 /* output-6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-6.json"; sourceTree = "<group>"; };
+		AA07E3A417053EB700E220F8 /* points-0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-0.json"; sourceTree = "<group>"; };
+		AA07E3A517053EB700E220F8 /* points-1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-1.json"; sourceTree = "<group>"; };
+		AA07E3A617053EB700E220F8 /* points-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-2.json"; sourceTree = "<group>"; };
+		AA07E3A717053EB700E220F8 /* points-3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-3.json"; sourceTree = "<group>"; };
+		AA07E3A817053EB700E220F8 /* points-4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-4.json"; sourceTree = "<group>"; };
+		AA07E3A917053EB700E220F8 /* points-5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-5.json"; sourceTree = "<group>"; };
+		AA07E3AA17053EB700E220F8 /* points-6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-6.json"; sourceTree = "<group>"; };
+		AA07E3B817053EC300E220F8 /* ASDelaunay-libTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ASDelaunay-libTests-Info.plist"; sourceTree = "<group>"; };
+		AA07E3BB17053ECC00E220F8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AA5DB947170538680063DC10 /* libASDelaunay-lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libASDelaunay-lib.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5DB94A170538680063DC10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AA5DB958170538680063DC10 /* ASDelaunay-libTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ASDelaunay-libTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA5DB959170538680063DC10 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AA5DB972170538F30063DC10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AA5DB974170538FB0063DC10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AAE450F4170542B3006A55A5 /* ASDelaunayTests2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDelaunayTests2.h; sourceTree = "<group>"; };
+		AAE450F5170542B3006A55A5 /* ASDelaunayTests2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDelaunayTests2.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA5DB944170538680063DC10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA5DB975170538FB0063DC10 /* UIKit.framework in Frameworks */,
+				AA5DB973170538F30063DC10 /* CoreGraphics.framework in Frameworks */,
+				AA5DB94B170538680063DC10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5DB954170538680063DC10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAE450F317053F3A006A55A5 /* CoreGraphics.framework in Frameworks */,
+				AA5DB95A170538680063DC10 /* SenTestingKit.framework in Frameworks */,
+				AA5DB95D170538680063DC10 /* Foundation.framework in Frameworks */,
+				AA5DB960170538680063DC10 /* libASDelaunay-lib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA07E2CE17053B8C00E220F8 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Geometry;
+			sourceTree = "<group>";
+		};
+		AA07E2CF17053B9100E220F8 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Graph;
+			sourceTree = "<group>";
+		};
+		AA07E2D017053B9500E220F8 /* Voronoi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Voronoi;
+			sourceTree = "<group>";
+		};
+		AA5DB93E170538680063DC10 = {
+			isa = PBXGroup;
+			children = (
+				AA5DB94C170538680063DC10 /* ASDelaunay-lib */,
+				AA5DB961170538680063DC10 /* ASDelaunay-libTests */,
+				AA5DB949170538680063DC10 /* Frameworks */,
+				AA5DB948170538680063DC10 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA5DB948170538680063DC10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA5DB947170538680063DC10 /* libASDelaunay-lib.a */,
+				AA5DB958170538680063DC10 /* ASDelaunay-libTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA5DB949170538680063DC10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA5DB974170538FB0063DC10 /* UIKit.framework */,
+				AA5DB972170538F30063DC10 /* CoreGraphics.framework */,
+				AA5DB94A170538680063DC10 /* Foundation.framework */,
+				AA5DB959170538680063DC10 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA5DB94C170538680063DC10 /* ASDelaunay-lib */ = {
+			isa = PBXGroup;
+			children = (
+				AA07E35E17053E1600E220F8 /* ASCircle.h */,
+				AA07E35F17053E1600E220F8 /* ASCircle.m */,
+				AA07E36017053E1600E220F8 /* ASDelaunay-lib-Prefix.pch */,
+				AA07E36117053E1600E220F8 /* ASEdge.h */,
+				AA07E36217053E1600E220F8 /* ASEdge.m */,
+				AA07E36317053E1600E220F8 /* ASEdgeList.h */,
+				AA07E36417053E1600E220F8 /* ASEdgeList.m */,
+				AA07E36517053E1600E220F8 /* ASEdgeReorderer.h */,
+				AA07E36617053E1600E220F8 /* ASEdgeReorderer.m */,
+				AA07E36717053E1600E220F8 /* ASHalfEdge.h */,
+				AA07E36817053E1600E220F8 /* ASHalfEdge.m */,
+				AA07E36917053E1600E220F8 /* ASHalfedgePriorityQueue.h */,
+				AA07E36A17053E1600E220F8 /* ASHalfedgePriorityQueue.m */,
+				AA07E36B17053E1600E220F8 /* ASLineSegment.h */,
+				AA07E36C17053E1600E220F8 /* ASLineSegment.m */,
+				AA07E36D17053E1600E220F8 /* ASLR.h */,
+				AA07E36E17053E1600E220F8 /* ASLR.m */,
+				AA07E36F17053E1600E220F8 /* ASPoint.h */,
+				AA07E37017053E1600E220F8 /* ASPoint.m */,
+				AA07E37117053E1600E220F8 /* ASPolygon.h */,
+				AA07E37217053E1600E220F8 /* ASPolygon.m */,
+				AA07E37317053E1600E220F8 /* ASSite.h */,
+				AA07E37417053E1600E220F8 /* ASSite.m */,
+				AA07E37517053E1600E220F8 /* ASSiteList.h */,
+				AA07E37617053E1600E220F8 /* ASSiteList.m */,
+				AA07E37717053E1600E220F8 /* ASVertex.h */,
+				AA07E37817053E1600E220F8 /* ASVertex.m */,
+				AA07E37917053E1600E220F8 /* ASDelaunay.h */,
+				AA07E37A17053E1600E220F8 /* ASDelaunay.m */,
+				AA07E37B17053E1600E220F8 /* ASWinding.h */,
+				AA07E37C17053E1600E220F8 /* ASWinding.m */,
+				AA07E2CE17053B8C00E220F8 /* Geometry */,
+				AA07E2CF17053B9100E220F8 /* Graph */,
+				AA07E2D017053B9500E220F8 /* Voronoi */,
+				AA5DB94D170538680063DC10 /* Supporting Files */,
+			);
+			path = "ASDelaunay-lib";
+			sourceTree = "<group>";
+		};
+		AA5DB94D170538680063DC10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA5DB961170538680063DC10 /* ASDelaunay-libTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA07E39B17053EA900E220F8 /* ASDelaunay_libTests.h */,
+				AA07E39C17053EA900E220F8 /* ASDelaunay_libTests.m */,
+				AAE450F4170542B3006A55A5 /* ASDelaunayTests2.h */,
+				AAE450F5170542B3006A55A5 /* ASDelaunayTests2.m */,
+				AA5DB962170538680063DC10 /* Supporting Files */,
+			);
+			path = "ASDelaunay-libTests";
+			sourceTree = "<group>";
+		};
+		AA5DB962170538680063DC10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA07E3BA17053ECC00E220F8 /* InfoPlist.strings */,
+				AA07E39E17053EB700E220F8 /* output-0.json */,
+				AA07E39F17053EB700E220F8 /* output-1.json */,
+				AA07E3A017053EB700E220F8 /* output-2.json */,
+				AA07E3A117053EB700E220F8 /* output-3.json */,
+				AA07E3A217053EB700E220F8 /* output-5.json */,
+				AA07E3A317053EB700E220F8 /* output-6.json */,
+				AA07E3A417053EB700E220F8 /* points-0.json */,
+				AA07E3A517053EB700E220F8 /* points-1.json */,
+				AA07E3A617053EB700E220F8 /* points-2.json */,
+				AA07E3A717053EB700E220F8 /* points-3.json */,
+				AA07E3A817053EB700E220F8 /* points-4.json */,
+				AA07E3A917053EB700E220F8 /* points-5.json */,
+				AA07E3AA17053EB700E220F8 /* points-6.json */,
+				AA07E3B817053EC300E220F8 /* ASDelaunay-libTests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA5DB946170538680063DC10 /* ASDelaunay-lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA5DB96C170538680063DC10 /* Build configuration list for PBXNativeTarget "ASDelaunay-lib" */;
+			buildPhases = (
+				AA5DB943170538680063DC10 /* Sources */,
+				AA5DB944170538680063DC10 /* Frameworks */,
+				AA5DB945170538680063DC10 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ASDelaunay-lib";
+			productName = "ASDelaunay-lib";
+			productReference = AA5DB947170538680063DC10 /* libASDelaunay-lib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		AA5DB957170538680063DC10 /* ASDelaunay-libTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA5DB96F170538680063DC10 /* Build configuration list for PBXNativeTarget "ASDelaunay-libTests" */;
+			buildPhases = (
+				AA5DB953170538680063DC10 /* Sources */,
+				AA5DB954170538680063DC10 /* Frameworks */,
+				AA5DB955170538680063DC10 /* Resources */,
+				AA5DB956170538680063DC10 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA5DB95F170538680063DC10 /* PBXTargetDependency */,
+			);
+			name = "ASDelaunay-libTests";
+			productName = "ASDelaunay-libTests";
+			productReference = AA5DB958170538680063DC10 /* ASDelaunay-libTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA5DB93F170538680063DC10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Ethan Mick";
+			};
+			buildConfigurationList = AA5DB942170538680063DC10 /* Build configuration list for PBXProject "ASDelaunay-lib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA5DB93E170538680063DC10;
+			productRefGroup = AA5DB948170538680063DC10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA5DB946170538680063DC10 /* ASDelaunay-lib */,
+				AA5DB957170538680063DC10 /* ASDelaunay-libTests */,
+				AAE450F7170549BD006A55A5 /* ASDelaunay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA5DB955170538680063DC10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA07E3AB17053EB700E220F8 /* output-0.json in Resources */,
+				AA07E3AC17053EB700E220F8 /* output-1.json in Resources */,
+				AA07E3AD17053EB700E220F8 /* output-2.json in Resources */,
+				AA07E3AE17053EB700E220F8 /* output-3.json in Resources */,
+				AA07E3AF17053EB700E220F8 /* output-5.json in Resources */,
+				AA07E3B017053EB700E220F8 /* output-6.json in Resources */,
+				AA07E3B117053EB700E220F8 /* points-0.json in Resources */,
+				AA07E3B217053EB700E220F8 /* points-1.json in Resources */,
+				AA07E3B317053EB700E220F8 /* points-2.json in Resources */,
+				AA07E3B417053EB700E220F8 /* points-3.json in Resources */,
+				AA07E3B517053EB700E220F8 /* points-4.json in Resources */,
+				AA07E3B617053EB700E220F8 /* points-5.json in Resources */,
+				AA07E3B717053EB700E220F8 /* points-6.json in Resources */,
+				AA07E3BC17053ECC00E220F8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AA5DB956170538680063DC10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		AAE450FB170549F0006A55A5 /* Build Library */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Library";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator\n\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos";
+		};
+		AAE450FC17054A7F006A55A5 /* Build Universal Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Universal Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "SIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/libASDelaunay-lib.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/libASDelaunay-lib.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nrm -rf \"${SRCROOT}/build\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\nmkdir -p \"${SRCROOT}/build\" &&\n\n# Generate universal binary for the device and simulator.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\nln -s \"A\" \"${FRAMEWORK}/Versions/Current\" &&\nln -s \"Versions/Current/Headers\" \"${FRAMEWORK}/Headers\" &&\nln -s \"Versions/Current/Resources\" \"${FRAMEWORK}/Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${FRAMEWORK}/${PRODUCT_NAME}\" &&\n\n# Copy the final framework to a nicer location\ncp -RP \"${UNIVERSAL_LIBRARY_DIR}\" \"${SRCROOT}/build\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA5DB943170538680063DC10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA07E37D17053E1600E220F8 /* ASCircle.m in Sources */,
+				AA07E37F17053E1600E220F8 /* ASEdge.m in Sources */,
+				AA07E38117053E1600E220F8 /* ASEdgeList.m in Sources */,
+				AA07E38317053E1600E220F8 /* ASEdgeReorderer.m in Sources */,
+				AA07E38517053E1600E220F8 /* ASHalfEdge.m in Sources */,
+				AA07E38717053E1600E220F8 /* ASHalfedgePriorityQueue.m in Sources */,
+				AA07E38917053E1600E220F8 /* ASLineSegment.m in Sources */,
+				AA07E38B17053E1600E220F8 /* ASLR.m in Sources */,
+				AA07E38D17053E1600E220F8 /* ASPoint.m in Sources */,
+				AA07E38F17053E1600E220F8 /* ASPolygon.m in Sources */,
+				AA07E39117053E1600E220F8 /* ASSite.m in Sources */,
+				AA07E39317053E1600E220F8 /* ASSiteList.m in Sources */,
+				AA07E39517053E1600E220F8 /* ASVertex.m in Sources */,
+				AA07E39717053E1600E220F8 /* ASDelaunay.m in Sources */,
+				AA07E39917053E1600E220F8 /* ASWinding.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5DB953170538680063DC10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA07E37E17053E1600E220F8 /* ASCircle.m in Sources */,
+				AA07E38017053E1600E220F8 /* ASEdge.m in Sources */,
+				AA07E38217053E1600E220F8 /* ASEdgeList.m in Sources */,
+				AA07E38417053E1600E220F8 /* ASEdgeReorderer.m in Sources */,
+				AA07E38617053E1600E220F8 /* ASHalfEdge.m in Sources */,
+				AA07E38817053E1600E220F8 /* ASHalfedgePriorityQueue.m in Sources */,
+				AA07E38A17053E1600E220F8 /* ASLineSegment.m in Sources */,
+				AA07E38C17053E1600E220F8 /* ASLR.m in Sources */,
+				AA07E38E17053E1600E220F8 /* ASPoint.m in Sources */,
+				AA07E39017053E1600E220F8 /* ASPolygon.m in Sources */,
+				AA07E39217053E1600E220F8 /* ASSite.m in Sources */,
+				AA07E39417053E1600E220F8 /* ASSiteList.m in Sources */,
+				AA07E39617053E1600E220F8 /* ASVertex.m in Sources */,
+				AA07E39817053E1600E220F8 /* ASDelaunay.m in Sources */,
+				AA07E39A17053E1600E220F8 /* ASWinding.m in Sources */,
+				AA07E39D17053EA900E220F8 /* ASDelaunay_libTests.m in Sources */,
+				AAE450F6170542B3006A55A5 /* ASDelaunayTests2.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA5DB95F170538680063DC10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA5DB946170538680063DC10 /* ASDelaunay-lib */;
+			targetProxy = AA5DB95E170538680063DC10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA07E3BA17053ECC00E220F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA07E3BB17053ECC00E220F8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA5DB96A170538680063DC10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TEST_AFTER_BUILD = NO;
+			};
+			name = Debug;
+		};
+		AA5DB96B170538680063DC10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA5DB96D170538680063DC10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DSTROOT = /tmp/ASDelaunay_lib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ASDelaunay-lib/ASDelaunay-lib-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AA5DB96E170538680063DC10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.0.0;
+				DSTROOT = /tmp/ASDelaunay_lib.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ASDelaunay-lib/ASDelaunay-lib-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AA5DB970170538680063DC10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ASDelaunay-lib/ASDelaunay-lib-Prefix.pch";
+				INFOPLIST_FILE = "ASDelaunay-libTests/ASDelaunay-libTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AA5DB971170538680063DC10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ASDelaunay-lib/ASDelaunay-lib-Prefix.pch";
+				INFOPLIST_FILE = "ASDelaunay-libTests/ASDelaunay-libTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		AAE450F9170549BD006A55A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AAE450FA170549BD006A55A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA5DB942170538680063DC10 /* Build configuration list for PBXProject "ASDelaunay-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5DB96A170538680063DC10 /* Debug */,
+				AA5DB96B170538680063DC10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA5DB96C170538680063DC10 /* Build configuration list for PBXNativeTarget "ASDelaunay-lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5DB96D170538680063DC10 /* Debug */,
+				AA5DB96E170538680063DC10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA5DB96F170538680063DC10 /* Build configuration list for PBXNativeTarget "ASDelaunay-libTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA5DB970170538680063DC10 /* Debug */,
+				AA5DB971170538680063DC10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AAE450F8170549BD006A55A5 /* Build configuration list for PBXAggregateTarget "ASDelaunay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAE450F9170549BD006A55A5 /* Debug */,
+				AAE450FA170549BD006A55A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA5DB93F170538680063DC10 /* Project object */;
+}
