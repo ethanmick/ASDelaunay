@@ -48,7 +48,7 @@ After adding the Library to your project, using it is pretty straight forward.
 ///
 /// At the top...
 ///
-#import <ASDelaunay/ASVoronoi.h>
+#import <ASDelaunay/ASDelaunay.h>
 
 ///
 /// then later...
@@ -77,7 +77,7 @@ for (int i = 0; i < numSites; i++) {
 ///
 /// PlotBounds, here, is just our view, but it could be anything. Negative numbers are fine.
 ///
-ASVoronoi *voronoi = [[ASVoronoi alloc] initWithPoints:randomPoints plotBounds:CGRectMake(0, 0, xMax, yMax)];
+ASDelaunay *voronoi = [[ASDelaunay alloc] initWithPoints:randomPoints plotBounds:CGRectMake(0, 0, xMax, yMax)];
 
 ///
 /// To get the edges
@@ -121,5 +121,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
