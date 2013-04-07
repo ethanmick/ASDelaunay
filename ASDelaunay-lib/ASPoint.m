@@ -54,6 +54,10 @@
     return sqrt(((p1.x - p0.x) * (p1.x - p0.x)) + ((p1.y - p0.y) * (p1.y - p0.y)));
 }
 
++ (instancetype)midpointBetween:(ASPoint *)p0 andP1:(ASPoint *)p1 {
+    return [[ASPoint alloc] initWithX:((p0.x + p1.x) / 2) y:((p0.y + p1.y) / 2))];
+}
+
 - (NSComparisonResult)compareYThenX:(ASPoint *)p0 {
     if (self.y < p0.y) return NSOrderedAscending;
     if (self.y > p0.y) return NSOrderedDescending;

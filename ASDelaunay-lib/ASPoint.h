@@ -21,8 +21,10 @@
 
 - (id)initWithX:(double)anX y:(double)aY;
 + (instancetype)pointWithX:(double)anX y:(double)aY;
++ (instancetype)midpointBetween:(ASPoint *)p0 andP1:(ASPoint *)p1;
 
 + (double)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1;
+
 - (CGPoint)point;
 - (double)getX;
 - (double)getY;
