@@ -30,6 +30,11 @@
 - (double)getY;
 - (NSComparisonResult)compareYThenX:(ASPoint *)p0;
 
+/**
+ * Distance from 0,0
+ */
+- (double)length;
+
 @end
 
 

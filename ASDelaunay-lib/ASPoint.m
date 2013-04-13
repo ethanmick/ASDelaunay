@@ -48,6 +48,10 @@
     return [[ASPoint alloc] initWithX:self.x y:self.y];
 }
 
+- (double)length {
+    return fabs([ASPoint distanceBetweenPoint0:[ASPoint pointWithX:0 y:0] andPoint1:self]);
+}
+
 #pragma mark - Class Methods
 
 + (double)distanceBetweenPoint0:(ASPoint *)p0 andPoint1:(ASPoint *)p1 {
@@ -55,7 +59,7 @@
 }
 
 + (instancetype)midpointBetween:(ASPoint *)p0 andP1:(ASPoint *)p1 {
-    return [[ASPoint alloc] initWithX:((p0.x + p1.x) / 2) y:((p0.y + p1.y) / 2))];
+    return [[ASPoint alloc] initWithX:((p0.x + p1.x) / 2) y:((p0.y + p1.y) / 2)];
 }
 
 - (NSComparisonResult)compareYThenX:(ASPoint *)p0 {
