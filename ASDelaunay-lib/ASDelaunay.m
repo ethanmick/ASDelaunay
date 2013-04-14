@@ -40,8 +40,8 @@
 }
 
 - (NSMutableArray *)region:(ASPoint *)p {
-    id site = [self.sitesIndexedByLocation objectForKey:p];
-    if (site == [NSNull null]) {
+    id site = self.sitesIndexedByLocation[p];
+    if (site == [NSNull null] || site == nil) {
         return [NSMutableArray array];
     }
     return [(ASSite *)site region:self.plotBounds];
@@ -101,8 +101,6 @@
         
         if (newSite != nil && ([heap empty] || [ASDelaunay compareByYThenX:newSite site2:newIntStar] < 0)) {
             
-            // START
-            NSLog(@"TESTING");
             /* new site is smallest */
             //trace("smallest: new site " + newSite);
             
