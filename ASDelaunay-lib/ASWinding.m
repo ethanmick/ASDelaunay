@@ -16,7 +16,10 @@
 
 @implementation ASWinding
 
-@synthesize name;
+static ASWinding *clockwise = nil;
+static ASWinding *counterClockwise = nil;
+static ASWinding *none = nil;
+
 
 - (id)initWithName:(NSString *)string {
     
@@ -28,7 +31,7 @@
 
 
 - (NSString *)description {
-    return name;
+    return _name;
 }
 
 - (BOOL)isEqual:(id)object {
@@ -36,15 +39,24 @@
 }
 
 + (ASWinding *)CLOCKWISE {
-    return [[ASWinding alloc] initWithName:@"clockwise"];
+    if (clockwise == nil) {
+        clockwise = [[ASWinding alloc] initWithName:@"clockwise"];
+    }
+    return clockwise;
 }
 
 + (ASWinding *)COUNTERCLOCKWISE {
-    return [[ASWinding alloc] initWithName:@"counterclockwise"];
+    if (counterClockwise == nil) {
+        counterClockwise = [[ASWinding alloc] initWithName:@"counterclockwise"];
+    }
+    return counterClockwise;
 }
 
 + (ASWinding *)NONE {
-    return [[ASWinding alloc] initWithName:@"none"];
+    if (none == nil) {
+        none = [[ASWinding alloc] initWithName:@"none"];
+    }
+    return none;
 }
 
 @end
