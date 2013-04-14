@@ -18,24 +18,20 @@
 
 @implementation ASEdgeReorderer
 
-@synthesize edges, edgeOrientations;
-
 - (id)initWithEdges:(NSMutableArray *)origEdges criterion:(Class)criterion {
     
     if ( (self = [super init]) ) {
+        
         if ([ASSite class] != criterion && [ASVertex class] != criterion) {
             [NSException raise:@"Bad Arguement Exception" format:@"Criterion must either be ASSite or ASVertex!"];
         }
         
-        edges = [NSMutableArray array];
-        edgeOrientations = [NSMutableArray array];
+        _edges = [NSMutableArray array];
+        _edgeOrientations = [NSMutableArray array];
     
-    if ([origEdges count] > 0) {
-        edges = [self reorderEdges:origEdges criterion:criterion];
-    }
-    
-    
-    
+        if ([origEdges count] > 0) {
+            _edges = [self reorderEdges:origEdges criterion:criterion];
+        }
     }
     return self;
 }
@@ -50,7 +46,7 @@
 
     NSInteger nDone = 0;
     NSMutableArray *newEdges = [NSMutableArray array];
-    ASEdge *edge = [origEdges objectAtIndex:i];
+    ASEdge *edge = origEdges[i];
     
     [newEdges addObject:edge];
     [self.edgeOrientations addObject:[ASLR LEFT]];
@@ -61,17 +57,17 @@
         return [NSMutableArray array];
     }
     
-    [done setObject:@YES atIndexedSubscript:i];
+    done[i] = @YES;
     ++nDone;
     
     while (nDone < n) {
         for (i = 1; i < n; ++i) {
             
-            if ([[done objectAtIndex:i] isEqual:@YES]) {
+            if ([done[i] isEqual:@YES]) {
                 continue;
             }
             
-            edge = [origEdges objectAtIndex:i];
+            edge = origEdges[i];
             
             id<ICoord>leftPoint = criterion == [ASVertex class] ? [edge leftVertex] : [edge leftSite];
             id<ICoord>rightPoint = criterion == [ASVertex class] ? [edge rightVertex] : [edge rightSite];
@@ -84,25 +80,25 @@
                 lastPoint = rightPoint;
                 [self.edgeOrientations addObject:[ASLR LEFT]];
                 [newEdges addObject:edge];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             } else if ( rightPoint == firstPoint) {
                 firstPoint = leftPoint;
                 [self.edgeOrientations insertObject:[ASLR LEFT] atIndex:0];
                 [newEdges insertObject:edge atIndex:0];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             } else if (leftPoint == firstPoint) {
                 firstPoint = rightPoint;
                 [self.edgeOrientations insertObject:[ASLR RIGHT] atIndex:0];
                 [newEdges insertObject:edge atIndex:0];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             } else if (rightPoint == lastPoint) {
                 lastPoint = leftPoint;
                 [self.edgeOrientations addObject:[ASLR RIGHT]];
                 [newEdges addObject:edge];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             }
             
-            if ([[done objectAtIndex:i] isEqual:@YES]) {
+            if ([done[i] isEqual:@YES]) {
                 ++nDone;
             }
         }
