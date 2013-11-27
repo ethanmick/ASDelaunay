@@ -179,7 +179,7 @@ static const NSInteger RIGHT = 8;
     if (self.edgeOrientation == nil) {
         [self reorderEdges];
         self.region = [self clipToBounds:clippingBounds];
-        if ( [[[ASPolygon alloc] initWithPoints:self.region] winding] == [ASWinding CLOCKWISE]) {
+        if ( [[[[ASPolygon alloc] initWithPoints:self.region] winding] isEqual:[ASWinding CLOCKWISE]]) {
             
             self.region = [NSMutableArray arrayWithArray:[[self.region reverseObjectEnumerator] allObjects]];
         }
@@ -204,7 +204,7 @@ static const NSInteger RIGHT = 8;
     edge = _edges[i];
     ASLR *orientation = _edgeOrientation[i];
     [pointsInner addObject:edge.clippedEnds[[orientation name]]];
-    [pointsInner addObject:edge.clippedEnds[[ASLR other:orientation]]];
+    [pointsInner addObject:edge.clippedEnds[[[ASLR other:orientation] name]]];
     
     
     for (NSInteger j = i + 1; j < n; ++j) {
