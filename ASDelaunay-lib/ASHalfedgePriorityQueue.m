@@ -113,7 +113,7 @@
     }
 }
 
-- (ASHalfEdge *)extraMin {
+- (ASHalfEdge *)extractMin {
     ASHalfEdge *answer = [[self.hash objectAtIndex:self.minBucket] nextInPriorityQueue];
     [[self.hash objectAtIndex:self.minBucket] setNextInPriorityQueue:answer.nextInPriorityQueue];
     

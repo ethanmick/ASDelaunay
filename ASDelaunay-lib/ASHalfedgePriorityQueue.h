@@ -17,6 +17,6 @@
 - (void)remove:(ASHalfEdge *)halfEdge;
 - (BOOL)empty;
 - (ASPoint *)min;
-- (ASHalfEdge *)extraMin;
+- (ASHalfEdge *)extractMin;
 
 @end
