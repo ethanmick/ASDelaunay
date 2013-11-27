@@ -61,17 +61,17 @@
         return [NSMutableArray array];
     }
     
-    [done setObject:@YES atIndexedSubscript:i];
+    done[i] = @YES;
     ++nDone;
     
     while (nDone < n) {
         for (i = 1; i < n; ++i) {
             
-            if ([[done objectAtIndex:i] isEqual:@YES]) {
+            if ([done[i] isEqual:@YES]) {
                 continue;
             }
             
-            edge = [origEdges objectAtIndex:i];
+            edge = origEdges[i];
             
             id<ICoord>leftPoint = criterion == [ASVertex class] ? [edge leftVertex] : [edge leftSite];
             id<ICoord>rightPoint = criterion == [ASVertex class] ? [edge rightVertex] : [edge rightSite];
@@ -84,25 +84,25 @@
                 lastPoint = rightPoint;
                 [self.edgeOrientations addObject:[ASLR LEFT]];
                 [newEdges addObject:edge];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             } else if ( rightPoint == firstPoint) {
                 firstPoint = leftPoint;
                 [self.edgeOrientations insertObject:[ASLR LEFT] atIndex:0];
                 [newEdges insertObject:edge atIndex:0];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             } else if (leftPoint == firstPoint) {
                 firstPoint = rightPoint;
                 [self.edgeOrientations insertObject:[ASLR RIGHT] atIndex:0];
                 [newEdges insertObject:edge atIndex:0];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             } else if (rightPoint == lastPoint) {
                 lastPoint = leftPoint;
                 [self.edgeOrientations addObject:[ASLR RIGHT]];
                 [newEdges addObject:edge];
-                [done setObject:@YES atIndexedSubscript:i];
+                done[i] = @YES;
             }
             
-            if ([[done objectAtIndex:i] isEqual:@YES]) {
+            if ([done[i] isEqual:@YES]) {
                 ++nDone;
             }
         }
