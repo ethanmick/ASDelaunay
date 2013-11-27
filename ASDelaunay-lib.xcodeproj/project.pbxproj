@@ -75,7 +75,6 @@
 		AA5DB973170538F30063DC10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB972170538F30063DC10 /* CoreGraphics.framework */; };
 		AA5DB975170538FB0063DC10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB974170538FB0063DC10 /* UIKit.framework */; };
 		AAE450F317053F3A006A55A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5DB972170538F30063DC10 /* CoreGraphics.framework */; };
-		AAE450F6170542B3006A55A5 /* ASDelaunayTests2.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE450F5170542B3006A55A5 /* ASDelaunayTests2.m */; };
 		AAE4510017054F3E006A55A5 /* ASCircle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E35E17053E1600E220F8 /* ASCircle.h */; };
 		AAE4510117054F3E006A55A5 /* ASEdge.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36117053E1600E220F8 /* ASEdge.h */; };
 		AAE4510217054F3E006A55A5 /* ASEdgeList.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E36317053E1600E220F8 /* ASEdgeList.h */; };
@@ -91,6 +90,8 @@
 		AAE4510C17054F3E006A55A5 /* ASVertex.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37717053E1600E220F8 /* ASVertex.h */; };
 		AAE4510D17054F3E006A55A5 /* ASDelaunay.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37917053E1600E220F8 /* ASDelaunay.h */; };
 		AAE4510E17054F3E006A55A5 /* ASWinding.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA07E37B17053E1600E220F8 /* ASWinding.h */; };
+		AAE4511317074C1F006A55A5 /* output-2000.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE4511217074C1F006A55A5 /* output-2000.json */; };
+		AAE4511517074C42006A55A5 /* points-2000.json in Resources */ = {isa = PBXBuildFile; fileRef = AAE4511417074C42006A55A5 /* points-2000.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,8 +195,8 @@
 		AA5DB959170538680063DC10 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AA5DB972170538F30063DC10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		AA5DB974170538FB0063DC10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		AAE450F4170542B3006A55A5 /* ASDelaunayTests2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASDelaunayTests2.h; sourceTree = "<group>"; };
-		AAE450F5170542B3006A55A5 /* ASDelaunayTests2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASDelaunayTests2.m; sourceTree = "<group>"; };
+		AAE4511217074C1F006A55A5 /* output-2000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "output-2000.json"; sourceTree = "<group>"; };
+		AAE4511417074C42006A55A5 /* points-2000.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "points-2000.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,27 +224,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA07E2CE17053B8C00E220F8 /* Geometry */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Geometry;
-			sourceTree = "<group>";
-		};
-		AA07E2CF17053B9100E220F8 /* Graph */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Graph;
-			sourceTree = "<group>";
-		};
-		AA07E2D017053B9500E220F8 /* Voronoi */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Voronoi;
-			sourceTree = "<group>";
-		};
 		AA5DB93E170538680063DC10 = {
 			isa = PBXGroup;
 			children = (
@@ -277,40 +257,10 @@
 		AA5DB94C170538680063DC10 /* ASDelaunay-lib */ = {
 			isa = PBXGroup;
 			children = (
-				AA07E35E17053E1600E220F8 /* ASCircle.h */,
-				AA07E35F17053E1600E220F8 /* ASCircle.m */,
-				AA07E36017053E1600E220F8 /* ASDelaunay-lib-Prefix.pch */,
-				AA07E36117053E1600E220F8 /* ASEdge.h */,
-				AA07E36217053E1600E220F8 /* ASEdge.m */,
-				AA07E36317053E1600E220F8 /* ASEdgeList.h */,
-				AA07E36417053E1600E220F8 /* ASEdgeList.m */,
-				AA07E36517053E1600E220F8 /* ASEdgeReorderer.h */,
-				AA07E36617053E1600E220F8 /* ASEdgeReorderer.m */,
-				AA07E36717053E1600E220F8 /* ASHalfEdge.h */,
-				AA07E36817053E1600E220F8 /* ASHalfEdge.m */,
-				AA07E36917053E1600E220F8 /* ASHalfedgePriorityQueue.h */,
-				AA07E36A17053E1600E220F8 /* ASHalfedgePriorityQueue.m */,
-				AA07E36B17053E1600E220F8 /* ASLineSegment.h */,
-				AA07E36C17053E1600E220F8 /* ASLineSegment.m */,
-				AA07E36D17053E1600E220F8 /* ASLR.h */,
-				AA07E36E17053E1600E220F8 /* ASLR.m */,
-				AA07E36F17053E1600E220F8 /* ASPoint.h */,
-				AA07E37017053E1600E220F8 /* ASPoint.m */,
-				AA07E37117053E1600E220F8 /* ASPolygon.h */,
-				AA07E37217053E1600E220F8 /* ASPolygon.m */,
-				AA07E37317053E1600E220F8 /* ASSite.h */,
-				AA07E37417053E1600E220F8 /* ASSite.m */,
-				AA07E37517053E1600E220F8 /* ASSiteList.h */,
-				AA07E37617053E1600E220F8 /* ASSiteList.m */,
-				AA07E37717053E1600E220F8 /* ASVertex.h */,
-				AA07E37817053E1600E220F8 /* ASVertex.m */,
+				AA66FA211712272A005344F0 /* Geometry */,
+				AA66FA221712274E005344F0 /* Graph */,
 				AA07E37917053E1600E220F8 /* ASDelaunay.h */,
 				AA07E37A17053E1600E220F8 /* ASDelaunay.m */,
-				AA07E37B17053E1600E220F8 /* ASWinding.h */,
-				AA07E37C17053E1600E220F8 /* ASWinding.m */,
-				AA07E2CE17053B8C00E220F8 /* Geometry */,
-				AA07E2CF17053B9100E220F8 /* Graph */,
-				AA07E2D017053B9500E220F8 /* Voronoi */,
 				AA5DB94D170538680063DC10 /* Supporting Files */,
 			);
 			path = "ASDelaunay-lib";
@@ -319,6 +269,7 @@
 		AA5DB94D170538680063DC10 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA07E36017053E1600E220F8 /* ASDelaunay-lib-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -328,8 +279,6 @@
 			children = (
 				AA07E39B17053EA900E220F8 /* ASDelaunay_libTests.h */,
 				AA07E39C17053EA900E220F8 /* ASDelaunay_libTests.m */,
-				AAE450F4170542B3006A55A5 /* ASDelaunayTests2.h */,
-				AAE450F5170542B3006A55A5 /* ASDelaunayTests2.m */,
 				AA5DB962170538680063DC10 /* Supporting Files */,
 			);
 			path = "ASDelaunay-libTests";
@@ -345,6 +294,7 @@
 				AA07E3A117053EB700E220F8 /* output-3.json */,
 				AA07E3A217053EB700E220F8 /* output-5.json */,
 				AA07E3A317053EB700E220F8 /* output-6.json */,
+				AAE4511217074C1F006A55A5 /* output-2000.json */,
 				AA07E3A417053EB700E220F8 /* points-0.json */,
 				AA07E3A517053EB700E220F8 /* points-1.json */,
 				AA07E3A617053EB700E220F8 /* points-2.json */,
@@ -352,9 +302,52 @@
 				AA07E3A817053EB700E220F8 /* points-4.json */,
 				AA07E3A917053EB700E220F8 /* points-5.json */,
 				AA07E3AA17053EB700E220F8 /* points-6.json */,
+				AAE4511417074C42006A55A5 /* points-2000.json */,
 				AA07E3B817053EC300E220F8 /* ASDelaunay-libTests-Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA66FA211712272A005344F0 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				AA07E37B17053E1600E220F8 /* ASWinding.h */,
+				AA07E37C17053E1600E220F8 /* ASWinding.m */,
+				AA07E35E17053E1600E220F8 /* ASCircle.h */,
+				AA07E35F17053E1600E220F8 /* ASCircle.m */,
+				AA07E36B17053E1600E220F8 /* ASLineSegment.h */,
+				AA07E36C17053E1600E220F8 /* ASLineSegment.m */,
+				AA07E36D17053E1600E220F8 /* ASLR.h */,
+				AA07E36E17053E1600E220F8 /* ASLR.m */,
+				AA07E36F17053E1600E220F8 /* ASPoint.h */,
+				AA07E37017053E1600E220F8 /* ASPoint.m */,
+				AA07E37117053E1600E220F8 /* ASPolygon.h */,
+				AA07E37217053E1600E220F8 /* ASPolygon.m */,
+			);
+			name = Geometry;
+			sourceTree = "<group>";
+		};
+		AA66FA221712274E005344F0 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				AA07E36117053E1600E220F8 /* ASEdge.h */,
+				AA07E36217053E1600E220F8 /* ASEdge.m */,
+				AA07E36317053E1600E220F8 /* ASEdgeList.h */,
+				AA07E36417053E1600E220F8 /* ASEdgeList.m */,
+				AA07E36517053E1600E220F8 /* ASEdgeReorderer.h */,
+				AA07E36617053E1600E220F8 /* ASEdgeReorderer.m */,
+				AA07E36717053E1600E220F8 /* ASHalfEdge.h */,
+				AA07E36817053E1600E220F8 /* ASHalfEdge.m */,
+				AA07E36917053E1600E220F8 /* ASHalfedgePriorityQueue.h */,
+				AA07E36A17053E1600E220F8 /* ASHalfedgePriorityQueue.m */,
+				AA07E37317053E1600E220F8 /* ASSite.h */,
+				AA07E37417053E1600E220F8 /* ASSite.m */,
+				AA07E37517053E1600E220F8 /* ASSiteList.h */,
+				AA07E37617053E1600E220F8 /* ASSiteList.m */,
+				AA07E37717053E1600E220F8 /* ASVertex.h */,
+				AA07E37817053E1600E220F8 /* ASVertex.m */,
+			);
+			name = Graph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +436,8 @@
 				AA07E3B617053EB700E220F8 /* points-5.json in Resources */,
 				AA07E3B717053EB700E220F8 /* points-6.json in Resources */,
 				AA07E3BC17053ECC00E220F8 /* InfoPlist.strings in Resources */,
+				AAE4511317074C1F006A55A5 /* output-2000.json in Resources */,
+				AAE4511517074C42006A55A5 /* points-2000.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +530,6 @@
 				AA07E39817053E1600E220F8 /* ASDelaunay.m in Sources */,
 				AA07E39A17053E1600E220F8 /* ASWinding.m in Sources */,
 				AA07E39D17053EA900E220F8 /* ASDelaunay_libTests.m in Sources */,
-				AAE450F6170542B3006A55A5 /* ASDelaunayTests2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,6 +722,7 @@
 				AAE450FA170549BD006A55A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
