@@ -15,9 +15,6 @@
 
 @implementation ASHalfEdge
 
-@synthesize edge, edgeListLeftNeighbor, edgeListRightNeighbor, leftRight, nextInPriorityQueue, vertex;
-@synthesize ystar;
-
 - (id)initWithEdge:(ASEdge *)anEdge lr:(ASLR *)lr {
     
     if ( (self = [super init]) ) {
@@ -93,14 +90,14 @@
         }
         if (!fast) {
             dxs = [topSite getX] - [self.edge.leftSite getX];
-            above = edge.b * (dxp * dxp - dyp * dyp) < dxs * dyp * (1.0 + 2.0 * dxp/dxs + edge.b * edge.b);
-            if (edge.b < 0.0)
+            above = _edge.b * (dxp * dxp - dyp * dyp) < dxs * dyp * (1.0 + 2.0 * dxp/dxs + _edge.b * _edge.b);
+            if (_edge.b < 0.0)
             {
                 above = !above;
             }
         }
     } else  /* edge.b == 1.0 */ {
-        yl = edge.c - edge.a * p.x;
+        yl = _edge.c - _edge.a * p.x;
         t1 = p.y - yl;
         t2 = p.x - [topSite getX];
         t3 = yl - [topSite getY];

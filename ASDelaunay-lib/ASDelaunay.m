@@ -152,7 +152,7 @@
         } else if ([heap empty] == NO)
         {
             // intersection is smallest //
-            lbnd = [heap extraMin];
+            lbnd = [heap extractMin];
             llbnd = lbnd.edgeListLeftNeighbor;
             rbnd = lbnd.edgeListRightNeighbor;
             rrbnd = rbnd.edgeListRightNeighbor;

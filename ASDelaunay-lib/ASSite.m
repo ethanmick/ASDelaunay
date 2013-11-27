@@ -30,7 +30,7 @@ static const NSInteger RIGHT = 8;
 @property (nonatomic) double weight;
 @property (nonatomic, strong) NSMutableArray *edges;
 @property (nonatomic, strong) NSMutableArray *points;
-@property (nonatomic, strong) NSMutableArray *edgeOrientation;
+@property (nonatomic, strong) NSMutableArray *edgeOrientations;
 @property (nonatomic, strong) NSMutableArray *region;
 
 @end
@@ -143,7 +143,7 @@ static const NSInteger RIGHT = 8;
         return [NSMutableArray array];
     }
     
-    if (self.edgeOrientation == nil) {
+    if (self.edgeOrientations == nil) {
         [self reorderEdges];
     }
     
@@ -168,7 +168,7 @@ static const NSInteger RIGHT = 8;
 - (void)reorderEdges {
     ASEdgeReorderer *reorderer = [[ASEdgeReorderer alloc] initWithEdges:self.edges criterion:[ASVertex class]];
     self.edges = [reorderer edges];
-    self.edgeOrientation = [reorderer edgeOrientations];
+    self.edgeOrientations = [reorderer edgeOrientations];
 }
 
 - (NSMutableArray *)region:(CGRect)clippingBounds {
@@ -176,15 +176,14 @@ static const NSInteger RIGHT = 8;
         return [NSMutableArray array];
     }
     
-    if (self.edgeOrientation == nil) {
+    if (self.edgeOrientations == nil) {
         [self reorderEdges];
         self.region = [self clipToBounds:clippingBounds];
         if ( [[[[ASPolygon alloc] initWithPoints:self.region] winding] isEqual:[ASWinding CLOCKWISE]]) {
-            
             self.region = [NSMutableArray arrayWithArray:[[self.region reverseObjectEnumerator] allObjects]];
         }
     }
-    return self.region;
+    return _region;
 }
 
 - (NSMutableArray *)clipToBounds:(CGRect)bounds {
@@ -200,12 +199,11 @@ static const NSInteger RIGHT = 8;
     if (i == n) {
         return [NSMutableArray array];
     }
-    
+
     edge = _edges[i];
-    ASLR *orientation = _edgeOrientation[i];
+    ASLR *orientation = _edgeOrientations[i];
     [pointsInner addObject:edge.clippedEnds[[orientation name]]];
     [pointsInner addObject:edge.clippedEnds[[[ASLR other:orientation] name]]];
-    
     
     for (NSInteger j = i + 1; j < n; ++j) {
         edge = self.edges[j];
@@ -239,9 +237,11 @@ static const NSInteger RIGHT = 8;
 
 - (void)connect:(NSMutableArray *)thePoints j:(NSInteger)j bounds:(CGRect)bounds closingUp:(BOOL)closingUp {
     ASPoint *rightPoint = [thePoints lastObject];
+    
     ASEdge *newEdge = _edges[j];
-    ASLR *newOrientation = _edgeOrientation[j];
-    ASPoint *newPoint = newEdge.clippedEnds[[newOrientation name]];
+    ASLR *newOrientation = _edgeOrientations[j];
+    ASPoint *newPoint = [[newEdge clippedEnds] objectForKey:newOrientation.name];
+    
     if (![ASSite closeEnough:rightPoint andPoint:newPoint])
     {
         // The points do not coincide, so they must have been clipped at the bounds;

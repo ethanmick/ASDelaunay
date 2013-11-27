@@ -60,7 +60,7 @@
     
     for (index = 0; index < n; ++index) {
         nextIndex = (index + 1) % n;
-        point = [self.vertices objectAtIndex:index]; //
+        point = [self.vertices objectAtIndex:index];
         next = [self.vertices objectAtIndex:nextIndex];
         signedDoubleArea += point.x * next.y - next.x * point.y;
     }
