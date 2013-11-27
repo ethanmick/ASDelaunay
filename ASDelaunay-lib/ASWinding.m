@@ -10,8 +10,6 @@
 
 @interface ASWinding()
 
-@property (nonatomic, strong) NSString *name;
-
 @end
 
 @implementation ASWinding
@@ -32,7 +30,7 @@
 }
 
 - (BOOL)isEqual:(id)object {
-    return [object isKindOfClass:[self class]] && [[object name] isEqual:self.name];
+    return [object isKindOfClass:[self class]] && [[(ASWinding *)object name] isEqual:self.name];
 }
 
 + (ASWinding *)CLOCKWISE {

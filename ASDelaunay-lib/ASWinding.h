@@ -11,6 +11,8 @@
 
 @interface ASWinding : NSObject
 
+@property (nonatomic, strong) NSString *name;
+
 - (id)initWithName:(NSString *)string;
 + (ASWinding *)CLOCKWISE;
 + (ASWinding *)COUNTERCLOCKWISE;
