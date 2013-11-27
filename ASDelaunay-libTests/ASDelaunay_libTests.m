@@ -7,7 +7,7 @@
 //
 
 #import "ASDelaunay_libTests.h"
-#import "ASVoronoi.h"
+#import "ASDelaunay.h"
 #import "ASPoint.h"
 #import "ASEdge.h"
 #import "ASLineSegment.h"
@@ -40,7 +40,7 @@
     NSArray *pos = @[p0, p1, p2];
     
     CGRect pb = CGRectMake(-20, -20, 40, 40);
-    ASVoronoi *vo = [[ASVoronoi alloc] initWithPoints:[NSMutableArray arrayWithArray:pos] plotBounds:pb];
+    ASDelaunay *vo = [[ASDelaunay alloc] initWithPoints:[NSMutableArray arrayWithArray:pos] plotBounds:pb];
     
     STAssertTrue([vo.edges count] == 3, @"The Number of Line Segments should be 3");
     STAssertTrue([[[vo.edges[0] voronoiEdge] p0] x] == 0, @"X Should be 0");
@@ -81,7 +81,7 @@
 /// Of course, since it crashed we can't verify that this is correct...
 ///
 - (void)testJSON4 {
-    ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:4] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
+    ASDelaunay *voro = [[ASDelaunay alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:4] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
     STAssertTrue([voro.edges count] > 0, @"Did we put something in the edges array?");
 }
 
@@ -94,7 +94,7 @@
 /// Test the Delaunay Line segments as well, as those are the aspects that will be used the most.
 ///
 - (void)testJSON6 {
-    ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[self arrayOfPointsFromJSONFile:6] plotBounds:CGRectMake(0, 0, 500, 500)];
+    ASDelaunay *voro = [[ASDelaunay alloc] initWithPoints:[self arrayOfPointsFromJSONFile:6] plotBounds:CGRectMake(0, 0, 500, 500)];
     
     ///
     /// Read in input and test to see if it's "close enough"
@@ -125,7 +125,7 @@
 #pragma mark - Helper Methods
 
 - (void)testForFile:(NSInteger)integer {
-    ASVoronoi *voro = [[ASVoronoi alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:integer] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
+    ASDelaunay *voro = [[ASDelaunay alloc] initWithPoints:[[self arrayOfPointsFromJSONFile:integer] mutableCopy] plotBounds:CGRectMake(0, 0, 500, 500)];
     
     ///
     /// Read in input and test to see if it's "close enough"
