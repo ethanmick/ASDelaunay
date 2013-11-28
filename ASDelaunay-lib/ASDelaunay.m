@@ -10,15 +10,13 @@
 
 @implementation ASDelaunay
 
-@synthesize edges, sites, sitesIndexedByLocation, triangles, plotBounds;
-
 - (id)initWithPoints:(NSArray *)somePoints plotBounds:(CGRect)theBounds {
     
     if ( (self = [super init]) ) {
         self.sites = [[ASSiteList alloc] init];
         self.sitesIndexedByLocation = [NSMutableDictionary dictionary];
         [self addSites:somePoints];
-        plotBounds = theBounds;
+        _plotBounds = theBounds;
         self.triangles = [NSMutableArray array];
         self.edges = [NSMutableArray array];
         [self fortunesAlgorithm];
@@ -28,7 +26,7 @@
 
 - (void)addSites:(NSArray *)points {
     for (NSInteger i = 0; i < [points count]; ++i) {
-        [self addSite:[points objectAtIndex:i] index:i];
+        [self addSite:points[i] index:i];
     }
 }
 
@@ -72,26 +70,42 @@
     ASSite *bottomMostSite = [self.sites next];
     newSite = [self.sites next];
     
-    void (^leftRegion)(ASHalfEdge *, ASSite **) = ^(ASHalfEdge *he, ASSite **site) {
+    ASSite* (^leftRegion)(ASHalfEdge *) = ^(ASHalfEdge *he) {
         ASEdge *edge = he.edge;
-        
         if (edge == nil) {
-            *site = bottomMostSite;
-            return;
+            return bottomMostSite;
         }
-        
-        *site = [edge site:he.leftRight];
+        return [edge site:he.leftRight];
     };
     
-    void (^rightRegion)(ASHalfEdge *, ASSite **) = ^(ASHalfEdge *he, ASSite **site) {
+//    void (^leftRegion)(ASHalfEdge *, ASSite **) = ^(ASHalfEdge *he, ASSite **site) {
+//        ASEdge *edge = he.edge;
+//        
+//        if (edge == nil) {
+//            *site = bottomMostSite;
+//            return;
+//        }
+//        
+//        *site = [edge site:he.leftRight];
+//    };
+    
+    ASSite* (^rightRegion)(ASHalfEdge *) = ^(ASHalfEdge *he) {
         ASEdge *edge = he.edge;
-        
         if (edge == nil) {
-            *site = bottomMostSite;
-            return;
+            return bottomMostSite;
         }
-        *site = [edge site:[ASLR other:he.leftRight]];
+        return [edge site:[ASLR other:he.leftRight]];
     };
+    
+//    void (^rightRegion)(ASHalfEdge *, ASSite **) = ^(ASHalfEdge *he, ASSite **site) {
+//        ASEdge *edge = he.edge;
+//        
+//        if (edge == nil) {
+//            *site = bottomMostSite;
+//            return;
+//        }
+//        *site = [edge site:[ASLR other:he.leftRight]];
+//    };
     
     for (;;) {
         
@@ -108,7 +122,8 @@
             lbnd = [edgeList edgeListLeftNeighbor:[newSite coord]]; // the Halfedge just to the left of newSite
             rbnd = lbnd.edgeListRightNeighbor;  // the Halfedge just to the right
 
-            rightRegion(lbnd, &bottomSite); // this is the same as leftRegion(rbnd)
+//            rightRegion(lbnd, &bottomSite); // this is the same as leftRegion(rbnd)
+            bottomSite = rightRegion(lbnd);
             // this Site determines the region containing the new site
             // Step 9:
             edge = [ASEdge createBisectingEdge:bottomSite site1:newSite];
@@ -156,8 +171,10 @@
             llbnd = lbnd.edgeListLeftNeighbor;
             rbnd = lbnd.edgeListRightNeighbor;
             rrbnd = rbnd.edgeListRightNeighbor;
-            leftRegion(lbnd, &bottomSite);
-            rightRegion(rbnd, &topSite);
+            bottomSite = leftRegion(lbnd);
+//            leftRegion(lbnd, &bottomSite);
+//            rightRegion(rbnd, &topSite);
+            topSite = rightRegion(rbnd);
 
             // these three sites define a Delaunay triangle
             // (not actually using these for anything...)
@@ -187,7 +204,6 @@
             [edge setVertex:[ASLR other:leftRight] vertex:v];
             
          
-            
             if ( (vertex = [ASVertex intersect:llbnd halfEdge1:bisector]) != nil ) {
                 [vertices addObject:vertex];
                 [heap remove:llbnd];
