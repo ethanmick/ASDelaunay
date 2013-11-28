@@ -20,8 +20,6 @@
 
 @implementation ASPolygon
 
-@synthesize vertices;
-
 - (id)initWithPoints:(NSArray *)points {
     
     if ( (self = [super init]) ) {

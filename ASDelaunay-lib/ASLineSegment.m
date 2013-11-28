@@ -11,9 +11,6 @@
 
 @implementation ASLineSegment
 
-@synthesize p0, p1;
-
-
 - (id)initWithPoint0:(ASPoint *)aPoint0 point1:(ASPoint *)aPoint1 {
     
     if ( (self = [super init]) ) {

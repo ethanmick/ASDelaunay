@@ -10,8 +10,6 @@
 
 @implementation ASPoint
 
-@synthesize x, y;
-
 - (id)initWithX:(double)anX y:(double)aY {
     if ( (self = [super init]) ) {
         self.x = anX;

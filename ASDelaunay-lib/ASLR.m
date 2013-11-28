@@ -15,12 +15,10 @@
 
 @implementation ASLR
 
-@synthesize name;
-
 // should be private
 - (id)initWithName:(NSString *)aName {
     if ( (self = [super init]) ) {
-        name = aName;
+        _name = aName;
     }
     return self;
 }
@@ -47,7 +45,7 @@ static ASLR *RIGHT = nil;
 }
 
 - (NSString *)description {
-    return name;
+    return _name;
 }
 
 - (BOOL)isEqual:(id)object {

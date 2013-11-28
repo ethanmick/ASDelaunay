@@ -11,8 +11,6 @@
 
 @implementation ASCircle
 
-@synthesize point, radius;
-
 - (id)initWithX:(double)anX y:(double)aY radius:(double)r {
     
     if ( (self = [super init]) ) {
