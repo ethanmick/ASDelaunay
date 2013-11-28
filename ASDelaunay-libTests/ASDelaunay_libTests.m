@@ -95,7 +95,7 @@
 ///
 - (void)testJSON2000 {
     NSLog(@"TESING 2000");
-//    [self testForFile:2000];
+    [self testForFile:2000];
 }
 
 ///

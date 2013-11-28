@@ -12,7 +12,6 @@
 #import "ASPoint.h"
 #import "ASSite.h"
 
-
 @implementation ASHalfEdge
 
 - (id)initWithEdge:(ASEdge *)anEdge lr:(ASLR *)lr {

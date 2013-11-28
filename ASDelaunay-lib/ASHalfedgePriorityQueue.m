@@ -23,8 +23,6 @@
 
 @implementation ASHalfedgePriorityQueue
 
-@synthesize hash, count, minBucket, hashSize, ymin, deltay;
-
 - (id)initWithYMin:(double)aYmin deltay:(double)aDeltay sqrtNSites:(NSInteger)sqrtNSites {
     
     if ( (self = [super init]) ) {

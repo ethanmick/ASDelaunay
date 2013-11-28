@@ -22,8 +22,6 @@
 
 @implementation ASEdgeList
 
-@synthesize deltax, xmin, hash, hashSize;
-
 - (id)initWithXMin:(double)anXmin deltax:(double)aDeltaX sqrtNSites:(NSInteger)sqrtNSites {
     
     if ( (self = [super init]) ) {
@@ -31,7 +29,7 @@
         self.deltax = aDeltaX;
         self.hashSize = 2 * sqrtNSites;
         
-        self.hash = [NSMutableArray arrayWithCapacity:hashSize];
+        self.hash = [NSMutableArray arrayWithCapacity:_hashSize];
         for (NSInteger i = 0; i < self.hashSize; i++) {
             [self.hash addObject:[NSNull null]];
         }

@@ -26,8 +26,6 @@ static NSInteger nedges = 0;
 
 @implementation ASEdge
 
-@synthesize sites, a, b, c, leftVertex, rightVertex, edgeIndex, clippedVertices;
-
 - (id)init {
     if ( (self = [super init]) ) {
         self.sites = [NSMutableDictionary dictionary];
