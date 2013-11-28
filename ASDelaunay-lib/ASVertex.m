@@ -23,7 +23,6 @@ static int nvertices = 0;
 @end
 
 @implementation ASVertex
-@synthesize coord = _coord, vertexIndex;
 
 + (ASVertex *)VERTEX_AT_INFINITY {
     if (_VERTEX_AT_INFINITY == nil) {
@@ -52,7 +51,7 @@ static int nvertices = 0;
 }
 
 - (void)setIndex {
-    vertexIndex = nvertices++;
+    _vertexIndex = nvertices++;
 }
 
 - (NSString *)description {

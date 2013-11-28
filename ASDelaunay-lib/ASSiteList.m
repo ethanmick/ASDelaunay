@@ -21,8 +21,6 @@
 
 @implementation ASSiteList
 
-@synthesize sites, currentIndex, sorted;
-
 - (id)init {
     
     if ( (self = [super init]) ) {
@@ -80,8 +78,8 @@
         }
     }
     
-    ymin = [[sites objectAtIndex:0] getY];
-    ymax = [[sites lastObject] getY];
+    ymin = [[_sites objectAtIndex:0] getY];
+    ymax = [[_sites lastObject] getY];
     
     return CGRectMake(xmin, ymin, xmax - xmin, ymax - ymin);
 }
